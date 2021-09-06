@@ -19,17 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJX-Zd-i3A">
-                    <rect key="frame" x="167" y="432.5" width="80" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Shazam!"/>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app is available on iOS 15 or above!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlN-bd-Osz">
+                    <rect key="frame" x="55" y="437.5" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="XJX-Zd-i3A" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="D0T-Cy-8Xn"/>
-                <constraint firstItem="XJX-Zd-i3A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qlW-Pb-KxL"/>
+                <constraint firstItem="wlN-bd-Osz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="X7Z-60-Ucj"/>
+                <constraint firstItem="wlN-bd-Osz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vOw-JY-uVt"/>
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>

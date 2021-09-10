@@ -71,8 +71,8 @@ class SongResultViewController: UIViewController, SHSessionDelegate {
             print(item.title ?? "title")
             print(item.artist ?? "artist")
             print(item.artworkURL?.absoluteURL ?? "Artwork url")
-//            titleLabel.text = item.title ?? "title"
-//            artistLabel.text = item.artist ?? "artist"
+            titleLabel.text = item.title ?? "title"
+            artistLabel.text = item.artist ?? "artist"
         }
     }
     
@@ -84,6 +84,8 @@ class SongResultViewController: UIViewController, SHSessionDelegate {
     
     
     @IBAction private func buttonPressed(_ sender: UIButton) {
+        titleLabel.text = "Searching..."
+        artistLabel.text = "Searching..."
         recognizeSong()
     }
 }

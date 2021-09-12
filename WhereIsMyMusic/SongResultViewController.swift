@@ -7,6 +7,7 @@
 
 import UIKit
 import ShazamKit
+import AVKit
 
 
 @available(iOS 15.0, *)
@@ -16,18 +17,17 @@ class SongResultViewController: UIViewController, SHSessionDelegate {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var shazamButton: UIButton!
     
-    
+    let shazamSession = SHSession()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     //MARK: Shazam song recognizing logic (reference by iOSAcademy)
     private func recognizeSong() {
-        // Session
-        let session = SHSession()
         
-        // Delegate
-        session.delegate = self
+        shazamSession.delegate = self
         
         do {
             // Get track
@@ -57,13 +57,14 @@ class SongResultViewController: UIViewController, SHSessionDelegate {
             let signature = generator.signature()
             
             // Try to match
-            session.match(signature)
+            shazamSession.match(signature)
             
         }
         catch {
             print(error)
         }
     }
+
     
     func session(_ session: SHSession, didFind match: SHMatch) {
         let items = match.mediaItems

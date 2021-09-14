@@ -16,6 +16,7 @@
 		4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */; };
 		4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */; };
 		4FCA016D26DFDDF700DEDE39 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */; };
+		4FE23BCA26F0954D005EFF1D /* SignatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */,
 				4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */,
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
+				4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */,
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 			);
 			path = WhereIsMyMusic;
@@ -160,6 +163,7 @@
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
 				4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */,
+				4FE23BCA26F0954D005EFF1D /* SignatureGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

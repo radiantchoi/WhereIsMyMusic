@@ -76,6 +76,9 @@ struct SignatureGenerator {
                 do {
                     // Read a frame from the audio file into the input buffer.
                     try audioFile.read(into: inputBuffer)
+                    if audioFile.framePosition >= audioFile.length / 30 {
+                        return inputBuffer
+                    }
                     outStatus.pointee = .haveData
                     return inputBuffer
                 } catch {

@@ -34,7 +34,8 @@ struct SignatureGenerator {
                 // Append portions of the converted audio to the signature generator.
                 try? signatureGenerator.append(buffer, at: nil)
             } catch {
-                // Handle an error generating the signature.
+                print("Conversion Failure")
+                print(error)
                 return
             }
         }

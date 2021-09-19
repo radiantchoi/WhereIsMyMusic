@@ -27,7 +27,6 @@ class SongResultViewController: UIViewController {
     
     lazy var shazamSession: SHSession = .init()
     lazy var audioEngine: AVAudioEngine = .init()
-//    let audioPlayer = AVAudioPlayerNode()
     
     lazy var audioSession: AVAudioSession = .sharedInstance()
     lazy var inputNode = audioEngine.inputNode
@@ -91,28 +90,7 @@ extension SongResultViewController {
 @available(iOS 15.0, *)
 extension SongResultViewController: SHSessionDelegate {
     
-//    private func recognizeSong() {
-//        guard let url = Bundle.main.url(forResource: "song", withExtension: "mp3") else {
-//            print("Failed to get song url")
-//            return
-//        }
-//        guard let signature = SignatureGenerator.generateSignature(from: url) else { return }
-//
-//        shazamSession.match(signature)
-//    }
-    
-    
     func session(_ session: SHSession, didFind match: SHMatch) {
-//        let items = match.mediaItems
-//        items.forEach { item in
-//            print(item.title ?? "title")
-//            print(item.artist ?? "artist")
-//            print(item.artworkURL?.absoluteURL ?? "Artwork url")
-//            DispatchQueue.main.async {
-//                self.titleLabel.text = item.title ?? "title"
-//                self.artistLabel.text = item.artist ?? "artist"
-//            }
-//        }
         
         DispatchQueue.main.async {
             if let mediaItem = match.mediaItems.first {
@@ -134,7 +112,6 @@ extension SongResultViewController: SHSessionDelegate {
     @IBAction private func buttonPressed(_ sender: UIButton) {
         titleLabel.text = "Searching..."
         artistLabel.text = "Searching..."
-//        recognizeSong()
         start()
     }
     

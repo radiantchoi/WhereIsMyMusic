@@ -9,20 +9,17 @@
 /* Begin PBXBuildFile section */
 		4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* SongResultViewController.swift */; };
 		4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* SongResultViewController.xib */; };
-		4FA3EBC226E670A90033117F /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA3EBC126E670A90033117F /* song.mp3 */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
 		4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */; };
 		4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */; };
 		4FCA016D26DFDDF700DEDE39 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */; };
-		4FE23BCA26F0954D005EFF1D /* SignatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F4E628026E07B8E001592AC /* SongResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* SongResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongResultViewController.xib; sourceTree = "<group>"; };
-		4FA3EBC126E670A90033117F /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +28,6 @@
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +60,12 @@
 		4FCA015226DFDC0700DEDE39 /* WhereIsMyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				4FA3EBC126E670A90033117F /* song.mp3 */,
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
 				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
 				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
 				4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */,
 				4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */,
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
-				4FE23BC926F0954D005EFF1D /* SignatureGenerator.swift */,
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 			);
 			path = WhereIsMyMusic;
@@ -145,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */,
-				4FA3EBC226E670A90033117F /* song.mp3 in Resources */,
 				4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */,
 				4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */,
 				4FCA016D26DFDDF700DEDE39 /* HomeViewController.xib in Resources */,
@@ -163,7 +156,6 @@
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
 				4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */,
-				4FE23BCA26F0954D005EFF1D /* SignatureGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

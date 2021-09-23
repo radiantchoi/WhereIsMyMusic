@@ -105,6 +105,10 @@ extension SongResultViewController: SHSessionDelegate {
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
         if let error = error {
             print(error)
+            DispatchQueue.main.async {
+                self.titleLabel.text = "not found"
+                self.artistLabel.text = "not found"
+            }
             self.stop()
         }
     }

@@ -15,6 +15,7 @@ class SongResultViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var shazamButton: UIButton!
+    @IBOutlet weak var checkLabel: UILabel!
     
     var matching: Bool = false
     var mediaItem: SHMatchedMediaItem?
@@ -32,12 +33,11 @@ class SongResultViewController: UIViewController {
     lazy var inputNode = audioEngine.inputNode
     lazy var bus: AVAudioNodeBus = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         shazamSession.delegate = self
+        checkLabel.isHidden = true
     }
-    
 }
 
 // MARK: recorder Setup

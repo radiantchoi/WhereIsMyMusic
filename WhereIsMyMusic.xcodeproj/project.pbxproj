@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F29FBF22701EE030054BAD5 /* MelonSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F29FBF12701EE030054BAD5 /* MelonSongModel.swift */; };
+		4F493A8B2701B92B00103B9B /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F493A8A2701B92B00103B9B /* Song.swift */; };
 		4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* SongResultViewController.swift */; };
 		4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* SongResultViewController.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F29FBF12701EE030054BAD5 /* MelonSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonSongModel.swift; sourceTree = "<group>"; };
+		4F493A8A2701B92B00103B9B /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* SongResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* SongResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongResultViewController.xib; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,8 @@
 				4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */,
 				4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */,
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
+				4F493A8A2701B92B00103B9B /* Song.swift */,
+				4F29FBF12701EE030054BAD5 /* MelonSongModel.swift */,
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 			);
 			path = WhereIsMyMusic;
@@ -162,8 +168,10 @@
 			files = (
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
+				4F29FBF22701EE030054BAD5 /* MelonSongModel.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
 				4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */,
+				4F493A8B2701B92B00103B9B /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

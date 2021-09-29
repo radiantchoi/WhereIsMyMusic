@@ -72,9 +72,9 @@
 				4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */,
 				4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */,
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
+				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 				4F493A8A2701B92B00103B9B /* Song.swift */,
 				4F29FBF12701EE030054BAD5 /* MelonSongModel.swift */,
-				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -313,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
 				INFOPLIST_FILE = WhereIsMyMusic/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
 				INFOPLIST_FILE = WhereIsMyMusic/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,7 +9,6 @@ import UIKit
 import ShazamKit
 import AVFoundation
 
-@available(iOS 15.0, *)
 class SongResultViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -41,7 +40,6 @@ class SongResultViewController: UIViewController {
 }
 
 // MARK: recorder Setup
-@available(iOS 15.0, *)
 extension SongResultViewController {
     
     private func record() {
@@ -87,7 +85,6 @@ extension SongResultViewController {
 
 
 // MARK: Shazam song recognizing logic
-@available(iOS 15.0, *)
 extension SongResultViewController: SHSessionDelegate {
     
     func session(_ session: SHSession, didFind match: SHMatch) {

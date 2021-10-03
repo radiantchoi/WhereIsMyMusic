@@ -16,104 +16,45 @@ class SongResultViewController: UIViewController {
     @IBOutlet weak var shazamButton: UIButton!
     @IBOutlet weak var checkLabel: UILabel!
     
-    var matching: Bool = false
     var mediaItem: SHMatchedMediaItem?
-    var error: Error? {
-        didSet {
-            hasError = error != nil
-        }
-    }
-    var hasError: Bool = false
-    
-    lazy var shazamSession: SHSession = .init()
-    lazy var audioEngine: AVAudioEngine = .init()
-    
-    lazy var audioSession: AVAudioSession = .sharedInstance()
-    lazy var inputNode = audioEngine.inputNode
-    lazy var bus: AVAudioNodeBus = 0
+    var error: Error?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shazamSession.delegate = self
         checkLabel.isHidden = true
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateUI),
+                                               name: ShazamController.matchFoundNotification,
+                                               object: nil )
     }
 }
 
-// MARK: recorder Setup
 extension SongResultViewController {
     
-    private func record() {
-        do {
-            self.matching = true
-            let format = self.inputNode.outputFormat(forBus: bus)
-            self.inputNode.installTap(onBus: bus, bufferSize: 1024, format: format) { buffer, time in
-                self.shazamSession.matchStreamingBuffer(buffer, at: time)
+    @objc func updateUI() {
+        self.mediaItem = ShazamController.shared.mediaItem ?? nil
+        self.error = ShazamController.shared.error ?? nil
+        DispatchQueue.main.async {
+            if self.mediaItem == nil {
+                print(self.error as Any)
+                self.titleLabel.text = "Not found"
+                self.artistLabel.text = "Not found"
+            } else {
+                self.titleLabel.text = self.mediaItem?.title
+                self.artistLabel.text = self.mediaItem?.artist
             }
-            self.audioEngine.prepare()
-            try self.audioEngine.start()
-        } catch {
-            self.error = error
         }
-    }
-    
-    func start() {
-        switch audioSession.recordPermission {
-        case .granted:
-            self.record()
-        case .denied:
-            print("Record denied")
-        case .undetermined:
-            audioSession.requestRecordPermission { granted in
-                if granted {
-                    self.record()
-                } else {
-                    print("Record denied")
-                }
-            }
-        @unknown default:
-            print("Unknown error")
-        }
-    }
-    
-    func stop() {
-        self.audioEngine.stop()
-        self.inputNode.removeTap(onBus: bus)
-        self.matching = false
     }
     
 }
 
 
-// MARK: Shazam song recognizing logic
-extension SongResultViewController: SHSessionDelegate {
-    
-    func session(_ session: SHSession, didFind match: SHMatch) {
-        
-        DispatchQueue.main.async {
-            if let mediaItem = match.mediaItems.first {
-                self.mediaItem = mediaItem
-                self.stop()
-                self.titleLabel.text = mediaItem.title ?? "title"
-                self.artistLabel.text = mediaItem.artist ?? "artist"
-            }
-        }
-    }
-    
-    func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
-        if let error = error {
-            print(error)
-            DispatchQueue.main.async {
-                self.titleLabel.text = "not found"
-                self.artistLabel.text = "not found"
-            }
-            self.stop()
-        }
-    }
-    
+extension SongResultViewController {
+
     @IBAction private func buttonPressed(_ sender: UIButton) {
         titleLabel.text = "Searching..."
         artistLabel.text = "Searching..."
-        start()
+        ShazamController.shared.start()
     }
-    
+
 }

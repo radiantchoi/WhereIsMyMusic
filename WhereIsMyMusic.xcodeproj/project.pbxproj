@@ -12,6 +12,7 @@
 		4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* SongResultViewController.swift */; };
 		4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* SongResultViewController.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
+		4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamController.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		4F493A8A2701B92B00103B9B /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* SongResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* SongResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongResultViewController.xib; sourceTree = "<group>"; };
+		4F850E3A27075E4200025F06 /* ShazamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamController.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 				4F493A8A2701B92B00103B9B /* Song.swift */,
 				4F29FBF12701EE030054BAD5 /* MelonSongModel.swift */,
+				4F850E3A27075E4200025F06 /* ShazamController.swift */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4F29FBF22701EE030054BAD5 /* MelonSongModel.swift in Sources */,
+				4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
 				4F493A8B2701B92B00103B9B /* Song.swift in Sources */,
 			);

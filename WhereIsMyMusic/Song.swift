@@ -24,3 +24,9 @@ struct Song {
         self.album = album
     }
 }
+
+extension Song: Equatable {
+    static func ==(lhs: Song, rhs: Song) -> Bool {
+        return lhs.title == rhs.title && lhs.artist == rhs.artist && lhs.album == rhs.album
+    }
+}

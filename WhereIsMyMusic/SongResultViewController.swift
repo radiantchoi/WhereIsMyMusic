@@ -13,10 +13,11 @@ class SongResultViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var shazamButton: UIButton!
     @IBOutlet weak var checkLabel: UILabel!
     
-    var mediaItem: SHMatchedMediaItem?
+    var mediaItem: SHMediaItem?
     var error: Error?
     
     override func viewDidLoad() {
@@ -39,9 +40,11 @@ extension SongResultViewController {
                 print(self.error as Any)
                 self.titleLabel.text = "Not found"
                 self.artistLabel.text = "Not found"
+                self.albumLabel.text = "Not found"
             } else {
                 self.titleLabel.text = self.mediaItem?.title
                 self.artistLabel.text = self.mediaItem?.artist
+                self.albumLabel.text = self.mediaItem?.album
             }
         }
     }
@@ -54,6 +57,7 @@ extension SongResultViewController {
     @IBAction private func buttonPressed(_ sender: UIButton) {
         titleLabel.text = "Searching..."
         artistLabel.text = "Searching..."
+        albumLabel.text = "Searching..."
         ShazamController.shared.start()
     }
 

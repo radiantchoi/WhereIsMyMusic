@@ -11,10 +11,12 @@ struct MelonSongModel: Codable {
     var title: String?
     var artist: String?
     var album: String?
+    var imageURL: URL?
     
     enum CodingKeys: String, CodingKey {
         case title = "SONGNAME"
         case artist = "ARTISTNAME"
         case album = "ALBUMNAME"
+        case imageURL = "ALBUMIMG"
     }
 }

@@ -8,20 +8,23 @@
 import Foundation
 
 struct Song {
-    let title: String
-    let artist: String
-    let album: String
+    var title: String
+    var artist: String
+    var album: String
+    var imageURL: URL
     
     init?(melonSongModel: MelonSongModel?) {
         guard let melonSongModel = melonSongModel,
               let title = melonSongModel.title,
               let artist = melonSongModel.artist,
-              let album = melonSongModel.album
+              let album = melonSongModel.album,
+              let imageURL = melonSongModel.imageURL
         else { return nil }
         
         self.title = title
         self.artist = artist
         self.album = album
+        self.imageURL = imageURL
     }
 }
 

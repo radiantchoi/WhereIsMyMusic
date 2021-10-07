@@ -11,6 +11,7 @@
 		4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* SongResultViewController.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
 		4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamController.swift */; };
+		4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		4F4E628026E07B8E001592AC /* SongResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* SongResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongResultViewController.xib; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamController.swift; sourceTree = "<group>"; };
+		4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSong.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
 				4F850E3A27075E4200025F06 /* ShazamController.swift */,
+				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */,
+				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

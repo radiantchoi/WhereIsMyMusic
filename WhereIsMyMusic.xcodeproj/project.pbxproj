@@ -3,31 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* SongResultViewController.swift */; };
 		4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* SongResultViewController.xib */; };
+		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
+		4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamController.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
 		4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */; };
-		4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */; };
-		4FCA016D26DFDDF700DEDE39 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F4E628026E07B8E001592AC /* SongResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* SongResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongResultViewController.xib; sourceTree = "<group>"; };
+		4F850E3A27075E4200025F06 /* ShazamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamController.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FCA015F26DFDC0800DEDE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +63,9 @@
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
 				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
 				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
-				4FCA016A26DFDDF700DEDE39 /* HomeViewController.swift */,
-				4FCA016B26DFDDF700DEDE39 /* HomeViewController.xib */,
 				4F4E628026E07B8E001592AC /* SongResultViewController.swift */,
 				4F4E628126E07B8E001592AC /* SongResultViewController.xib */,
+				4F850E3A27075E4200025F06 /* ShazamController.swift */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -97,6 +96,9 @@
 			dependencies = (
 			);
 			name = WhereIsMyMusic;
+			packageProductDependencies = (
+				4F7A4BD926FCC814007BAD79 /* Alamofire */,
+			);
 			productName = WhereIsMyMusic;
 			productReference = 4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -124,6 +126,9 @@
 				Base,
 			);
 			mainGroup = 4FCA014726DFDC0700DEDE39;
+			packageReferences = (
+				4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4FCA015126DFDC0700DEDE39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,7 +146,6 @@
 				4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */,
 				4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */,
 				4F4E628326E07B8E001592AC /* SongResultViewController.xib in Resources */,
-				4FCA016D26DFDDF700DEDE39 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +158,8 @@
 			files = (
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
+				4F850E3B27075E4200025F06 /* ShazamController.swift in Sources */,
 				4F4E628226E07B8E001592AC /* SongResultViewController.swift in Sources */,
-				4FCA016C26DFDDF700DEDE39 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
 				INFOPLIST_FILE = WhereIsMyMusic/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5UNW2D34P;
 				INFOPLIST_FILE = WhereIsMyMusic/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F7A4BD926FCC814007BAD79 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FCA014826DFDC0700DEDE39 /* Project object */;
 }

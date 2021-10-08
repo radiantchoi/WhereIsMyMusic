@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultViewController" customModule="WhereIsMyMusic" customModuleProvider="target">
             <connections>
+                <outlet property="albumLabel" destination="sDg-sM-Xzh" id="pBb-pb-X6Q"/>
+                <outlet property="artistLabel" destination="HRN-1E-3ty" id="Cs7-uv-f9x"/>
+                <outlet property="titleLabel" destination="p7G-oQ-Hpf" id="Q21-W2-Mth"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

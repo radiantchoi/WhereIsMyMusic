@@ -7,29 +7,34 @@
 
 import UIKit
 import ShazamKit
-import AVFoundation
 
 class ShazamSearchViewController: UIViewController {
     
     @IBOutlet weak var shazamButton: UIButton!
     
-    var mediaItem: SHMediaItem?
+    var mediaItem: ShazamSong?
     var error: Error?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateUI),
-                                               name: ShazamController.matchFoundNotification,
-                                               object: nil )
+        
+        ShazamSession.shared.completion = { result in
+            switch result {
+            case .success(let shazamSong):
+                let searchResultViewController = SearchResultViewController(shazamSong: shazamSong)
+                self.navigationController?.pushViewController(searchResultViewController, animated: true)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
 extension ShazamSearchViewController {
     
-    @objc func updateUI() {
-        self.mediaItem = ShazamController.shared.mediaItem ?? nil
-        self.error = ShazamController.shared.error ?? nil
+    func updateUI() {
+//        self.mediaItem = ShazamSession.shared.mediaItem ?? nil
+//        self.error = ShazamSession.shared.error ?? nil
         DispatchQueue.main.async {
             if self.mediaItem == nil {
                 print(self.error as Any)
@@ -39,14 +44,14 @@ extension ShazamSearchViewController {
             }
         }
     }
-    
 }
 
 
 extension ShazamSearchViewController {
 
     @IBAction private func buttonPressed(_ sender: UIButton) {
-        ShazamController.shared.start()
+        ShazamSession.shared.start()
     }
 
 }
+

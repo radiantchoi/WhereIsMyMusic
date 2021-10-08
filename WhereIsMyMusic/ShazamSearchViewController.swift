@@ -11,10 +11,9 @@ import ShazamKit
 class ShazamSearchViewController: UIViewController {
     
     @IBOutlet weak var shazamButton: UIButton!
-    
-    var mediaItem: ShazamSong?
-    var error: Error?
-    
+}
+
+extension ShazamSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,23 +28,6 @@ class ShazamSearchViewController: UIViewController {
         }
     }
 }
-
-extension ShazamSearchViewController {
-    
-    func updateUI() {
-//        self.mediaItem = ShazamSession.shared.mediaItem ?? nil
-//        self.error = ShazamSession.shared.error ?? nil
-        DispatchQueue.main.async {
-            if self.mediaItem == nil {
-                print(self.error as Any)
-                
-            } else {
-                
-            }
-        }
-    }
-}
-
 
 extension ShazamSearchViewController {
 

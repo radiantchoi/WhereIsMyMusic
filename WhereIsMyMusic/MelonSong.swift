@@ -13,7 +13,7 @@ struct MelonSong: Decodable {
     let album: String?
     let imageURL: URL?
 
-    enum UnWrappingKeys: String, CodingKey {
+    enum UnwrappingKeys: String, CodingKey {
         case contents = "SONGCONTENTS"
     }
     
@@ -25,7 +25,7 @@ struct MelonSong: Decodable {
     }
     
     init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: UnWrappingKeys.self)
+        let values = try decoder.container(keyedBy: UnwrappingKeys.self)
         let additionalInfo = try values.nestedContainer(keyedBy: CodingKeys.self, forKey: .contents)
         self.title = try additionalInfo.decode(String.self, forKey: .title)
         self.artist = try additionalInfo.decode(String.self, forKey: .artist)

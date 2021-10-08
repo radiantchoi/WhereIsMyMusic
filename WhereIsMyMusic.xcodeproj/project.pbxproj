@@ -74,18 +74,8 @@
 		4FCA015226DFDC0700DEDE39 /* WhereIsMyMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4FE03B812710297A005B5CE8 /* Application */,
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
-				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
-				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
-				4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */,
-				4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */,
-				4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */,
-				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
-				4FE03B7F27102584005B5CE8 /* MelonAPI.swift */,
-				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
-				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
-				4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */,
-				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -98,6 +88,72 @@
 				4FCA016126DFDC0800DEDE39 /* Info.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		4FE03B812710297A005B5CE8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
+				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
+				4FE03B83271029B6005B5CE8 /* ViewControllers */,
+				4FE03B8727102A15005B5CE8 /* Sessions */,
+				4FE03B84271029C2005B5CE8 /* Models */,
+				4FE03B8827102A30005B5CE8 /* Networking */,
+				4FE03B8627102A06005B5CE8 /* Extensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4FE03B83271029B6005B5CE8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */,
+				4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */,
+				4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */,
+				4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4FE03B84271029C2005B5CE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
+				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FE03B85271029F8005B5CE8 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B7F27102584005B5CE8 /* MelonAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		4FE03B8627102A06005B5CE8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4FE03B8727102A15005B5CE8 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		4FE03B8827102A30005B5CE8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B85271029F8005B5CE8 /* APIs */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

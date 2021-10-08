@@ -21,6 +21,7 @@
 		4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE03B7927101061005B5CE8 /* Kingfisher */; };
 		4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */; };
 		4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7D27101793005B5CE8 /* MelonSong.swift */; };
+		4FE03B8027102584005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7F27102584005B5CE8 /* MelonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B7D27101793005B5CE8 /* MelonSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonSong.swift; sourceTree = "<group>"; };
+		4FE03B7F27102584005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */,
 				4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */,
 				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
+				4FE03B7F27102584005B5CE8 /* MelonAPI.swift */,
 				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
 				4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */,
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
+				4FE03B8027102584005B5CE8 /* MelonAPI.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,

@@ -9,19 +9,20 @@ import Foundation
 import ShazamKit
 
 struct ShazamSong {
-    var title: String?
-    var artist: String?
-    var album: String?
-    var imageURL: URL?
+    let title: String?
+    let artist: String?
+    let album: String?
+    let imageURL: URL?
     
-    init?(mediaItem: SHMediaItem?) {
-        guard let mediaItem = mediaItem else {
-            return nil
-        }
+    init?(mediaItem: SHMatchedMediaItem) {
+        guard let title = mediaItem.title,
+              let artist = mediaItem.artist,
+              let album = mediaItem.album
+        else { return nil }
         
-        self.title = mediaItem.title
-        self.artist = mediaItem.artist
-        self.album = mediaItem.album
+        self.title = title
+        self.artist = artist
+        self.album = album
         self.imageURL = mediaItem.artworkURL
     }
 }

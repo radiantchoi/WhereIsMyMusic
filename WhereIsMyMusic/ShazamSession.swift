@@ -8,33 +8,33 @@
 import Foundation
 import ShazamKit
 
-final class ShazamController: NSObject {
-    
-    static let shared = ShazamController()
-    static let matchFoundNotification = Notification.Name("ShazamController.matchFound")
+extension ShazamSession {
+    typealias ResultType = Result<ShazamSong, ShazamError>
+    typealias Completion = (ResultType) -> Void
     
     enum ShazamError: Error, LocalizedError {
         case recordDenied
         case unknown
+        case matchFailed
         
         var errorDescription: String? {
             switch self {
             case .recordDenied:
                 return "Record permission is denied. Please enable it in Settings."
+            case .matchFailed:
+                return "Failed to match with this music"
             case .unknown:
                 return "Unknown error occured."
             }
         }
     }
+}
+
+final class ShazamSession: NSObject {
+
+    static let shared = ShazamSession()
     
-    var matching: Bool = false
-    var mediaItem: SHMatchedMediaItem?
-    var error: Error? {
-        didSet {
-            hasError = error != nil
-        }
-    }
-    var hasError: Bool = false
+    var completion: Completion?
     
     lazy var audioSession: AVAudioSession = .sharedInstance()
     lazy var session: SHSession = .init()
@@ -49,14 +49,14 @@ final class ShazamController: NSObject {
 }
 
 
-extension ShazamController {
+extension ShazamSession {
     func start() {
         switch audioSession.recordPermission {
         case .granted:
             self.record()
         case .denied:
             DispatchQueue.main.async {
-                self.error = ShazamError.recordDenied
+                self.completion?(.failure(.recordDenied))
             }
         case .undetermined:
             audioSession.requestRecordPermission { granted in
@@ -64,13 +64,13 @@ extension ShazamController {
                     if granted {
                         self.record()
                     } else {
-                        self.error = ShazamError.recordDenied
+                        self.completion?(.failure(.recordDenied))
                     }
                 }
             }
         @unknown default:
             DispatchQueue.main.async {
-                self.error = ShazamError.unknown
+                self.completion?(.failure(.unknown))
             }
         }
     }
@@ -78,12 +78,10 @@ extension ShazamController {
     func stop() {
         self.audioEngine.stop()
         self.inputNode.removeTap(onBus: bus)
-        self.matching = false
     }
     
     private func record() {
         do {
-            self.matching = true
             let format = self.inputNode.outputFormat(forBus: bus)
             self.inputNode.installTap(onBus: bus, bufferSize: 1024, format: format) { buffer, time in
                 self.session.matchStreamingBuffer(buffer, at: time)
@@ -91,32 +89,34 @@ extension ShazamController {
             self.audioEngine.prepare()
             try self.audioEngine.start()
         } catch {
-            self.error = error
+            self.completion?(.failure(.unknown))
         }
     }
 }
 
-
-extension ShazamController: SHSessionDelegate {
+extension ShazamSession: SHSessionDelegate {
     
     func session(_ session: SHSession, didFind match: SHMatch) {
         DispatchQueue.main.async {
-            if let mediaItem = match.mediaItems.first {
-                self.mediaItem = mediaItem
-                self.stop()
+            guard let mediaItem = match.mediaItems.first,
+                  let shazamSong = ShazamSong(mediaItem: mediaItem)
+            else {
+                self.completion?(.failure(.matchFailed))
+                return
             }
-            NotificationCenter.default.post(name: ShazamController.matchFoundNotification, object: nil)
+            
+            self.completion?(.success(shazamSong))
+            self.stop()
         }
     }
     
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
         DispatchQueue.main.async {
-            self.error = error
+            self.completion?(.failure(.matchFailed))
             self.stop()
         }
     }
 }
-
 
 extension SHMediaItemProperty {
     static let album = SHMediaItemProperty("sh_albumName")

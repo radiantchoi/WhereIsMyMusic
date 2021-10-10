@@ -24,6 +24,7 @@ class SearchResultViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension SearchResultViewController {
@@ -35,5 +36,14 @@ extension SearchResultViewController {
         self.albumImageView.load(self.shazamSong.imageURL)
         albumImageView.layer.cornerRadius = 4
         albumImageView.layer.masksToBounds = true
+        getSongs()
+    }
+}
+
+extension SearchResultViewController {
+    func getSongs() {
+        var  melon = MelonAPI()
+        melon.query["query"] = shazamSong.title
+        melon.loadSong()
     }
 }

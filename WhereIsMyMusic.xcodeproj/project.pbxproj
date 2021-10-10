@@ -21,7 +21,10 @@
 		4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE03B7927101061005B5CE8 /* Kingfisher */; };
 		4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */; };
 		4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7D27101793005B5CE8 /* MelonSong.swift */; };
-		4FE03B8027102584005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7F27102584005B5CE8 /* MelonAPI.swift */; };
+		4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7F27102584005B5CE8 /* NetworkManager.swift */; };
+		4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8927102B0C005B5CE8 /* EndPoint.swift */; };
+		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
+		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,10 @@
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B7D27101793005B5CE8 /* MelonSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonSong.swift; sourceTree = "<group>"; };
-		4FE03B7F27102584005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
+		4FE03B7F27102584005B5CE8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4FE03B8927102B0C005B5CE8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +133,7 @@
 		4FE03B85271029F8005B5CE8 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				4FE03B7F27102584005B5CE8 /* MelonAPI.swift */,
+				4FE03B8F27103834005B5CE8 /* MelonAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
+				4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				4FE03B85271029F8005B5CE8 /* APIs */,
+				4FE03B8927102B0C005B5CE8 /* EndPoint.swift */,
+				4FE03B7F27102584005B5CE8 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -236,13 +245,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
-				4FE03B8027102584005B5CE8 /* MelonAPI.swift in Sources */,
+				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
+				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
+				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,
 				4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */,
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,
+				4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */,
 				4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

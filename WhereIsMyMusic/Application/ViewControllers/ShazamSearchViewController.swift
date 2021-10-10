@@ -17,8 +17,8 @@ extension ShazamSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ShazamSession.shared.completion = { result in
-            switch result {
+        ShazamSession.shared.completion = {
+            switch $0 {
             case .success(let shazamSong):
                 let searchResultViewController = SearchResultViewController(shazamSong: shazamSong)
                 self.navigationController?.pushViewController(searchResultViewController, animated: true)

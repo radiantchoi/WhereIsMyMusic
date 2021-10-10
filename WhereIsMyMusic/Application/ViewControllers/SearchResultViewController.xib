@@ -26,7 +26,7 @@
                     <rect key="frame" x="8" y="52" width="398" height="398"/>
                     <color key="backgroundColor" red="0.9782857546" green="0.59488662589999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="398" id="lrx-vb-F23"/>
+                        <constraint firstAttribute="height" constant="398" id="n11-ld-W58"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-Le-Bs5">

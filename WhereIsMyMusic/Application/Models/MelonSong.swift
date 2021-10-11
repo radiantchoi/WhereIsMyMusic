@@ -31,7 +31,7 @@ struct MelonSong: Codable {
         var titles = [String]()
         var artists = [String]()
         var albums = [String]()
-        var imageURLs = [URL]()
+        var imageURLs = [URL]() 
         
         while !additionalInfo.isAtEnd {
             let contentsContainer = try additionalInfo.nestedContainer(keyedBy: CodingKeys.self)

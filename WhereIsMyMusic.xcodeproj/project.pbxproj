@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1D70A327145B69004224C1 /* SwiftSoup */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
@@ -55,6 +56,7 @@
 			files = (
 				4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */,
 				4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */,
+				4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,7 @@
 			packageProductDependencies = (
 				4F7A4BD926FCC814007BAD79 /* Alamofire */,
 				4FE03B7927101061005B5CE8 /* Kingfisher */,
+				4F1D70A327145B69004224C1 /* SwiftSoup */,
 			);
 			productName = WhereIsMyMusic;
 			productReference = 4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */;
@@ -215,6 +218,7 @@
 			packageReferences = (
 				4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4FE03B7827101061005B5CE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 4FCA015126DFDC0700DEDE39 /* Products */;
 			projectDirPath = "";
@@ -453,6 +457,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -472,6 +484,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4F1D70A327145B69004224C1 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		4F7A4BD926FCC814007BAD79 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */;

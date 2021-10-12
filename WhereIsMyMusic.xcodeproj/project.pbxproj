@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1D70A327145B69004224C1 /* SwiftSoup */; };
+		4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D70A52714A3C6004224C1 /* CrawlManager.swift */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
@@ -20,9 +22,15 @@
 		4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */; };
 		4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE03B7927101061005B5CE8 /* Kingfisher */; };
 		4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */; };
+		4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7D27101793005B5CE8 /* MelonSong.swift */; };
+		4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7F27102584005B5CE8 /* NetworkManager.swift */; };
+		4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8927102B0C005B5CE8 /* EndPoint.swift */; };
+		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
+		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F1D70A52714A3C6004224C1 /* CrawlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlManager.swift; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
@@ -36,6 +44,11 @@
 		4FCA015F26DFDC0800DEDE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		4FE03B7D27101793005B5CE8 /* MelonSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonSong.swift; sourceTree = "<group>"; };
+		4FE03B7F27102584005B5CE8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4FE03B8927102B0C005B5CE8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +58,7 @@
 			files = (
 				4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */,
 				4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */,
+				4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,16 +84,8 @@
 		4FCA015226DFDC0700DEDE39 /* WhereIsMyMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4FE03B812710297A005B5CE8 /* Application */,
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
-				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
-				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
-				4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */,
-				4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */,
-				4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */,
-				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
-				4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */,
-				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
-				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 			);
 			path = WhereIsMyMusic;
 			sourceTree = "<group>";
@@ -92,6 +98,76 @@
 				4FCA016126DFDC0800DEDE39 /* Info.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		4FE03B812710297A005B5CE8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
+				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
+				4FE03B83271029B6005B5CE8 /* ViewControllers */,
+				4FE03B8727102A15005B5CE8 /* Sessions */,
+				4FE03B84271029C2005B5CE8 /* Models */,
+				4FE03B8827102A30005B5CE8 /* Networking */,
+				4FE03B8627102A06005B5CE8 /* Extensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4FE03B83271029B6005B5CE8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */,
+				4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */,
+				4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */,
+				4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4FE03B84271029C2005B5CE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
+				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FE03B85271029F8005B5CE8 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B8F27103834005B5CE8 /* MelonAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		4FE03B8627102A06005B5CE8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
+				4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4FE03B8727102A15005B5CE8 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		4FE03B8827102A30005B5CE8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B85271029F8005B5CE8 /* APIs */,
+				4FE03B8927102B0C005B5CE8 /* EndPoint.swift */,
+				4FE03B7F27102584005B5CE8 /* NetworkManager.swift */,
+				4F1D70A52714A3C6004224C1 /* CrawlManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +189,7 @@
 			packageProductDependencies = (
 				4F7A4BD926FCC814007BAD79 /* Alamofire */,
 				4FE03B7927101061005B5CE8 /* Kingfisher */,
+				4F1D70A327145B69004224C1 /* SwiftSoup */,
 			);
 			productName = WhereIsMyMusic;
 			productReference = 4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */;
@@ -144,6 +221,7 @@
 			packageReferences = (
 				4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4FE03B7827101061005B5CE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 4FCA015126DFDC0700DEDE39 /* Products */;
 			projectDirPath = "";
@@ -174,11 +252,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
+				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
+				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
+				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
+				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,
+				4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */,
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,
+				4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */,
 				4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +461,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -396,6 +488,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4F1D70A327145B69004224C1 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		4F7A4BD926FCC814007BAD79 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4F7A4BD826FCC814007BAD79 /* XCRemoteSwiftPackageReference "Alamofire" */;

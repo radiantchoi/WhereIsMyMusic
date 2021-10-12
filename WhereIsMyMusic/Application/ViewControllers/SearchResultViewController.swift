@@ -58,6 +58,13 @@ extension SearchResultViewController {
             print(result)
         }
         
-        
+        var genie = GenieAPI.init()
+        genie.query = ["query": searchQuery]
+        genie.loadGenieSong{ (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
 }

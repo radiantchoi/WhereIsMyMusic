@@ -42,8 +42,8 @@ extension SearchResultViewController {
 
 extension SearchResultViewController {
     func getSongs() {
-        var melon = MelonAPI()
-        melon.query["query"] = shazamSong.title
+        var melon = MelonAPI.init()
+        melon.query = ["q": shazamSong.title! + " " + shazamSong.artist! + " " + shazamSong.album!]
         melon.loadSong()
     }
 }

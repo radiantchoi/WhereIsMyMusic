@@ -10,7 +10,7 @@ import Foundation
 struct EndPoint {
     let baseURL: URL
     let query: Query
-    let httpMethod: HTTPMethod
+    let httpMethod: HTTPMethod?
 }
 
 enum HTTPMethod: String {

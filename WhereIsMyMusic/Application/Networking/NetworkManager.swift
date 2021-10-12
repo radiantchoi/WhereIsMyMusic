@@ -16,7 +16,7 @@ extension NetworkManager {
     func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask {
         let url = endPoint.baseURL.withQueries(endPoint.query)
         var request = URLRequest(url: url!)
-        request.httpMethod = endPoint.httpMethod.rawValue
+        request.httpMethod = endPoint.httpMethod?.rawValue
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data,

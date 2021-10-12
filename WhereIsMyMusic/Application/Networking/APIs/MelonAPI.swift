@@ -17,7 +17,7 @@ struct MelonAPI {
 }
 
 extension MelonAPI {
-    func loadSong(completion: @escaping (MelonSong?) -> Void) {
+    func loadMelonSong(completion: @escaping (MelonSong?) -> Void) {
 
         CrawlManager.shared.crawl(EndPoint(baseURL: baseURL,
                                            query: query,
@@ -36,6 +36,3 @@ extension MelonAPI {
         }
     }
 }
-
-
-

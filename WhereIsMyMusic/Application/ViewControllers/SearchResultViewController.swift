@@ -51,7 +51,7 @@ extension SearchResultViewController {
                 
         var melon = MelonAPI.init()
         melon.query = ["q": searchQuery]
-        melon.loadSong { (result) in
+        melon.loadMelonSong { (result) in
             guard let result = result else {
                 return
             }

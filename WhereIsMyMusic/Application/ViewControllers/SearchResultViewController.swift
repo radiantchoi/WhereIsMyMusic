@@ -51,13 +51,20 @@ extension SearchResultViewController {
                 
         var melon = MelonAPI.init()
         melon.query = ["q": searchQuery]
-        melon.loadSong { (result) in
+        melon.loadMelonSong { (result) in
             guard let result = result else {
                 return
             }
             print(result)
         }
         
-        
+        var genie = GenieAPI.init()
+        genie.query = ["query": searchQuery]
+        genie.loadGenieSong{ (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
 }

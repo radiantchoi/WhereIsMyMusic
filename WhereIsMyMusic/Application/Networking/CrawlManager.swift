@@ -14,7 +14,7 @@ struct CrawlManager {
 }
 
 extension CrawlManager {
-    func crawl(_ endPoint: EndPoint, cssQuery: String, titleCss: String, artistCss: String, albumCss: String, completion: @escaping (Result<[String], Error>) -> Void) {
+    func crawl(_ endPoint: EndPoint, cssQuery: String, titleCss: [String], artistCss: [String], albumCss: [String], completion: @escaping (Result<[[String]], Error>) -> Void) {
         let url = endPoint.baseURL.withQueries(endPoint.query)
         let urlString = String(describing: url!)
         
@@ -24,12 +24,19 @@ extension CrawlManager {
                 else { return }
                 
                 do {
+                    var results: [[String]] = Array(repeating: [], count: 3)
                     let doc: Document = try SwiftSoup.parse(html)
                     let elements: Elements = try doc.select(cssQuery)
-                    let titleResult = try elements.select(titleCss).text()
-                    let artistResult = try elements.select(artistCss).text()
-                    let albumResult = try elements.select(albumCss).text()
-                    completion(.success([titleResult, artistResult, albumResult]))
+                    for n in 0...2 {
+                        let titleResult = try elements.select(titleCss[n]).text()
+                        let artistResult = try elements.select(artistCss[n]).text()
+                        let albumResult = try elements.select(albumCss[n]).text()
+                        results[n].append(titleResult)
+                        results[n].append(artistResult)
+                        results[n].append(albumResult)
+                    }
+                    
+                    completion(.success(results))
                 } catch {
                     print("Crawl error")
                     completion(.failure(error))

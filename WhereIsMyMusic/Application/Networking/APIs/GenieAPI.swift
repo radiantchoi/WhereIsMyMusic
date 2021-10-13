@@ -37,13 +37,14 @@ extension GenieAPI {
                 var genieSongs = [GenieSong]()
                 for data in datas {
                     var titleData: String = ""
-                    let titleSpread = data[0].map { String($0) }
-                    if titleSpread.count > 6 && titleSpread[0...5].joined() == "TITLE " {
-                        titleData = titleSpread[6...].joined()
-                    } else {
-                        titleData = titleSpread.joined()
+                    if data[0].count != 0 {
+                        let titleSpread = data[0].map { String($0) }
+                        if titleSpread.count > 6 && titleSpread[0...5].joined() == "TITLE " {
+                            titleData = titleSpread[6...].joined()
+                        } else {
+                            titleData = titleSpread.joined()
+                        }
                     }
-                    
                     let genieSong = GenieSong.init(title: titleData, artist: data[1], album: data[2], imageURL: nil)
                     genieSongs.append(genieSong)
                 }

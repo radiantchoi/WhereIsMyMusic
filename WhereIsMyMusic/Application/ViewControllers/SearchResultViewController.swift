@@ -66,5 +66,15 @@ extension SearchResultViewController {
             }
             print(result)
         }
+        
+        var bugs = BugsAPI.init()
+        bugs.query = ["q": searchQuery]
+        bugs.loadBugsSong { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
+    
 }

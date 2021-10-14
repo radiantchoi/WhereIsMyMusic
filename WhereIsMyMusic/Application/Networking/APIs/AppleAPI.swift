@@ -13,12 +13,12 @@ struct AppleAPI {
 }
 
 extension AppleAPI {
-    func loadAppleSong(completion: @escaping (AppleSongs?) -> Void) {
+    func loadAppleSong(completion: @escaping ([AppleSong]?) -> Void) {
         let endPoint = EndPoint(baseURL: baseURL, query: query, httpMethod: .get)
         NetworkManager.shared.call(endPoint, for: AppleSongs.self) {
             switch $0 {
             case .success(let appleSongs):
-                print(appleSongs)
+                print(appleSongs.results[0...2])
             case .failure(let error):
                 print(error)
             }

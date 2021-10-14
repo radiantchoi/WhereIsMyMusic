@@ -17,6 +17,8 @@
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
 		4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA82717669400A649EB /* BugsAPI.swift */; };
+		4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAA27177F6400A649EB /* AppleSong.swift */; };
+		4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAC2717815100A649EB /* AppleAPI.swift */; };
 		4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */; };
 		4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */; };
 		4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */; };
@@ -42,6 +44,8 @@
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
+		4F94ACAA27177F6400A649EB /* AppleSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSong.swift; sourceTree = "<group>"; };
+		4F94ACAC2717815100A649EB /* AppleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAPI.swift; sourceTree = "<group>"; };
 		4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSong.swift; sourceTree = "<group>"; };
 		4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
 				4F66C0212715DC6700706C7A /* GenieSong.swift */,
 				4F94ACA6271765B000A649EB /* BugsSong.swift */,
+				4F94ACAA27177F6400A649EB /* AppleSong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				4FE03B8F27103834005B5CE8 /* MelonAPI.swift */,
 				4F66C0232715DD1A00706C7A /* GenieAPI.swift */,
 				4F94ACA82717669400A649EB /* BugsAPI.swift */,
+				4F94ACAC2717815100A649EB /* AppleAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -269,7 +275,9 @@
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
+				4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
+				4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */,
 				4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */,

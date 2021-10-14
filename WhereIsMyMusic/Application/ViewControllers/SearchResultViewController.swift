@@ -75,6 +75,15 @@ extension SearchResultViewController {
             }
             print(result)
         }
+        
+        var apple = AppleAPI.init()
+        apple.query = ["term": searchQuery, "country": "KR"]
+        apple.loadAppleSong { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
     
 }

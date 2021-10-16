@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct YoutubeResponse: Codable {
-    let items: [YoutubeResult]
+struct YouTubeResponse: Codable {
+    let items: [YouTubeResult]
 }
 
-struct YoutubeResult: Codable {
-    let snippet: YoutubeSongModel
+struct YouTubeResult: Codable {
+    let snippet: YouTubeSongModel
 }
 
-struct YoutubeSongModel: Codable {
+struct YouTubeSongModel: Codable {
     let title: String
     let channelTitle: String
 }

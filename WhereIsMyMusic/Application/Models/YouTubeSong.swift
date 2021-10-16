@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct YoutubeSong {
+struct YouTubeSong {
     let title: String
     let channel: String
     
-    init(youtubeSongModel: YoutubeSongModel) {
+    init(youtubeSongModel: YouTubeSongModel) {
         title = youtubeSongModel.title
         channel = youtubeSongModel.channelTitle
     }

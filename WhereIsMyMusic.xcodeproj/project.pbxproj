@@ -24,8 +24,8 @@
 		4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */; };
 		4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD542F271ADA3500E47A6C /* FloSongModel.swift */; };
 		4FBD5432271ADED400E47A6C /* FloAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5431271ADED400E47A6C /* FloAPI.swift */; };
-		4FBD5434271B2EE300E47A6C /*  YoutubeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5433271B2EE300E47A6C /*  YoutubeSongModel.swift */; };
-		4FBD5436271B2EF700E47A6C /* YoutubeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5435271B2EF700E47A6C /* YoutubeSong.swift */; };
+		4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */; };
+		4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
@@ -56,8 +56,8 @@
 		4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		4FBD542F271ADA3500E47A6C /* FloSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSongModel.swift; sourceTree = "<group>"; };
 		4FBD5431271ADED400E47A6C /* FloAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloAPI.swift; sourceTree = "<group>"; };
-		4FBD5433271B2EE300E47A6C /*  YoutubeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " YoutubeSongModel.swift"; sourceTree = "<group>"; };
-		4FBD5435271B2EF700E47A6C /* YoutubeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSong.swift; sourceTree = "<group>"; };
+		4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " YouTubeSongModel.swift"; sourceTree = "<group>"; };
+		4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSong.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				4FBD542F271ADA3500E47A6C /* FloSongModel.swift */,
-				4FBD5433271B2EE300E47A6C /*  YoutubeSongModel.swift */,
+				4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */,
 			);
 			path = ParsingModels;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 				4F94ACA6271765B000A649EB /* BugsSong.swift */,
 				4F94ACAA27177F6400A649EB /* AppleSong.swift */,
 				4FF8926E271874E700CBF7C0 /* FloSong.swift */,
-				4FBD5435271B2EF700E47A6C /* YoutubeSong.swift */,
+				4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,11 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBD5436271B2EF700E47A6C /* YoutubeSong.swift in Sources */,
+				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
-				4FBD5434271B2EE300E47A6C /*  YoutubeSongModel.swift in Sources */,
+				4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,

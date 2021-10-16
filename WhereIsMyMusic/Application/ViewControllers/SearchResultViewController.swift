@@ -84,6 +84,15 @@ extension SearchResultViewController {
             }
             print(result)
         }
+        
+        var flo = FloAPI.init()
+        flo.query = ["keyword": searchQuery]
+        flo.loadFloSong { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
     
 }

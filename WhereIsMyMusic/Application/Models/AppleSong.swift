@@ -11,13 +11,11 @@ struct AppleSong: Codable {
     let title: String
     let artist: String
     let album: String
-    let imageURL: URL
     
     enum CodingKeys: String, CodingKey {
         case title = "trackName"
         case artist = "artistName"
         case album = "collectionName"
-        case imageURL = "artworkUrl100"
     }
     
     init(from decoder: Decoder) throws {
@@ -25,7 +23,6 @@ struct AppleSong: Codable {
         title = try values.decode(String.self, forKey: CodingKeys.title)
         artist = try values.decode(String.self, forKey: CodingKeys.artist)
         album = try values.decode(String.self, forKey: CodingKeys.album)
-        imageURL = try values.decode(URL.self, forKey: CodingKeys.imageURL)
     }
 }
 

@@ -19,13 +19,21 @@ extension FloAPI {
             switch $0 {
             case .success(let result):
                 var floSongs = [FloSong]()
-                for n in 0...2 {
-                    let floSong = FloSong(floSongModel: result.data.list[0].list[n])
-                    floSongs.append(floSong)
+                let floResults = Array(result.data.list[0].list)
+                if floResults.count < 3 {
+                    for i in 0..<floResults.count {
+                        let floSong = FloSong(floSongModel: result.data.list[0].list[i])
+                        floSongs.append(floSong)
+                    }
+                } else {
+                    for n in 0...2 {
+                        let floSong = FloSong(floSongModel: result.data.list[0].list[n])
+                        floSongs.append(floSong)
+                    }
                 }
-                print(floSongs)
-            case .failure(let error):
-                print(error)
+                completion(floSongs)
+            case .failure(_):
+                completion(nil)
             }
         }
     }

@@ -17,10 +17,15 @@ extension AppleAPI {
         let endPoint = EndPoint(baseURL: baseURL, query: query, httpMethod: .get)
         NetworkManager.shared.call(endPoint, for: AppleSongs.self) {
             switch $0 {
-            case .success(let appleSongs):
-                print(appleSongs.results[0...2])
-            case .failure(let error):
-                print(error)
+            case .success(let responses):
+                let appleResults = Array(responses.results)
+                if appleResults.count < 3 {
+                    completion(appleResults)
+                } else {
+                    completion(Array(appleResults[0...2]))
+                }
+            case .failure(_):
+                completion(nil)
             }
         }
     }

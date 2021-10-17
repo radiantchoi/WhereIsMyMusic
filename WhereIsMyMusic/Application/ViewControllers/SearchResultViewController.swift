@@ -93,6 +93,35 @@ extension SearchResultViewController {
             }
             print(result)
         }
+        
+        var youTube = YouTubeAPI.init()
+        var apiKey: String {
+            get {
+                guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist")
+                else {
+                    fatalError("Couldn't find Keys.plist file")
+                }
+                
+                let plist = NSDictionary(contentsOfFile: filePath)
+                guard let value = plist?.object(forKey: "YOUTUBE_API_KEY") as? String
+                else {
+                    fatalError("Couldn't find 'YOUTUBE_API_KEY' in 'Keys.plist'.")
+                }
+                return value
+            }
+        }
+        youTube.query = ["q": searchQuery + " " + artist,
+                         "type": "video",
+                         "videoCategoryId": "10",
+                         "part": "snippet",
+                         "maxResult": "10",
+                         "key": apiKey]
+        youTube.loadYoutubeSong { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
     
 }

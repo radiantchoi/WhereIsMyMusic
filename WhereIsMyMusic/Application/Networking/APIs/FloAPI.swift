@@ -22,12 +22,12 @@ extension FloAPI {
                 let floResults = Array(result.data.list[0].list)
                 if floResults.count < 3 {
                     for i in 0..<floResults.count {
-                        let floSong = FloSong(floSongModel: result.data.list[0].list[i])
+                        let floSong = FloSong(floSongModel: floResults[i])
                         floSongs.append(floSong)
                     }
                 } else {
                     for n in 0...2 {
-                        let floSong = FloSong(floSongModel: result.data.list[0].list[n])
+                        let floSong = FloSong(floSongModel: floResults[n])
                         floSongs.append(floSong)
                     }
                 }

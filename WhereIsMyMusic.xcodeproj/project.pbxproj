@@ -25,7 +25,7 @@
 		4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */; };
 		4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD542F271ADA3500E47A6C /* FloSongModel.swift */; };
 		4FBD5432271ADED400E47A6C /* FloAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5431271ADED400E47A6C /* FloAPI.swift */; };
-		4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */; };
+		4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5433271B2EE300E47A6C /* YouTubeSongModel.swift */; };
 		4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */; };
 		4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
@@ -59,7 +59,7 @@
 		4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		4FBD542F271ADA3500E47A6C /* FloSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSongModel.swift; sourceTree = "<group>"; };
 		4FBD5431271ADED400E47A6C /* FloAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloAPI.swift; sourceTree = "<group>"; };
-		4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " YouTubeSongModel.swift"; sourceTree = "<group>"; };
+		4FBD5433271B2EE300E47A6C /* YouTubeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSongModel.swift; sourceTree = "<group>"; };
 		4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSong.swift; sourceTree = "<group>"; };
 		4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeAPI.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4FBD542F271ADA3500E47A6C /* FloSongModel.swift */,
-				4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */,
+				4FBD5433271B2EE300E47A6C /* YouTubeSongModel.swift */,
 			);
 			path = ParsingModels;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
-				4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */,
+				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,

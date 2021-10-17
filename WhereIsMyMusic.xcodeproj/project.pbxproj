@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1D70A327145B69004224C1 /* SwiftSoup */; };
 		4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D70A52714A3C6004224C1 /* CrawlManager.swift */; };
+		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
 		4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0212715DC6700706C7A /* GenieSong.swift */; };
@@ -24,6 +25,9 @@
 		4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */; };
 		4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD542F271ADA3500E47A6C /* FloSongModel.swift */; };
 		4FBD5432271ADED400E47A6C /* FloAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5431271ADED400E47A6C /* FloAPI.swift */; };
+		4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */; };
+		4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */; };
+		4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */; };
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
@@ -40,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		4F1D70A52714A3C6004224C1 /* CrawlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlManager.swift; sourceTree = "<group>"; };
+		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
 		4F66C0212715DC6700706C7A /* GenieSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieSong.swift; sourceTree = "<group>"; };
@@ -54,6 +59,9 @@
 		4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		4FBD542F271ADA3500E47A6C /* FloSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSongModel.swift; sourceTree = "<group>"; };
 		4FBD5431271ADED400E47A6C /* FloAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloAPI.swift; sourceTree = "<group>"; };
+		4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " YouTubeSongModel.swift"; sourceTree = "<group>"; };
+		4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSong.swift; sourceTree = "<group>"; };
+		4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeAPI.swift; sourceTree = "<group>"; };
 		4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4FBD542F271ADA3500E47A6C /* FloSongModel.swift */,
+				4FBD5433271B2EE300E47A6C /*  YouTubeSongModel.swift */,
 			);
 			path = ParsingModels;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 				4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */,
 				4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */,
 				4FCA016126DFDC0800DEDE39 /* Info.plist */,
+				4F4E1D73271C4E4C00896A22 /* Keys.plist */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -161,6 +171,7 @@
 				4F94ACA6271765B000A649EB /* BugsSong.swift */,
 				4F94ACAA27177F6400A649EB /* AppleSong.swift */,
 				4FF8926E271874E700CBF7C0 /* FloSong.swift */,
+				4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +184,7 @@
 				4F94ACA82717669400A649EB /* BugsAPI.swift */,
 				4F94ACAC2717815100A649EB /* AppleAPI.swift */,
 				4FBD5431271ADED400E47A6C /* FloAPI.swift */,
+				4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -276,6 +288,7 @@
 				4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */,
 				4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */,
 				4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */,
+				4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
+				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
+				4FBD5434271B2EE300E47A6C /*  YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,

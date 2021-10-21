@@ -122,6 +122,14 @@ extension SearchResultViewController {
             }
             print(result)
         }
+        
+        let vibe = VibeAPI.init(query: ["q": searchQuery])
+        vibe.loadVibeSong { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
     
 }

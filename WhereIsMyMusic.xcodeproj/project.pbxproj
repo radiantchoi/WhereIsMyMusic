@@ -12,6 +12,10 @@
 		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
+		4F5408D02720668B00F84402 /* ParsingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408CF2720668B00F84402 /* ParsingSession.swift */; };
+		4F5408D2272066C100F84402 /* VibeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D1272066C100F84402 /* VibeSongModel.swift */; };
+		4F5408D4272067B100F84402 /* VibeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D3272067B100F84402 /* VibeSong.swift */; };
+		4F5408D62720683400F84402 /* VibeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D52720683400F84402 /* VibeAPI.swift */; };
 		4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0212715DC6700706C7A /* GenieSong.swift */; };
 		4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0232715DD1A00706C7A /* GenieAPI.swift */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
@@ -47,6 +51,10 @@
 		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
+		4F5408CF2720668B00F84402 /* ParsingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingSession.swift; sourceTree = "<group>"; };
+		4F5408D1272066C100F84402 /* VibeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeSongModel.swift; sourceTree = "<group>"; };
+		4F5408D3272067B100F84402 /* VibeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeSong.swift; sourceTree = "<group>"; };
+		4F5408D52720683400F84402 /* VibeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeAPI.swift; sourceTree = "<group>"; };
 		4F66C0212715DC6700706C7A /* GenieSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieSong.swift; sourceTree = "<group>"; };
 		4F66C0232715DD1A00706C7A /* GenieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieAPI.swift; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
@@ -96,6 +104,7 @@
 			children = (
 				4FBD542F271ADA3500E47A6C /* FloSongModel.swift */,
 				4FBD5433271B2EE300E47A6C /* YouTubeSongModel.swift */,
+				4F5408D1272066C100F84402 /* VibeSongModel.swift */,
 			);
 			path = ParsingModels;
 			sourceTree = "<group>";
@@ -172,6 +181,7 @@
 				4F94ACAA27177F6400A649EB /* AppleSong.swift */,
 				4FF8926E271874E700CBF7C0 /* FloSong.swift */,
 				4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */,
+				4F5408D3272067B100F84402 /* VibeSong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +195,7 @@
 				4F94ACAC2717815100A649EB /* AppleAPI.swift */,
 				4FBD5431271ADED400E47A6C /* FloAPI.swift */,
 				4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */,
+				4F5408D52720683400F84402 /* VibeAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
+				4F5408CF2720668B00F84402 /* ParsingSession.swift */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
@@ -302,8 +314,10 @@
 				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
+				4F5408D02720668B00F84402 /* ParsingSession.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
+				4F5408D4272067B100F84402 /* VibeSong.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
@@ -311,6 +325,7 @@
 				4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */,
+				4F5408D2272066C100F84402 /* VibeSongModel.swift in Sources */,
 				4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */,
@@ -322,6 +337,7 @@
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,
 				4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */,
+				4F5408D62720683400F84402 /* VibeAPI.swift in Sources */,
 				4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */,
 				4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */,
 			);

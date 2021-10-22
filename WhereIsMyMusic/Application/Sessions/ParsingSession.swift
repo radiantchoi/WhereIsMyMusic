@@ -11,16 +11,21 @@ class ParsingSession: NSObject {
     var tracks = [VibeSongModel]()
     var xmlDictionary: [String: String]?
     var currentType: XMLKey?
+    var url: URL
     
+    lazy var session = XMLParser(contentsOf: self.url)
     var completion: ((Result<VibeSongModel, ParsingError>) -> Void)?
+
+    init(url: URL) {
+        self.url = url
+        super.init()
+        session?.delegate = self
+    }
 }
 
 extension ParsingSession: XMLParserDelegate {
     
-    func start(baseUrl: URL, query: Query) {
-        let url = baseUrl.withQueries(query)!
-        let session = XMLParser(contentsOf: url)
-        session?.delegate = self
+    func start() {
         session?.parse()
     }
     
@@ -62,7 +67,7 @@ extension ParsingSession: XMLParserDelegate {
             let track = VibeSongModel(trackTitle: trackTitle,
                               artistName: artistName,
                               albumTitle: albumtitle)
-//            tracks.append(track)
+            tracks.append(track)
             self.completion?(.success(track))
             self.xmlDictionary = nil
         }

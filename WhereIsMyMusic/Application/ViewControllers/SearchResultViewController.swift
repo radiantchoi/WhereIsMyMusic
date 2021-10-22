@@ -123,13 +123,14 @@ extension SearchResultViewController {
             print(result)
         }
         
-        let vibe = VibeAPI.init(query: ["q": searchQuery])
-        vibe.loadVibeSong { (result) in
-            guard let result = result else {
-                return
-            }
-            print(result)
-        }
+//        var vibe = VibeAPI.init()
+//        vibe.query = ["q": searchQuery]
+//        vibe.loadVibeSong { (result) in
+//            guard let result = result else {
+//                return
+//            }
+//            print(result)
+//        }
     }
     
 }

@@ -12,4 +12,9 @@ struct SpotifySong {
     let artist: String
     let album: String
     
+    init(spotifySongModel: SpotifySongModel) {
+        title = spotifySongModel.name
+        artist = spotifySongModel.artists[0].name
+        album = spotifySongModel.album.name
+    }
 }

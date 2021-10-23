@@ -20,7 +20,7 @@ extension NetworkManager {
         
         if endPoint.headers != nil {
             for (key, value) in endPoint.headers! {
-                request.addValue(value, forHTTPHeaderField: key)
+                request.setValue(value, forHTTPHeaderField: key)
             }
         }
         

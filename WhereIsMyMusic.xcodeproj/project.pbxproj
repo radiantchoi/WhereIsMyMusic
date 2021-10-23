@@ -43,6 +43,7 @@
 		4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8927102B0C005B5CE8 /* EndPoint.swift */; };
 		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
 		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
+		4FE17E4D2723FC7C007F46B0 /* SpotifySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE17E4C2723FC7C007F46B0 /* SpotifySong.swift */; };
 		4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8926E271874E700CBF7C0 /* FloSong.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		4FE03B8927102B0C005B5CE8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
+		4FE17E4C2723FC7C007F46B0 /* SpotifySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySong.swift; sourceTree = "<group>"; };
 		4FF8926E271874E700CBF7C0 /* FloSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 				4FF8926E271874E700CBF7C0 /* FloSong.swift */,
 				4FBD5435271B2EF700E47A6C /* YouTubeSong.swift */,
 				4F5408D3272067B100F84402 /* VibeSong.swift */,
+				4FE17E4C2723FC7C007F46B0 /* SpotifySong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
 				4F5408D4272067B100F84402 /* VibeSong.swift in Sources */,
+				4FE17E4D2723FC7C007F46B0 /* SpotifySong.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,

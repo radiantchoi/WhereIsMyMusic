@@ -14,9 +14,15 @@ struct NetworkManager {
 extension NetworkManager {
     @discardableResult
     func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask {
-        let url = endPoint.baseURL.withQueries(endPoint.query)
+        let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         var request = URLRequest(url: url!)
-        request.httpMethod = endPoint.httpMethod?.rawValue
+        request.httpMethod = endPoint.httpMethod.rawValue
+        
+        if endPoint.headers != nil {
+            for (key, value) in endPoint.headers! {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data,

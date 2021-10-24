@@ -16,6 +16,7 @@
 		4F5408D2272066C100F84402 /* VibeSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D1272066C100F84402 /* VibeSongModel.swift */; };
 		4F5408D4272067B100F84402 /* VibeSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D3272067B100F84402 /* VibeSong.swift */; };
 		4F5408D62720683400F84402 /* VibeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5408D52720683400F84402 /* VibeAPI.swift */; };
+		4F5DDAFC272467E800602D9C /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DDAFB272467E800602D9C /* SpotifyAuth.swift */; };
 		4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0212715DC6700706C7A /* GenieSong.swift */; };
 		4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0232715DD1A00706C7A /* GenieAPI.swift */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
@@ -60,6 +61,7 @@
 		4F5408D1272066C100F84402 /* VibeSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeSongModel.swift; sourceTree = "<group>"; };
 		4F5408D3272067B100F84402 /* VibeSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeSong.swift; sourceTree = "<group>"; };
 		4F5408D52720683400F84402 /* VibeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeAPI.swift; sourceTree = "<group>"; };
+		4F5DDAFB272467E800602D9C /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
 		4F66C0212715DC6700706C7A /* GenieSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieSong.swift; sourceTree = "<group>"; };
 		4F66C0232715DD1A00706C7A /* GenieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieAPI.swift; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */,
 				4F5408D52720683400F84402 /* VibeAPI.swift */,
 				4FE17E5527242310007F46B0 /* SpotifyAPI.swift */,
+				4F5DDAFB272467E800602D9C /* SpotifyAuth.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */,
 				4FBD5432271ADED400E47A6C /* FloAPI.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,
+				4F5DDAFC272467E800602D9C /* SpotifyAuth.swift in Sources */,
 				4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */,
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,

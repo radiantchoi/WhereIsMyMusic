@@ -10,12 +10,13 @@ import Foundation
 struct SpotifyAPI {
     let baseURL = URL(string: "https://api.spotify.com/v1/search")!
     var query: Query = [:]
-    let accessToken: String
+    
+    lazy var token: String = .init()
 }
 
 extension SpotifyAPI {
-    func loadSpotifySong(completion: @escaping ([SpotifySong]?) -> Void) {
-        let headers = ["Authorization": "Bearer " + accessToken,
+    func loadSpotifySong(token: String, completion: @escaping ([SpotifySong]?) -> Void) {
+        let headers = ["Authorization": "Bearer \(token)",
                       "Content-type": "application/json"]
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: headers)
         NetworkManager.shared.call(endPoint, for: SpotifyResponse.self) {

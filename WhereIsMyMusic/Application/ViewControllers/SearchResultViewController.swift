@@ -123,14 +123,20 @@ extension SearchResultViewController {
             print(result)
         }
         
-//        var vibe = VibeAPI.init()
-//        vibe.query = ["q": searchQuery]
-//        vibe.loadVibeSong { (result) in
-//            guard let result = result else {
-//                return
-//            }
-//            print(result)
-//        }
+        var auth = SpotifyAuth()
+        auth.getToken()
+        let accessToken = auth.token
+        
+        var spotify = SpotifyAPI()
+        spotify.query = ["type": "track",
+                         "q": searchQuery,
+                         "market": "KR"]
+        spotify.loadSpotifySong(token: accessToken) { (result) in
+            guard let result = result else {
+                return
+            }
+            print(result)
+        }
     }
     
 }

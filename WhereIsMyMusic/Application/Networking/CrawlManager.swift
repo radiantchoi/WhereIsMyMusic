@@ -15,7 +15,7 @@ struct CrawlManager {
 
 extension CrawlManager {
     func crawl(_ endPoint: EndPoint, cssQuery: String, titleCss: [String], artistCss: [String], albumCss: [String], completion: @escaping (Result<[[String]], Error>) -> Void) {
-        let url = endPoint.baseURL.withQueries(endPoint.query)
+        let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         let urlString = String(describing: url!)
         
         AF.request(urlString)

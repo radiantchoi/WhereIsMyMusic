@@ -26,8 +26,9 @@ extension MelonAPI {
     func loadMelonSong(completion: @escaping ([MelonSong]?) -> Void) {
 
         CrawlManager.shared.crawl(EndPoint(baseURL: baseURL,
+                                           httpMethod: .get,
                                            query: query,
-                                           httpMethod: nil),
+                                           headers: nil),
                                   cssQuery: cssQuery,
                                   titleCss: titleCss,
                                   artistCss: artistCss,

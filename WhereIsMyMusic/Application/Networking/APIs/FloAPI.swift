@@ -14,7 +14,7 @@ struct FloAPI {
 
 extension FloAPI {
     func loadFloSong(completion: @escaping ([FloSong]?) -> Void) {
-        let endPoint = EndPoint(baseURL: baseURL, query: query, httpMethod: .get)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         NetworkManager.shared.call(endPoint, for: FloResponse.self) {
             switch $0 {
             case .success(let result):

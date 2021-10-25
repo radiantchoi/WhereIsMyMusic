@@ -14,7 +14,7 @@ struct YouTubeAPI {
 
 extension YouTubeAPI {
     func loadYoutubeSong(completion: @escaping ([YouTubeSong]?) -> Void) {
-        let endPoint = EndPoint(baseURL: baseURL, query: query, httpMethod: .get)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         NetworkManager.shared.call(endPoint, for: YouTubeResponse.self) {
             switch $0 {
             case .success(let result):

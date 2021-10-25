@@ -9,8 +9,9 @@ import Foundation
 
 struct EndPoint {
     let baseURL: URL
-    let query: Query
-    let httpMethod: HTTPMethod?
+    let httpMethod: HTTPMethod
+    let query: Query?
+    let headers: [String: String]?
 }
 
 enum HTTPMethod: String {

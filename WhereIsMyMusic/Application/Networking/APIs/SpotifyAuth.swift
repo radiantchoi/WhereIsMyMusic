@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpotifyAuth {
+class SpotifyAuth {
     let clientID = "dbe85a8894f340e99c60621d1e2f572e"
     var clientSecret: String {
         get {
@@ -26,10 +26,18 @@ struct SpotifyAuth {
     }
     
     lazy var token: String = .init()
+    
 }
 
 extension SpotifyAuth {
-    mutating func getToken() {
+    func loadToken() {
+        getToken { result in
+            guard let result = result else { return }
+            self.token = result
+        }
+    }
+    
+    func getToken(completion: @escaping (String?) -> Void) {
         let url = URL(string: "https://accounts.spotify.com/api/token")!
         var postRequest = URLRequest(url: url)
         postRequest.httpMethod = "POST"
@@ -41,16 +49,14 @@ extension SpotifyAuth {
         let combo = "\(id):\(secret)".toBase64()
         postRequest.addValue("Basic \(combo)", forHTTPHeaderField: "Authorization")
         
-        var tokenStorage = ""
 
         let task = URLSession.shared.dataTask(with: postRequest) { (data, response, error) in
             guard let data = data else {
                 return
             }
             let result = try? JSONDecoder().decode(AccessToken.self, from: data)
-            tokenStorage = result?.accessToken ?? ""
+            completion(result?.accessToken)
         }
         task.resume()
-        self.token = tokenStorage
     }
 }

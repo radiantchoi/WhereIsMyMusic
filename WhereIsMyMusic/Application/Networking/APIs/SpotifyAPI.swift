@@ -10,8 +10,6 @@ import Foundation
 struct SpotifyAPI {
     let baseURL = URL(string: "https://api.spotify.com/v1/search")!
     var query: Query = [:]
-    
-    lazy var token: String = .init()
 }
 
 extension SpotifyAPI {

@@ -104,6 +104,9 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for melonSong in result {
+                    if melonSong.title == "" || melonSong.artist == "" || melonSong.album == "" {
+                        continue
+                    }
                     let song = Song(melonSong: melonSong)
                     self.songs.append(song)
                 }
@@ -119,6 +122,9 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for genieSong in result {
+                    if genieSong.title == "" || genieSong.artist == "" || genieSong.album == "" {
+                        continue
+                    }
                     let song = Song(genieSong: genieSong)
                     self.songs.append(song)
                 }
@@ -134,6 +140,9 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for bugsSong in result {
+                    if bugsSong.title == "" || bugsSong.artist == "" || bugsSong.album == "" {
+                        continue
+                    }
                     let song = Song(bugsSong: bugsSong)
                     self.songs.append(song)
                 }

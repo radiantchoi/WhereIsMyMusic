@@ -37,31 +37,8 @@ extension SearchResultViewController {
         self.albumLabel.text = self.shazamSong.album
         self.albumImageView.load(self.shazamSong.imageURL)
         albumImageView.layer.cornerRadius = 4
-        albumImageView.layer.masksToBounds = true
-        
-        resultTableView.delegate = self
-        resultTableView.dataSource = self
+        albumImageView.layer.masksToBounds = true        
         getSongs()
-        registerXib()
-    }
-}
-
-extension SearchResultViewController {
-    func registerXib() {
-        let nibName = UINib(nibName: "MelonTableViewCell", bundle: nil)
-        resultTableView.register(nibName, forCellReuseIdentifier: "melonCell")
-    }
-}
-
-extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "melonCell", for: indexPath) as? MelonTableViewCell else { return UITableViewCell() }
-                
-        return cell
     }
 }
 

@@ -7,17 +7,21 @@
 
 import UIKit
 
-class MelonTableViewCell: UITableViewCell {
+class SearchResultTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    static let identifier = "MelonTableViewCell"
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var albumLabel: UILabel!
+    
+    static let identifier = "SearchResultTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "MelonTableViewCell", bundle: nil)
+        return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     }
     
 }
 
-extension MelonTableViewCell {
+extension SearchResultTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

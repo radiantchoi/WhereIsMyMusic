@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchResultViewController: UIViewController {
+    
     private let resultTableView: UITableView = {
         let table = UITableView()
         
@@ -27,7 +28,6 @@ class SearchResultViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension SearchResultViewController {
@@ -47,19 +47,25 @@ extension SearchResultViewController {
 
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultTableView.dequeueReusableCell(
-            withIdentifier: ShazamResultTableViewCell.identifier,
-            for: indexPath) as! ShazamResultTableViewCell
-        cell.titleLabel.text = shazamSong.title
-        cell.artistLabel.text = shazamSong.artist
-        cell.albumLabel.text = shazamSong.album
-        cell.configure(with: shazamSong.imageURL!)
+        if indexPath.row == 0 {
+            let shazamCell = resultTableView.dequeueReusableCell(
+                withIdentifier: ShazamResultTableViewCell.identifier,
+                for: indexPath) as! ShazamResultTableViewCell
+            shazamCell.titleLabel.text = shazamSong.title
+            shazamCell.artistLabel.text = shazamSong.artist
+            shazamCell.albumLabel.text = shazamSong.album
+            shazamCell.configure(with: shazamSong.imageURL!)
+            
+            return shazamCell
+        }
         
-        return cell
+        
+        
+        return UITableViewCell()
     }
     
     

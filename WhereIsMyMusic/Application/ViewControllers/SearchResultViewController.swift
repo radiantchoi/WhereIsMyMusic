@@ -117,7 +117,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for genieSong in result {
+                    let song = Song(genieSong: genieSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
         var bugs = BugsAPI.init()
@@ -126,7 +132,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for bugsSong in result {
+                    let song = Song(bugsSong: bugsSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
         var apple = AppleAPI.init()
@@ -135,7 +147,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for appleSong in result {
+                    let song = Song(appleSong: appleSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
         var flo = FloAPI.init()
@@ -144,7 +162,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for floSong in result {
+                    let song = Song(floSong: floSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
         var youTube = YouTubeAPI.init()
@@ -173,7 +197,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for youTubeSong in result {
+                    let song = Song(youTubeSong: youTubeSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
     }

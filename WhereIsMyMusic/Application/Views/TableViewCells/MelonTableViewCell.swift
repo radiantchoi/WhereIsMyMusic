@@ -10,6 +10,10 @@ import UIKit
 class MelonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    static let identifier = "MelonTableViewCell"
+    static func nib() -> UINib {
+        return UINib(nibName: "MelonTableViewCell", bundle: nil)
+    }
     
 }
 

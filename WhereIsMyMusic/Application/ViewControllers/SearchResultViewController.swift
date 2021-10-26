@@ -8,12 +8,14 @@
 import UIKit
 
 class SearchResultViewController: UIViewController {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var albumLabel: UILabel!
-    @IBOutlet weak var albumImageView: UIImageView!
-    @IBOutlet weak var resultTableView: UITableView!
+    private let resultTableView: UITableView = {
+        let table = UITableView()
+        
+        table.register(ShazamResultTableViewCell.nib(),
+                       forCellReuseIdentifier: ShazamResultTableViewCell.identifier)
+        
+        return table
+    }()
     
     let shazamSong: ShazamSong
     
@@ -31,36 +33,32 @@ class SearchResultViewController: UIViewController {
 extension SearchResultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = self.shazamSong.title
-        self.artistLabel.text = self.shazamSong.artist
-        self.albumLabel.text = self.shazamSong.album
-        self.albumImageView.load(self.shazamSong.imageURL)
-        albumImageView.layer.cornerRadius = 4
-        albumImageView.layer.masksToBounds = true
-        
+        view.addSubview(resultTableView)
         resultTableView.delegate = self
         resultTableView.dataSource = self
         getSongs()
-        registerXib()
     }
-}
-
-extension SearchResultViewController {
-    func registerXib() {
-        let nibName = UINib(nibName: "MelonTableViewCell", bundle: nil)
-        resultTableView.register(nibName, forCellReuseIdentifier: "melonCell")
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        resultTableView.frame = view.bounds
     }
 }
 
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = resultTableView
-                .dequeueReusableCell(withIdentifier: "melonCell", for: indexPath) as? MelonTableViewCell
-        else { return UITableViewCell() }
+        let cell = resultTableView.dequeueReusableCell(
+            withIdentifier: ShazamResultTableViewCell.identifier,
+            for: indexPath) as! ShazamResultTableViewCell
+        cell.titleLabel.text = shazamSong.title
+        cell.artistLabel.text = shazamSong.artist
+        cell.albumLabel.text = shazamSong.album
+        cell.configure(with: shazamSong.imageURL!)
+        
         return cell
     }
     

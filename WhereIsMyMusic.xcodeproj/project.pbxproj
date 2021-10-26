@@ -19,6 +19,8 @@
 		4F5DDAFC272467E800602D9C /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DDAFB272467E800602D9C /* SpotifyAuth.swift */; };
 		4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0212715DC6700706C7A /* GenieSong.swift */; };
 		4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66C0232715DD1A00706C7A /* GenieAPI.swift */; };
+		4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A00B427284F4E0054BB5B /* ShazamResultTableViewCell.swift */; };
+		4F6A00B727284F4E0054BB5B /* ShazamResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
@@ -66,6 +68,8 @@
 		4F5DDAFB272467E800602D9C /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
 		4F66C0212715DC6700706C7A /* GenieSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieSong.swift; sourceTree = "<group>"; };
 		4F66C0232715DD1A00706C7A /* GenieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieAPI.swift; sourceTree = "<group>"; };
+		4F6A00B427284F4E0054BB5B /* ShazamResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamResultTableViewCell.swift; sourceTree = "<group>"; };
+		4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamResultTableViewCell.xib; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 		4FC0FD31272710BA00DEFD3E /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				4F6A00B427284F4E0054BB5B /* ShazamResultTableViewCell.swift */,
+				4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */,
 				4FC0FD322727113100DEFD3E /* MelonTableViewCell.swift */,
 				4FC0FD332727113100DEFD3E /* MelonTableViewCell.xib */,
 			);
@@ -349,6 +355,7 @@
 				4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */,
 				4FC0FD352727113100DEFD3E /* MelonTableViewCell.xib in Resources */,
 				4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */,
+				4F6A00B727284F4E0054BB5B /* ShazamResultTableViewCell.xib in Resources */,
 				4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +371,7 @@
 				4FC0FD342727113100DEFD3E /* MelonTableViewCell.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
+				4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */,
 				4F5408D02720668B00F84402 /* ParsingSession.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,

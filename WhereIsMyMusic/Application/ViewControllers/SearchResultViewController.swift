@@ -13,6 +13,8 @@ class SearchResultViewController: UIViewController {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var contentsScrollView: UIScrollView!
+    @IBOutlet weak var resultTableView: UITableView!
     
     let shazamSong: ShazamSong
     
@@ -36,7 +38,30 @@ extension SearchResultViewController {
         self.albumImageView.load(self.shazamSong.imageURL)
         albumImageView.layer.cornerRadius = 4
         albumImageView.layer.masksToBounds = true
+        
+        resultTableView.delegate = self
+        resultTableView.dataSource = self
         getSongs()
+        registerXib()
+    }
+}
+
+extension SearchResultViewController {
+    func registerXib() {
+        let nibName = UINib(nibName: "MelonTableViewCell", bundle: nil)
+        resultTableView.register(nibName, forCellReuseIdentifier: "melonCell")
+    }
+}
+
+extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "melonCell", for: indexPath) as? MelonTableViewCell else { return UITableViewCell() }
+                
+        return cell
     }
 }
 
@@ -124,5 +149,4 @@ extension SearchResultViewController {
         }
         
     }
-    
 }

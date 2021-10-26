@@ -14,6 +14,8 @@ class SearchResultViewController: UIViewController {
         
         table.register(ShazamResultTableViewCell.nib(),
                        forCellReuseIdentifier: ShazamResultTableViewCell.identifier)
+        table.register(SearchResultTableViewCell.nib(),
+                       forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         
         return table
     }()
@@ -46,6 +48,16 @@ extension SearchResultViewController {
     }
 }
 
+extension SearchResultViewController {
+    func configureCells(_ cell: SearchResultTableViewCell, forItemAt indexPath: IndexPath) {
+        let song = songs[indexPath.row - 1]
+        cell.vendorLabel.text = song.vendor
+        cell.titleLabel.text = song.title
+        cell.artistLabel.text = song.artist
+        cell.albumLabel.text = song.album
+    }
+}
+
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songs.count + 1
@@ -67,12 +79,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         let resultCell = resultTableView.dequeueReusableCell(
             withIdentifier: SearchResultTableViewCell.identifier,
             for: indexPath) as! SearchResultTableViewCell
-        for song in songs {
-            resultCell.vendorLabel.text = song.vendor
-            resultCell.titleLabel.text = song.title
-            resultCell.artistLabel.text = song.artist
-            resultCell.albumLabel.text = song.album
-        }
+        configureCells(resultCell, forItemAt: indexPath)
         
         return resultCell
     }
@@ -95,7 +102,13 @@ extension SearchResultViewController {
             guard let result = result else {
                 return
             }
-            print(result)
+            DispatchQueue.main.async {
+                for melonSong in result {
+                    let song = Song(melonSong: melonSong)
+                    self.songs.append(song)
+                }
+                self.resultTableView.reloadData()
+            }
         }
         
         var genie = GenieAPI.init()

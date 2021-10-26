@@ -19,6 +19,7 @@ class SearchResultViewController: UIViewController {
     }()
     
     let shazamSong: ShazamSong
+    var songs: [Song] = .init()
     
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
@@ -47,7 +48,7 @@ extension SearchResultViewController {
 
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return songs.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,9 +64,17 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
             return shazamCell
         }
         
+        let resultCell = resultTableView.dequeueReusableCell(
+            withIdentifier: SearchResultTableViewCell.identifier,
+            for: indexPath) as! SearchResultTableViewCell
+        for song in songs {
+            resultCell.vendorLabel.text = song.vendor
+            resultCell.titleLabel.text = song.title
+            resultCell.artistLabel.text = song.artist
+            resultCell.albumLabel.text = song.album
+        }
         
-        
-        return UITableViewCell()
+        return resultCell
     }
     
     
@@ -75,7 +84,7 @@ extension SearchResultViewController {
     func getSongs() {
         guard let title = shazamSong.title,
               let artist = shazamSong.artist,
-              let album = shazamSong.album
+              let _ = shazamSong.album
         else { return }
         
         let searchQuery = title

@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-8C-tDs">
-                        <rect key="frame" x="8" y="8" width="130.5" height="64"/>
+                        <rect key="frame" x="8" y="8" width="359" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-fd-f6g">
                                 <rect key="frame" x="0.0" y="20.5" width="65.5" height="23"/>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="T1Y-pQ-Bv7">
-                                <rect key="frame" x="81.5" y="1.5" width="49" height="61.5"/>
+                                <rect key="frame" x="81.5" y="1.5" width="277.5" height="61.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-T0-059">
                                         <rect key="frame" x="0.0" y="0.0" width="36.5" height="20.5"/>
@@ -49,11 +49,15 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="T1Y-pQ-Bv7" firstAttribute="leading" secondItem="Zpu-fd-f6g" secondAttribute="trailing" constant="16" id="qwH-Li-cSp"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="S6u-8C-tDs" secondAttribute="bottom" constant="8" id="BBa-4b-NER"/>
                     <constraint firstItem="S6u-8C-tDs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="QDZ-yb-D92"/>
+                    <constraint firstAttribute="trailing" secondItem="S6u-8C-tDs" secondAttribute="trailing" constant="8" id="cTg-cT-RlC"/>
                     <constraint firstItem="S6u-8C-tDs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="im9-of-9M0"/>
                 </constraints>
             </tableViewCellContentView>

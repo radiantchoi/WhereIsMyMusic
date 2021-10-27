@@ -8,15 +8,15 @@
 import Foundation
 
 struct BugsAPI {
-    let baseURL = URL(string: "https://music.bugs.co.kr/search/track")!
-    let cssQuery = "#DEFAULT0 > table > tbody"
-    let titleCss = ["tr:nth-child(1) > th > p > a",
+    private let baseURL = URL(string: "https://music.bugs.co.kr/search/track")!
+    private let cssQuery = "#DEFAULT0 > table > tbody"
+    private let titleCss = ["tr:nth-child(1) > th > p > a",
                     "tr:nth-child(2) > th > p > a",
                     "tr:nth-child(3) > th > p > a"]
-    let artistCss = ["tr:nth-child(1) > td:nth-child(7) > p > a",
+    private let artistCss = ["tr:nth-child(1) > td:nth-child(7) > p > a",
                      "tr:nth-child(2) > td:nth-child(7) > p > a",
                      "tr:nth-child(3) > td:nth-child(7) > p > a"]
-    let albumCss = ["tr:nth-child(1) > td:nth-child(8) > a",
+    private let albumCss = ["tr:nth-child(1) > td:nth-child(8) > a",
                     "tr:nth-child(2) > td:nth-child(8) > a",
                     "tr:nth-child(3) > td:nth-child(8) > a"]
     var query: Query = [:]

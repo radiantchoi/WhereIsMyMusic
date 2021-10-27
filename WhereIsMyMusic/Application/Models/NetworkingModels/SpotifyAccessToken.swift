@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct AccessToken: Codable {
     let accessToken: String
     let tokenType: String

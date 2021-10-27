@@ -36,11 +36,11 @@ final class ShazamSession: NSObject {
     
     var completion: Completion?
     
-    lazy var audioSession: AVAudioSession = .sharedInstance()
-    lazy var session: SHSession = .init()
-    lazy var audioEngine: AVAudioEngine = .init()
-    lazy var inputNode = self.audioEngine.inputNode
-    lazy var bus: AVAudioNodeBus = 0
+    private lazy var audioSession: AVAudioSession = .sharedInstance()
+    private lazy var session: SHSession = .init()
+    private lazy var audioEngine: AVAudioEngine = .init()
+    private lazy var inputNode = self.audioEngine.inputNode
+    private lazy var bus: AVAudioNodeBus = 0
     
     override init() {
         super.init()

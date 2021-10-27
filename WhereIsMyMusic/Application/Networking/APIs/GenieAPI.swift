@@ -8,15 +8,15 @@
 import Foundation
 
 struct GenieAPI {
-    let baseURL = URL(string: "https://www.genie.co.kr/search/searchSong")!
-    let cssQuery = "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody"
-    let titleCss = ["tr:nth-child(1) > td.info > a.title.ellipsis",
+    private let baseURL = URL(string: "https://www.genie.co.kr/search/searchSong")!
+    private let cssQuery = "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody"
+    private let titleCss = ["tr:nth-child(1) > td.info > a.title.ellipsis",
                     "tr:nth-child(2) > td.info > a.title.ellipsis",
                     "tr:nth-child(3) > td.info > a.title.ellipsis"]
-    let artistCss = ["tr:nth-child(1) > td.info > a.artist.ellipsis",
+    private let artistCss = ["tr:nth-child(1) > td.info > a.artist.ellipsis",
                      "tr:nth-child(2) > td.info > a.artist.ellipsis",
                      "tr:nth-child(3) > td.info > a.artist.ellipsis"]
-    let albumCss = ["tr:nth-child(1) > td.info > a.albumtitle.ellipsis",
+    private let albumCss = ["tr:nth-child(1) > td.info > a.albumtitle.ellipsis",
                     "tr:nth-child(2) > td.info > a.albumtitle.ellipsis",
                     "tr:nth-child(3) > td.info > a.albumtitle.ellipsis"]
     var query: Query = [:]

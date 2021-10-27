@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct VibeAPI {
     let baseURL = URL(string: "https://apis.naver.com/vibeWeb/musicapiweb/v3/search/track")!
     var query: Query = [:]

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct SpotifyResponse: Codable {
     let list: [SpotifySongModel]
 }

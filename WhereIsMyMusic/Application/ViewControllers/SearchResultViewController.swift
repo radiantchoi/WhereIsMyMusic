@@ -20,8 +20,8 @@ class SearchResultViewController: UIViewController {
         return table
     }()
     
-    let shazamSong: ShazamSong
-    var songs: [Song] = .init()
+    private let shazamSong: ShazamSong
+    private var songs: [Song] = .init()
     
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
@@ -49,7 +49,7 @@ extension SearchResultViewController {
 }
 
 extension SearchResultViewController {
-    func configureCells(_ cell: SearchResultTableViewCell, forItemAt indexPath: IndexPath) {
+    private func configureCells(_ cell: SearchResultTableViewCell, forItemAt indexPath: IndexPath) {
         let song = songs[indexPath.row - 1]
         cell.vendorLabel.text = song.vendor
         cell.titleLabel.text = song.title
@@ -88,7 +88,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension SearchResultViewController {
-    func getSongs() {
+    private func getSongs() {
         guard let title = shazamSong.title,
               let artist = shazamSong.artist,
               let _ = shazamSong.album

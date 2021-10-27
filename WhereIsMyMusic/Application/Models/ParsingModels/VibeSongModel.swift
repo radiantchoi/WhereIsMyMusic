@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct VibeSongModel {
     var trackTitle: String
     var artistName: String

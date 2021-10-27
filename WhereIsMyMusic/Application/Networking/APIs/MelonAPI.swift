@@ -8,15 +8,15 @@
 import Foundation
 
 struct MelonAPI {
-    let baseURL = URL(string: "https://www.melon.com/search/song/index.htm")!
-    let cssQuery = "#frm_defaultList > div > table > tbody"
-    let titleCss = ["tr:nth-child(1) > td:nth-child(3) > div > div > a.fc_gray",
+    private let baseURL = URL(string: "https://www.melon.com/search/song/index.htm")!
+    private let cssQuery = "#frm_defaultList > div > table > tbody"
+    private let titleCss = ["tr:nth-child(1) > td:nth-child(3) > div > div > a.fc_gray",
                     "tr:nth-child(2) > td:nth-child(3) > div > div > a.fc_gray",
                     "tr:nth-child(3) > td:nth-child(3) > div > div > a.fc_gray"]
-    let artistCss = ["tr:nth-child(1) > td:nth-child(4) > div > div > a",
+    private let artistCss = ["tr:nth-child(1) > td:nth-child(4) > div > div > a",
                      "tr:nth-child(2) > td:nth-child(4) > div > div > a",
                      "tr:nth-child(3) > td:nth-child(4) > div > div > a"]
-    let albumCss = ["tr:nth-child(1) > td:nth-child(5) > div > div > a",
+    private let albumCss = ["tr:nth-child(1) > td:nth-child(5) > div > div > a",
                     "tr:nth-child(2) > td:nth-child(5) > div > div > a",
                     "tr:nth-child(3) > td:nth-child(5) > div > div > a"]
     var query: Query = [:]

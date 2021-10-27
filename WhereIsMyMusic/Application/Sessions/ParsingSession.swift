@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 class ParsingSession: NSObject {
     var tracks = [VibeSongModel]()
     var xmlDictionary: [String: String]?

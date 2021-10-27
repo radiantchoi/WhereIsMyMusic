@@ -8,7 +8,7 @@
 import Foundation
 
 struct YouTubeAPI {
-    let baseURL = URL(string: "https://www.googleapis.com/youtube/v3/search")!
+    private let baseURL = URL(string: "https://www.googleapis.com/youtube/v3/search")!
     var query: Query = [:]
 }
 

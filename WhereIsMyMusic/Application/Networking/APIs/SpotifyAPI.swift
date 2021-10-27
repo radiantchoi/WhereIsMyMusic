@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct SpotifyAPI {
     let baseURL = URL(string: "https://api.spotify.com/v1/search")!
     var query: Query = [:]

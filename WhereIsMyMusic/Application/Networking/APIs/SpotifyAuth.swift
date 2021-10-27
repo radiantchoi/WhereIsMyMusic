@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 class SpotifyAuth {
     let clientID = "dbe85a8894f340e99c60621d1e2f572e"
     var clientSecret: String {

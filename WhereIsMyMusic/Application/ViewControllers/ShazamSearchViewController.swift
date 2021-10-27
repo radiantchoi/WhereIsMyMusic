@@ -10,7 +10,7 @@ import ShazamKit
 
 class ShazamSearchViewController: UIViewController {
     
-    @IBOutlet weak var shazamButton: UIButton!
+    @IBOutlet private weak var shazamButton: UIButton!
 }
 
 extension ShazamSearchViewController {

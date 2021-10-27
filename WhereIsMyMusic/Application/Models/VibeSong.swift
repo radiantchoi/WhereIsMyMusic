@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Not used now
+
 struct VibeSong {
     let title: String
     let artist: String

@@ -23,7 +23,13 @@ extension ShazamSearchViewController {
                 let searchResultViewController = SearchResultViewController(shazamSong: shazamSong)
                 self.navigationController?.pushViewController(searchResultViewController, animated: true)
             case .failure(let error):
-                print(error)
+//                print(error)
+                let alert = UIAlertController(title: "Error!",
+                                              message: error.errorDescription,
+                                              preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

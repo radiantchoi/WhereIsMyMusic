@@ -37,7 +37,7 @@ extension MelonAPI {
             case .success(let datas):
                 var melonSongs = [MelonSong]()
                 for data in datas {
-                    let melonSong = MelonSong.init(title: data[0], artist: data[1], album: data[2], imageURL: nil)
+                    let melonSong = MelonSong.init(title: data[0], artist: data[1], album: data[2])
                     melonSongs.append(melonSong)
                 }
                 completion(melonSongs)

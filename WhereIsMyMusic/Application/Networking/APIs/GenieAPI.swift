@@ -46,7 +46,7 @@ extension GenieAPI {
                             titleData = titleSpread.joined()
                         }
                     }
-                    let genieSong = GenieSong.init(title: titleData, artist: data[1], album: data[2], imageURL: nil)
+                    let genieSong = GenieSong.init(title: titleData, artist: data[1], album: data[2])
                     genieSongs.append(genieSong)
                 }
                 completion(genieSongs)

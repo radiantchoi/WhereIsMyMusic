@@ -12,7 +12,7 @@ struct BugsSong: Codable {
     let artist: String
     let album: String
     
-    init(title: String, artist: String, album: String, imageURL: URL?) {
+    init(title: String, artist: String, album: String) {
         self.title = title
         self.artist = artist
         self.album = album

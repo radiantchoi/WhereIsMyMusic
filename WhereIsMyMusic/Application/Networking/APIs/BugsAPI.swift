@@ -37,7 +37,7 @@ extension BugsAPI {
             case .success(let datas):
                 var bugsSongs = [BugsSong]()
                 for data in datas {
-                    let bugsSong = BugsSong.init(title: data[0], artist: data[1], album: data[2], imageURL: nil)
+                    let bugsSong = BugsSong.init(title: data[0], artist: data[1], album: data[2])
                     bugsSongs.append(bugsSong)
                 }
                 completion(bugsSongs)

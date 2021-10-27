@@ -32,13 +32,14 @@ extension ShazamSearchViewController {
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
                 self.micImageView.layer.removeAllAnimations()
+                self.micImageView.alpha = 1
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        micImageView.alpha = 1.0
+        micImageView.alpha = 1
     }
 }
 

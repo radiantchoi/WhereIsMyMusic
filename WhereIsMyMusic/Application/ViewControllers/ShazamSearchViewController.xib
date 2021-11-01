@@ -25,7 +25,6 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microphone-342" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Gd-TQm">
                             <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-U6-C7Q">
                             <rect key="frame" x="93.5" y="279" width="69" height="31"/>

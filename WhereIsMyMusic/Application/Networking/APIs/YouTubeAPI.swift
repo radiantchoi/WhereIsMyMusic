@@ -32,8 +32,7 @@ extension YouTubeAPI {
                     }
                 }
                 completion(youTubeSongs)
-            case .failure(let error):
-                print(error)
+            case .failure(_):
                 completion(nil)
             }
         }

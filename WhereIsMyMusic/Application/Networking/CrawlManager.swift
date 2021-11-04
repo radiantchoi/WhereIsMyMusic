@@ -38,7 +38,6 @@ extension CrawlManager {
                     
                     completion(.success(results))
                 } catch {
-                    print("Crawl error")
                     completion(.failure(error))
                 }
             }

@@ -194,7 +194,6 @@
 		4FE03B84271029C2005B5CE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4FE17E522724227F007F46B0 /* NetworkingModels */,
 				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
 				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
@@ -247,13 +246,6 @@
 				4F1D70A52714A3C6004224C1 /* CrawlManager.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		4FE17E522724227F007F46B0 /* NetworkingModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkingModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

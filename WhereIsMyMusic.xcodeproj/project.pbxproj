@@ -44,7 +44,6 @@
 		4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8927102B0C005B5CE8 /* EndPoint.swift */; };
 		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
 		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
-		4FE17E4F2724004B007F46B0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE17E4E2724004B007F46B0 /* String+Extension.swift */; };
 		4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8926E271874E700CBF7C0 /* FloSong.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +84,6 @@
 		4FE03B8927102B0C005B5CE8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
-		4FE17E4E2724004B007F46B0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		4FF8926E271874E700CBF7C0 /* FloSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,7 +226,6 @@
 			children = (
 				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
 				4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */,
-				4FE17E4E2724004B007F46B0 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,7 +365,6 @@
 				4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */,
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,
-				4FE17E4F2724004B007F46B0 /* String+Extension.swift in Sources */,
 				4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */,
 				4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */,
 				4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */,

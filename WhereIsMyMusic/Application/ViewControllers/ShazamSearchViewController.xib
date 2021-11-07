@@ -29,7 +29,10 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-U6-C7Q">
                             <rect key="frame" x="93.5" y="279" width="69" height="31"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Search">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="baseBackgroundColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="nO7-kd-kp8"/>
                             </connections>

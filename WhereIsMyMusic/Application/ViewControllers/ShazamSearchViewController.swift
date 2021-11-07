@@ -35,6 +35,7 @@ extension ShazamSearchViewController {
                 self.micImageView.alpha = 1
             }
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

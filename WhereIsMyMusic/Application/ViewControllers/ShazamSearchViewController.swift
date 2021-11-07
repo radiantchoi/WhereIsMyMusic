@@ -33,6 +33,7 @@ extension ShazamSearchViewController {
                 self.present(alert, animated: true, completion: nil)
                 self.micImageView.layer.removeAllAnimations()
                 self.micImageView.alpha = 1
+                self.shazamButton.isEnabled = true
             }
         }
         
@@ -41,6 +42,7 @@ extension ShazamSearchViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         micImageView.alpha = 1
+        self.shazamButton.isEnabled = true
     }
 }
 
@@ -51,6 +53,7 @@ extension ShazamSearchViewController {
         UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
             self.micImageView.alpha = 0
         }
+        self.shazamButton.isEnabled = false
     }
 
 }

@@ -22,7 +22,7 @@ extension ShazamSession {
             case .recordDenied:
                 return "Record permission is denied. Please enable it in Settings."
             case .matchFailed:
-                return "No song found. Please try again."
+                return "No song found or internet connection is bad."
             case .unknown:
                 return "Unknown error occured."
             }

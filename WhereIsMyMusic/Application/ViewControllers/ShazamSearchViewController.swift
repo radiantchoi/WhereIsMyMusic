@@ -23,6 +23,9 @@ extension ShazamSearchViewController {
             switch $0 {
             case .success(let shazamSong):
                 let searchResultViewController = SearchResultViewController(shazamSong: shazamSong)
+                let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
+                backButton.tintColor = self.shazamButton.tintColor
+                self.navigationItem.backBarButtonItem = backButton
                 self.navigationController?.pushViewController(searchResultViewController, animated: true)
             case .failure(let error):
                 let alert = UIAlertController(title: "Error!",

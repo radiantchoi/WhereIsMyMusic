@@ -36,7 +36,6 @@
 		4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */; };
 		4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */; };
 		4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */; };
-		4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */; };
 		4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE03B7927101061005B5CE8 /* Kingfisher */; };
 		4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */; };
 		4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B7D27101793005B5CE8 /* MelonSong.swift */; };
@@ -76,7 +75,6 @@
 		4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4FCA015F26DFDC0800DEDE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FCA016126DFDC0800DEDE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B7D27101793005B5CE8 /* MelonSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonSong.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */,
-				4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */,
 				4FCA016126DFDC0800DEDE39 /* Info.plist */,
 				4F4E1D73271C4E4C00896A22 /* Keys.plist */,
 			);
@@ -315,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FCA016026DFDC0800DEDE39 /* LaunchScreen.storyboard in Resources */,
 				4FCA015D26DFDC0800DEDE39 /* Assets.xcassets in Resources */,
 				4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */,
 				4FC0FD352727113100DEFD3E /* SearchResultTableViewCell.xib in Resources */,
@@ -364,17 +360,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4FCA015E26DFDC0800DEDE39 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FCA015F26DFDC0800DEDE39 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4FCA016226DFDC0800DEDE39 /* Debug */ = {

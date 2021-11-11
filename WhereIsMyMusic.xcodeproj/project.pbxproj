@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1D70A327145B69004224C1 /* SwiftSoup */; };
 		4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D70A52714A3C6004224C1 /* CrawlManager.swift */; };
+		4F33C3D8273D4B92009B9868 /* IntroScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */; };
+		4F44984F273D66B0006603FC /* LogoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F44984E273D66B0006603FC /* LogoImage.png */; };
 		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		4F1D70A52714A3C6004224C1 /* CrawlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlManager.swift; sourceTree = "<group>"; };
+		4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroScreen.storyboard; sourceTree = "<group>"; };
+		4F44984E273D66B0006603FC /* LogoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoImage.png; sourceTree = "<group>"; };
 		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				4FCA015C26DFDC0800DEDE39 /* Assets.xcassets */,
 				4FCA016126DFDC0800DEDE39 /* Info.plist */,
 				4F4E1D73271C4E4C00896A22 /* Keys.plist */,
+				4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */,
+				4F44984E273D66B0006603FC /* LogoImage.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */,
 				4FC0FD352727113100DEFD3E /* SearchResultTableViewCell.xib in Resources */,
 				4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */,
+				4F44984F273D66B0006603FC /* LogoImage.png in Resources */,
+				4F33C3D8273D4B92009B9868 /* IntroScreen.storyboard in Resources */,
 				4F6A00B727284F4E0054BB5B /* ShazamResultTableViewCell.xib in Resources */,
 				4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */,
 			);

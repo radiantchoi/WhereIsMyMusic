@@ -9,16 +9,11 @@ import Foundation
 
 struct MelonAPI {
     private let baseURL = BaseURL.melon
-    private let cssQuery = "#frm_defaultList > div > table > tbody"
-    private let titleCss = ["tr:nth-child(1) > td:nth-child(3) > div > div > a.fc_gray",
-                    "tr:nth-child(2) > td:nth-child(3) > div > div > a.fc_gray",
-                    "tr:nth-child(3) > td:nth-child(3) > div > div > a.fc_gray"]
-    private let artistCss = ["tr:nth-child(1) > td:nth-child(4) > div > div > a",
-                     "tr:nth-child(2) > td:nth-child(4) > div > div > a",
-                     "tr:nth-child(3) > td:nth-child(4) > div > div > a"]
-    private let albumCss = ["tr:nth-child(1) > td:nth-child(5) > div > div > a",
-                    "tr:nth-child(2) > td:nth-child(5) > div > div > a",
-                    "tr:nth-child(3) > td:nth-child(5) > div > div > a"]
+    private let cssQuery = CrawlingCSS.melon.cssQuery
+    private let titleCss = CrawlingCSS.melon.titleCss
+    private let artistCss = CrawlingCSS.melon.artistCss
+    private let albumCss = CrawlingCSS.melon.albumCss
+    
     var query: Query = [:]
 }
 

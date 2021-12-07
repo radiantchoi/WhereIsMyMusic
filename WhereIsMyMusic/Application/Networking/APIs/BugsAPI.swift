@@ -9,16 +9,11 @@ import Foundation
 
 struct BugsAPI {
     private let baseURL = BaseURL.bugs
-    private let cssQuery = "#DEFAULT0 > table > tbody"
-    private let titleCss = ["tr:nth-child(1) > th > p > a",
-                    "tr:nth-child(2) > th > p > a",
-                    "tr:nth-child(3) > th > p > a"]
-    private let artistCss = ["tr:nth-child(1) > td:nth-child(7) > p > a",
-                     "tr:nth-child(2) > td:nth-child(7) > p > a",
-                     "tr:nth-child(3) > td:nth-child(7) > p > a"]
-    private let albumCss = ["tr:nth-child(1) > td:nth-child(8) > a",
-                    "tr:nth-child(2) > td:nth-child(8) > a",
-                    "tr:nth-child(3) > td:nth-child(8) > a"]
+    private let cssQuery = CrawlingCSS.bugs.cssQuery
+    private let titleCss = CrawlingCSS.bugs.titleCss
+    private let artistCss = CrawlingCSS.bugs.artistCss
+    private let albumCss = CrawlingCSS.bugs.albumCss
+    
     var query: Query = [:]
 }
 

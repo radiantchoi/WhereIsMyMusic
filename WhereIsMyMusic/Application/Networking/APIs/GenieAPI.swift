@@ -9,16 +9,11 @@ import Foundation
 
 struct GenieAPI {
     private let baseURL = BaseURL.genie
-    private let cssQuery = "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody"
-    private let titleCss = ["tr:nth-child(1) > td.info > a.title.ellipsis",
-                    "tr:nth-child(2) > td.info > a.title.ellipsis",
-                    "tr:nth-child(3) > td.info > a.title.ellipsis"]
-    private let artistCss = ["tr:nth-child(1) > td.info > a.artist.ellipsis",
-                     "tr:nth-child(2) > td.info > a.artist.ellipsis",
-                     "tr:nth-child(3) > td.info > a.artist.ellipsis"]
-    private let albumCss = ["tr:nth-child(1) > td.info > a.albumtitle.ellipsis",
-                    "tr:nth-child(2) > td.info > a.albumtitle.ellipsis",
-                    "tr:nth-child(3) > td.info > a.albumtitle.ellipsis"]
+    private let cssQuery = CrawlingCSS.genie.cssQuery
+    private let titleCss = CrawlingCSS.genie.titleCss
+    private let artistCss = CrawlingCSS.genie.artistCss
+    private let albumCss = CrawlingCSS.genie.albumCss
+    
     var query: Query = [:]
 }
 

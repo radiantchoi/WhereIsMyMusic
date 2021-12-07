@@ -8,7 +8,7 @@
 import Foundation
 
 struct FloAPI {
-    private let baseURL = URL(string: "https://www.music-flo.com/api/search/v2/search")!
+    private let baseURL = BaseURL.flo
     var query: Query = [:]
 }
 

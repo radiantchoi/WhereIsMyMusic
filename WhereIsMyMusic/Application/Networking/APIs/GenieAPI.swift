@@ -8,7 +8,7 @@
 import Foundation
 
 struct GenieAPI {
-    private let baseURL = URL(string: "https://www.genie.co.kr/search/searchSong")!
+    private let baseURL = BaseURL.genie
     private let cssQuery = "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody"
     private let titleCss = ["tr:nth-child(1) > td.info > a.title.ellipsis",
                     "tr:nth-child(2) > td.info > a.title.ellipsis",

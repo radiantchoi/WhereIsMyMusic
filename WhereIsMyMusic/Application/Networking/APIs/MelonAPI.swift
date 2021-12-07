@@ -8,7 +8,7 @@
 import Foundation
 
 struct MelonAPI {
-    private let baseURL = URL(string: "https://www.melon.com/search/song/index.htm")!
+    private let baseURL = BaseURL.melon
     private let cssQuery = "#frm_defaultList > div > table > tbody"
     private let titleCss = ["tr:nth-child(1) > td:nth-child(3) > div > div > a.fc_gray",
                     "tr:nth-child(2) > td:nth-child(3) > div > div > a.fc_gray",

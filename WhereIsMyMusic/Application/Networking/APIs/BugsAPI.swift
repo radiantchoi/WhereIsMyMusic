@@ -8,7 +8,7 @@
 import Foundation
 
 struct BugsAPI {
-    private let baseURL = URL(string: "https://music.bugs.co.kr/search/track")!
+    private let baseURL = BaseURL.bugs
     private let cssQuery = "#DEFAULT0 > table > tbody"
     private let titleCss = ["tr:nth-child(1) > th > p > a",
                     "tr:nth-child(2) > th > p > a",

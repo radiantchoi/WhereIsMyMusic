@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppleAPI {
-    private let baseURL = URL(string: "https://itunes.apple.com/search")!
+    private let baseURL = BaseURL.apple
     var query: Query = [:]
 }
 

@@ -18,6 +18,7 @@ class ShazamSearchViewController: UIViewController {
 extension ShazamSearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         micImageView.layer.cornerRadius = 50
         ShazamSession.shared.completion = {
             switch $0 {
@@ -44,6 +45,7 @@ extension ShazamSearchViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         micImageView.alpha = 1
         self.shazamButton.isEnabled = true
     }
@@ -58,6 +60,5 @@ extension ShazamSearchViewController {
         }
         self.shazamButton.isEnabled = false
     }
-
 }
 

@@ -18,5 +18,4 @@ class SearchResultTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     }
-    
 }

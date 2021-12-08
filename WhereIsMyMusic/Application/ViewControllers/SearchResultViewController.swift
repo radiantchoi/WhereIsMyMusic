@@ -25,6 +25,7 @@ class SearchResultViewController: UIViewController {
     
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,6 +37,7 @@ class SearchResultViewController: UIViewController {
 extension SearchResultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(resultTableView)
         resultTableView.delegate = self
         resultTableView.dataSource = self
@@ -44,6 +46,7 @@ extension SearchResultViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         resultTableView.frame = view.bounds
     }
 }
@@ -83,8 +86,6 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         
         return resultCell
     }
-    
-    
 }
 
 extension SearchResultViewController {
@@ -209,6 +210,5 @@ extension SearchResultViewController {
                 self.resultTableView.reloadData()
             }
         }
-        
     }
 }

@@ -104,10 +104,9 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for melonSong in result {
-                    if melonSong.title == "" || melonSong.artist == "" || melonSong.album == "" {
-                        continue
-                    }
-                    let song = Song(melonSong: melonSong)
+                    guard let song = Song(melonSong: melonSong)
+                    else { return }
+                    
                     self.songs.append(song)
                 }
                 self.resultTableView.reloadData()
@@ -122,10 +121,8 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for genieSong in result {
-                    if genieSong.title == "" || genieSong.artist == "" || genieSong.album == "" {
-                        continue
-                    }
-                    let song = Song(genieSong: genieSong)
+                    guard let song = Song(genieSong: genieSong)
+                    else { return }
                     self.songs.append(song)
                 }
                 self.resultTableView.reloadData()
@@ -140,10 +137,8 @@ extension SearchResultViewController {
             }
             DispatchQueue.main.async {
                 for bugsSong in result {
-                    if bugsSong.title == "" || bugsSong.artist == "" || bugsSong.album == "" {
-                        continue
-                    }
-                    let song = Song(bugsSong: bugsSong)
+                    guard let song = Song(bugsSong: bugsSong)
+                    else { return }
                     self.songs.append(song)
                 }
                 self.resultTableView.reloadData()

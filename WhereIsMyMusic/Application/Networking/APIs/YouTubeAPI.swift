@@ -22,12 +22,12 @@ extension YouTubeAPI {
                 let youTubeResults = Array(result.items)
                 if youTubeResults.count < 3 {
                     for i in 0..<youTubeResults.count {
-                        let youTubeSong = YouTubeSong(youTubeSongModel: youTubeResults[i].snippet)
+                        let youTubeSong = YouTubeSong(result: youTubeResults[i])
                         youTubeSongs.append(youTubeSong)
                     }
                 } else {
                     for n in 0...2 {
-                        let youTubeSong = YouTubeSong(youTubeSongModel: youTubeResults[n].snippet)
+                        let youTubeSong = YouTubeSong(result: youTubeResults[n])
                         youTubeSongs.append(youTubeSong)
                     }
                 }

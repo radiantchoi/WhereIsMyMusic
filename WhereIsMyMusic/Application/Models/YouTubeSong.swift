@@ -11,8 +11,9 @@ struct YouTubeSong {
     let title: String
     let channel: String
     
-    init(youTubeSongModel: YouTubeSongModel) {
-        title = youTubeSongModel.title
-        channel = youTubeSongModel.channelTitle
+    init(result: YouTubeResult) {
+        let ytSong = result.snippet
+        title = ytSong.title
+        channel = ytSong.channelTitle
     }
 }

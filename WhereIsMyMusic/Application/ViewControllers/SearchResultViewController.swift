@@ -12,9 +12,9 @@ class SearchResultViewController: UIViewController {
     private let resultTableView: UITableView = {
         let table = UITableView()
         
-        table.register(ShazamResultTableViewCell.nib(),
+        table.register(ShazamResultTableViewCell.nib,
                        forCellReuseIdentifier: ShazamResultTableViewCell.identifier)
-        table.register(SearchResultTableViewCell.nib(),
+        table.register(SearchResultTableViewCell.nib,
                        forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         
         return table

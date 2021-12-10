@@ -15,7 +15,7 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var albumLabel: UILabel!
     
     static let identifier = "SearchResultTableViewCell"
-    static func nib() -> UINib {
+    static var nib: UINib {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     }
 }

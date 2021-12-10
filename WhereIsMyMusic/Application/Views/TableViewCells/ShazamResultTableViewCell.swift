@@ -15,7 +15,7 @@ class ShazamResultTableViewCell: UITableViewCell {
     @IBOutlet weak var albumLabel: UILabel!
     
     static let identifier = "ShazamResultTableViewCell"
-    static func nib() -> UINib {
+    static var nib: UINib {
         return UINib(nibName: "ShazamResultTableViewCell", bundle: nil)
     }
     

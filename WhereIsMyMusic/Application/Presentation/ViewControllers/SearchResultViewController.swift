@@ -41,7 +41,13 @@ extension SearchResultViewController {
         view.addSubview(resultTableView)
         resultTableView.delegate = self
         resultTableView.dataSource = self
-        getSongs()
+        let session = ParsingSession()
+        session.getSongs(shazamSong) { song in
+            DispatchQueue.main.async {
+                self.songs.append(song)
+                self.resultTableView.reloadData()
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,130 +91,5 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         configureCells(resultCell, forItemAt: indexPath)
         
         return resultCell
-    }
-}
-
-extension SearchResultViewController {
-    private func getSongs() {
-        guard let title = shazamSong.title,
-              let artist = shazamSong.artist,
-              let _ = shazamSong.album
-        else { return }
-        
-        let searchQuery = title
-                
-        var melon = MelonAPI.init()
-        melon.query = ["q": searchQuery]
-        melon.loadMelonSong { (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for melonSong in result {
-                    guard let song = Song(melonSong: melonSong)
-                    else { return }
-                    
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
-        
-        var genie = GenieAPI.init()
-        genie.query = ["query": searchQuery]
-        genie.loadGenieSong{ (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for genieSong in result {
-                    guard let song = Song(genieSong: genieSong)
-                    else { return }
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
-        
-        var bugs = BugsAPI.init()
-        bugs.query = ["q": searchQuery]
-        bugs.loadBugsSong { (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for bugsSong in result {
-                    guard let song = Song(bugsSong: bugsSong)
-                    else { return }
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
-        
-        var apple = AppleAPI.init()
-        apple.query = ["term": searchQuery, "country": "KR"]
-        apple.loadAppleSong { (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for appleSong in result {
-                    let song = Song(appleSong: appleSong)
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
-        
-        var flo = FloAPI.init()
-        flo.query = ["keyword": searchQuery]
-        flo.loadFloSong { (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for floSong in result {
-                    let song = Song(floSong: floSong)
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
-        
-        var youTube = YouTubeAPI.init()
-        var apiKey: String {
-            get {
-                guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist")
-                else {
-                    fatalError("Couldn't find Keys.plist file")
-                }
-                
-                let plist = NSDictionary(contentsOfFile: filePath)
-                guard let value = plist?.object(forKey: "YOUTUBE_API_KEY") as? String
-                else {
-                    fatalError("Couldn't find 'YOUTUBE_API_KEY' in 'Keys.plist'.")
-                }
-                return value
-            }
-        }
-        youTube.query = ["q": searchQuery + " " + artist,
-                         "type": "video",
-                         "videoCategoryId": "10",
-                         "part": "snippet",
-                         "maxResult": "10",
-                         "key": apiKey]
-        youTube.loadYoutubeSong { (result) in
-            guard let result = result else {
-                return
-            }
-            DispatchQueue.main.async {
-                for youTubeSong in result {
-                    let song = Song(youTubeSong: youTubeSong)
-                    self.songs.append(song)
-                }
-                self.resultTableView.reloadData()
-            }
-        }
     }
 }

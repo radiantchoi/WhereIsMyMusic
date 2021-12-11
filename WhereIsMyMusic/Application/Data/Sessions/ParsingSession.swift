@@ -20,13 +20,11 @@ class ParsingSession {
         var melon = MelonAPI.init()
         melon.query = ["q": searchQuery]
         melon.loadMelonSong { (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for melonSong in result {
                 guard let song = Song(melonSong: melonSong)
                 else { return }
-                
                 completion(song)
             }
             
@@ -35,9 +33,8 @@ class ParsingSession {
         var genie = GenieAPI.init()
         genie.query = ["query": searchQuery]
         genie.loadGenieSong{ (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for genieSong in result {
                 guard let song = Song(genieSong: genieSong)
                 else { return }
@@ -48,9 +45,8 @@ class ParsingSession {
         var bugs = BugsAPI.init()
         bugs.query = ["q": searchQuery]
         bugs.loadBugsSong { (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for bugsSong in result {
                 guard let song = Song(bugsSong: bugsSong)
                 else { return }
@@ -61,9 +57,8 @@ class ParsingSession {
         var apple = AppleAPI.init()
         apple.query = ["term": searchQuery, "country": "KR"]
         apple.loadAppleSong { (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for appleSong in result {
                 let song = Song(appleSong: appleSong)
                 completion(song)
@@ -73,9 +68,8 @@ class ParsingSession {
         var flo = FloAPI.init()
         flo.query = ["keyword": searchQuery]
         flo.loadFloSong { (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for floSong in result {
                 let song = Song(floSong: floSong)
                 completion(song)
@@ -105,9 +99,8 @@ class ParsingSession {
                          "maxResult": "10",
                          "key": apiKey]
         youTube.loadYoutubeSong { (result) in
-            guard let result = result else {
-                return
-            }
+            guard let result = result
+            else { return }
             for youTubeSong in result {
                 let song = Song(youTubeSong: youTubeSong)
                 completion(song)

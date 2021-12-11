@@ -8,7 +8,7 @@
 import Foundation
 
 class ParsingSession {
-    func getSongs(_ shazamSong: ShazamSong, completion: @escaping (Song) -> Void) {
+    func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([Song]) -> Void) {
         
         guard let title = shazamSong.title,
               let artist = shazamSong.artist,
@@ -22,12 +22,9 @@ class ParsingSession {
         melon.loadMelonSong { (result) in
             guard let result = result
             else { return }
-            for melonSong in result {
-                guard let song = Song(melonSong: melonSong)
-                else { return }
-                completion(song)
-            }
             
+            let songs = result.compactMap { Song(melonSong: $0) }
+            completion(songs)
         }
         
         var genie = GenieAPI.init()
@@ -35,47 +32,41 @@ class ParsingSession {
         genie.loadGenieSong{ (result) in
             guard let result = result
             else { return }
-            for genieSong in result {
-                guard let song = Song(genieSong: genieSong)
-                else { return }
-                completion(song)
-            }
+            
+            let songs = result.compactMap { Song(genieSong: $0) }
+            completion(songs)
         }
-        
+
         var bugs = BugsAPI.init()
         bugs.query = ["q": searchQuery]
         bugs.loadBugsSong { (result) in
             guard let result = result
             else { return }
-            for bugsSong in result {
-                guard let song = Song(bugsSong: bugsSong)
-                else { return }
-                completion(song)
-            }
+            
+            let songs = result.compactMap { Song(bugsSong: $0) }
+            completion(songs)
         }
-        
+
         var apple = AppleAPI.init()
         apple.query = ["term": searchQuery, "country": "KR"]
         apple.loadAppleSong { (result) in
             guard let result = result
             else { return }
-            for appleSong in result {
-                let song = Song(appleSong: appleSong)
-                completion(song)
-            }
+            
+            let songs = result.compactMap { Song(appleSong: $0) }
+            completion(songs)
         }
-        
+
         var flo = FloAPI.init()
         flo.query = ["keyword": searchQuery]
         flo.loadFloSong { (result) in
             guard let result = result
             else { return }
-            for floSong in result {
-                let song = Song(floSong: floSong)
-                completion(song)
-            }
+            
+            let songs = result.compactMap { Song(floSong: $0) }
+            completion(songs)
         }
-        
+
         var youTube = YouTubeAPI.init()
         var apiKey: String {
             get {
@@ -83,7 +74,7 @@ class ParsingSession {
                 else {
                     fatalError("Couldn't find Keys.plist file")
                 }
-                
+
                 let plist = NSDictionary(contentsOfFile: filePath)
                 guard let value = plist?.object(forKey: "YOUTUBE_API_KEY") as? String
                 else {
@@ -92,6 +83,7 @@ class ParsingSession {
                 return value
             }
         }
+        
         youTube.query = ["q": searchQuery + " " + artist,
                          "type": "video",
                          "videoCategoryId": "10",
@@ -101,10 +93,9 @@ class ParsingSession {
         youTube.loadYoutubeSong { (result) in
             guard let result = result
             else { return }
-            for youTubeSong in result {
-                let song = Song(youTubeSong: youTubeSong)
-                completion(song)
-            }
+            
+            let songs = result.compactMap { Song(youTubeSong: $0) }
+            completion(songs)
         }
         
     }

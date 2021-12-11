@@ -42,9 +42,9 @@ extension SearchResultViewController {
         resultTableView.delegate = self
         resultTableView.dataSource = self
         let session = ParsingSession()
-        session.getSongs(shazamSong) { song in
+        session.getSongs(shazamSong) { parsedSongs in
             DispatchQueue.main.async {
-                self.songs.append(song)
+                self.songs.append(contentsOf: parsedSongs)
                 self.resultTableView.reloadData()
             }
         }

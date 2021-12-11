@@ -22,7 +22,7 @@ class SearchResultViewController: UIViewController {
     
     private let shazamSong: ShazamSong
     private var songs: [Song] = .init()
-    
+   
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
         

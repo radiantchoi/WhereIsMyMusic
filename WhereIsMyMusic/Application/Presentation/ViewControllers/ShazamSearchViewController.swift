@@ -13,6 +13,8 @@ class ShazamSearchViewController: UIViewController {
     @IBOutlet private weak var shazamButton: UIButton!
     @IBOutlet private weak var micImageView: UIImageView!
     
+    private var searching: Bool = true
+    
 }
 
 extension ShazamSearchViewController {
@@ -30,33 +32,33 @@ extension ShazamSearchViewController {
                 self.navigationController?.pushViewController(searchResultViewController, animated: true)
             case .failure(let error):
                 self.alert(error)
-                self.micImageView.layer.removeAllAnimations()
-                self.micImageView.alpha = 1
-                self.shazamButton.isEnabled = true
+                self.flicker()
             }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        micImageView.alpha = 1
-        self.shazamButton.isEnabled = true
+
+        flicker()
     }
 }
 
 extension ShazamSearchViewController {
-    @IBAction private func buttonPressed(_ sender: UIButton) {
-        ShazamSession.shared.start()
-        UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
-            self.micImageView.alpha = 0
+    func flicker() {
+        searching.toggle()
+        if searching {
+            UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
+                self.micImageView.alpha = 0
+            }
+            shazamButton.isEnabled = false
+        } else {
+            micImageView.layer.removeAllAnimations()
+            micImageView.alpha = 1
+            shazamButton.isEnabled = true
         }
-        self.shazamButton.isEnabled = false
     }
-}
-
-extension UIViewController {
+    
     func alert(_ error: ShazamError) {
         let alert = UIAlertController(title: "Error!",
                                       message: error.errorDescription,
@@ -64,5 +66,12 @@ extension UIViewController {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension ShazamSearchViewController {
+    @IBAction private func buttonPressed(_ sender: UIButton) {
+        ShazamSession.shared.start()
+        flicker()
     }
 }

@@ -29,12 +29,7 @@ extension ShazamSearchViewController {
                 self.navigationItem.backBarButtonItem = backButton
                 self.navigationController?.pushViewController(searchResultViewController, animated: true)
             case .failure(let error):
-                let alert = UIAlertController(title: "Error!",
-                                              message: error.errorDescription,
-                                              preferredStyle: UIAlertController.Style.alert)
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                self.alert(error)
                 self.micImageView.layer.removeAllAnimations()
                 self.micImageView.alpha = 1
                 self.shazamButton.isEnabled = true
@@ -52,7 +47,6 @@ extension ShazamSearchViewController {
 }
 
 extension ShazamSearchViewController {
-
     @IBAction private func buttonPressed(_ sender: UIButton) {
         ShazamSession.shared.start()
         UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
@@ -62,3 +56,13 @@ extension ShazamSearchViewController {
     }
 }
 
+extension UIViewController {
+    func alert(_ error: ShazamError) {
+        let alert = UIAlertController(title: "Error!",
+                                      message: error.errorDescription,
+                                      preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+}

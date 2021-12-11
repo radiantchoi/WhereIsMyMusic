@@ -111,6 +111,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FB3ACD42764E1A300264277 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4FC0FD30272710A700DEFD3E /* Views */,
+				4FE03B83271029B6005B5CE8 /* ViewControllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		4FB3ACD52764E1E700264277 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B84271029C2005B5CE8 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4FB3ACD62764E1EF00264277 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
+				4FE03B8727102A15005B5CE8 /* Sessions */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4FBD542E271ADA1C00E47A6C /* ParsingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				4FE03B812710297A005B5CE8 /* Application */,
+				4FE03B8827102A30005B5CE8 /* Networking */,
+				4FE03B8627102A06005B5CE8 /* Extensions */,
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
 			);
 			path = WhereIsMyMusic;
@@ -181,12 +209,9 @@
 			children = (
 				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
 				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
-				4FC0FD30272710A700DEFD3E /* Views */,
-				4FE03B83271029B6005B5CE8 /* ViewControllers */,
-				4FE03B8727102A15005B5CE8 /* Sessions */,
-				4FE03B84271029C2005B5CE8 /* Models */,
-				4FE03B8827102A30005B5CE8 /* Networking */,
-				4FE03B8627102A06005B5CE8 /* Extensions */,
+				4FB3ACD42764E1A300264277 /* Presentation */,
+				4FB3ACD52764E1E700264277 /* Domain */,
+				4FB3ACD62764E1EF00264277 /* Data */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -205,7 +230,6 @@
 		4FE03B84271029C2005B5CE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
 				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
 				4F66C0212715DC6700706C7A /* GenieSong.swift */,
@@ -228,7 +252,6 @@
 				4FBD5431271ADED400E47A6C /* FloAPI.swift */,
 				4FBD5437271B30EA00E47A6C /* YouTubeAPI.swift */,
 				4F0F55D2275FA8D6005FD3EE /* BaseURL.swift */,
-				4F0F55D4275FAF9E005FD3EE /* CrawlingCSS.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 				4FE03B8927102B0C005B5CE8 /* EndPoint.swift */,
 				4FE03B7F27102584005B5CE8 /* NetworkManager.swift */,
 				4F1D70A52714A3C6004224C1 /* CrawlManager.swift */,
+				4F0F55D4275FAF9E005FD3EE /* CrawlingCSS.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

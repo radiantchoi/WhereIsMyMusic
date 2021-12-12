@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultViewController" customModule="WhereIsMyMusic" customModuleProvider="target">
             <connections>
+                <outlet property="resultTableView" destination="yvY-wi-Pz1" id="luU-1V-Ypz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +18,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yvY-wi-Pz1">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9bA-47-9hK"/>
+                        <outlet property="delegate" destination="-1" id="ULl-E9-B1X"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <color key="tintColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yvY-wi-Pz1" secondAttribute="trailing" id="WYt-QH-9MH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yvY-wi-Pz1" secondAttribute="bottom" id="woP-7W-ZuJ"/>
+                <constraint firstItem="yvY-wi-Pz1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xeV-j6-bFM"/>
+                <constraint firstItem="yvY-wi-Pz1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zwv-um-qKy"/>
+            </constraints>
             <point key="canvasLocation" x="133" y="129"/>
         </view>
     </objects>

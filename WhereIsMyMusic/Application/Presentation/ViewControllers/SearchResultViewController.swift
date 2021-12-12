@@ -9,20 +9,11 @@ import UIKit
 
 class SearchResultViewController: UIViewController {
     
-    private let resultTableView: UITableView = {
-        let table = UITableView()
-        
-        table.register(ShazamResultTableViewCell.nib,
-                       forCellReuseIdentifier: ShazamResultTableViewCell.reuseIdentifier)
-        table.register(SearchResultTableViewCell.nib,
-                       forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
-        
-        return table
-    }()
+    @IBOutlet weak var resultTableView: UITableView!
     
     private let shazamSong: ShazamSong
     private var songs: [Song] = .init()
-   
+    
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
         
@@ -39,22 +30,12 @@ extension SearchResultViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.981432, green: 0.819418, blue: 0.149074, alpha: 1)
-        view.addSubview(resultTableView)
-        resultTableView.delegate = self
-        resultTableView.dataSource = self
-        let session = ParsingSession()
-        session.getSongs(shazamSong) { parsedSongs in
-            DispatchQueue.main.async {
-                self.songs.append(contentsOf: parsedSongs)
-                self.resultTableView.reloadData()
-            }
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        resultTableView.register(ShazamResultTableViewCell.nib,
+                                 forCellReuseIdentifier: ShazamResultTableViewCell.reuseIdentifier)
+        resultTableView.register(SearchResultTableViewCell.nib,
+                                 forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
         
-        resultTableView.frame = view.bounds
+        setSongData()
     }
 }
 
@@ -86,6 +67,18 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         configureCells(resultCell, forItemAt: indexPath)
         
         return resultCell
+    }
+}
+
+extension SearchResultViewController {
+    func setSongData() {
+        let session = ParsingSession()
+        session.getSongs(shazamSong) { parsedSongs in
+            DispatchQueue.main.async {
+                self.songs.append(contentsOf: parsedSongs)
+                self.resultTableView.reloadData()
+            }
+        }
     }
 }
 

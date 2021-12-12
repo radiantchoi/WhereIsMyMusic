@@ -20,7 +20,7 @@ class ShazamResultTableViewCell: UITableViewCell {
 }
 
 extension ShazamResultTableViewCell {    
-    public func configure(_ shazamSong: ShazamSong) {
+    func configure(_ shazamSong: ShazamSong) {
         titleLabel.text = shazamSong.title
         artistLabel.text = shazamSong.artist
         albumLabel.text = shazamSong.album

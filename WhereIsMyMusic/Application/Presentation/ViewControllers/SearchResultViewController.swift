@@ -61,10 +61,7 @@ extension SearchResultViewController {
 extension SearchResultViewController {
     private func configureCells(_ cell: SearchResultTableViewCell, forItemAt indexPath: IndexPath) {
         let song = songs[indexPath.row - 1]
-        cell.vendorLabel.text = song.vendor
-        cell.titleLabel.text = song.title
-        cell.artistLabel.text = song.artist
-        cell.albumLabel.text = song.album
+        cell.configure(song)
     }
 }
 
@@ -78,10 +75,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
             let shazamCell = resultTableView.dequeueReusableCell(
                 withIdentifier: ShazamResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! ShazamResultTableViewCell
-            shazamCell.titleLabel.text = shazamSong.title
-            shazamCell.artistLabel.text = shazamSong.artist
-            shazamCell.albumLabel.text = shazamSong.album
-            shazamCell.configure(with: shazamSong.imageURL!)
+            shazamCell.configure(shazamSong)
             
             return shazamCell
         }

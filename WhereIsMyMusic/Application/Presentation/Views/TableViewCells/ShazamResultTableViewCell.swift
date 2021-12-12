@@ -17,9 +17,15 @@ class ShazamResultTableViewCell: UITableViewCell {
     static var nib: UINib {
         return UINib(nibName: "ShazamResultTableViewCell", bundle: nil)
     }
-    
-    public func configure(with imageURL: URL) {
-        albumImageView.load(imageURL)
+}
+
+extension ShazamResultTableViewCell {    
+    public func configure(_ shazamSong: ShazamSong) {
+        titleLabel.text = shazamSong.title
+        artistLabel.text = shazamSong.artist
+        albumLabel.text = shazamSong.album
+        
+        albumImageView.load(shazamSong.imageURL)
         albumImageView.layer.cornerRadius = 4
         albumImageView.layer.masksToBounds = true
     }

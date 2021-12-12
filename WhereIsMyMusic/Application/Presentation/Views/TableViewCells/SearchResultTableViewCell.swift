@@ -18,3 +18,12 @@ class SearchResultTableViewCell: UITableViewCell {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     }
 }
+
+extension SearchResultTableViewCell {
+    func configure(_ song: Song) {
+        vendorLabel.text = song.vendor
+        titleLabel.text = song.title
+        artistLabel.text = song.artist
+        albumLabel.text = song.album
+    }
+}

@@ -58,15 +58,6 @@ extension ShazamSearchViewController {
             shazamButton.isEnabled = true
         }
     }
-    
-    func alert(_ error: ShazamError) {
-        let alert = UIAlertController(title: "Error!",
-                                      message: error.errorDescription,
-                                      preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
 }
 
 extension ShazamSearchViewController {

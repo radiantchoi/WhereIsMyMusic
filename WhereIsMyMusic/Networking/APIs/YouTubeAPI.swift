@@ -18,19 +18,8 @@ extension YouTubeAPI {
         NetworkManager.shared.call(endPoint, for: YouTubeResponse.self) {
             switch $0 {
             case .success(let result):
-                var youTubeSongs = [YouTubeSong]()
-                let youTubeResults = Array(result.items)
-                if youTubeResults.count < 3 {
-                    for i in 0..<youTubeResults.count {
-                        let youTubeSong = YouTubeSong(result: youTubeResults[i])
-                        youTubeSongs.append(youTubeSong)
-                    }
-                } else {
-                    for n in 0...2 {
-                        let youTubeSong = YouTubeSong(result: youTubeResults[n])
-                        youTubeSongs.append(youTubeSong)
-                    }
-                }
+                let youTubeResults = Array(result.items).slice(first: 3)
+                let youTubeSongs = youTubeResults.compactMap { YouTubeSong(result: $0) }
                 completion(youTubeSongs)
             case .failure(_):
                 completion(nil)

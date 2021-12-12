@@ -26,14 +26,15 @@ extension NetworkManager {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data,
-                  let model = try? JSONDecoder().decode(model, from: data) else {
-                      if let error = error {
-                          completion(.failure(error))
-                      } else {
-                          completion(.failure(UnknownNetworkError()))
-                      }
-                      return
-                  }
+                  let model = try? JSONDecoder().decode(model, from: data)
+            else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(UnknownNetworkError()))
+                }
+                return
+            }
             completion(.success(model))
         }
         task.resume()

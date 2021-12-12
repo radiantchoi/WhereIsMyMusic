@@ -38,6 +38,7 @@ extension SearchResultViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.981432, green: 0.819418, blue: 0.149074, alpha: 1)
         view.addSubview(resultTableView)
         resultTableView.delegate = self
         resultTableView.dataSource = self
@@ -91,5 +92,12 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         configureCells(resultCell, forItemAt: indexPath)
         
         return resultCell
+    }
+}
+
+extension SearchResultViewController {
+    static func push(in viewController: UIViewController, with shazamSong: ShazamSong) {
+        let vc = SearchResultViewController(shazamSong: shazamSong)
+        viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }

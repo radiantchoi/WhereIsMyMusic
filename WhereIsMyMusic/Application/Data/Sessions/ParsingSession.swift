@@ -17,8 +17,7 @@ class ParsingSession {
         
         let searchQuery = title
         
-        var melon = MelonAPI.init()
-        melon.query = ["q": searchQuery]
+        let melon = MelonAPI.init(query: ["q": searchQuery])
         melon.loadMelonSong { (result) in
             guard let result = result
             else { return }
@@ -27,8 +26,7 @@ class ParsingSession {
             completion(songs)
         }
         
-        var genie = GenieAPI.init()
-        genie.query = ["query": searchQuery]
+        let genie = GenieAPI.init(query: ["query": searchQuery])
         genie.loadGenieSong{ (result) in
             guard let result = result
             else { return }
@@ -36,9 +34,8 @@ class ParsingSession {
             let songs = result.compactMap { Song(genieSong: $0) }
             completion(songs)
         }
-
-        var bugs = BugsAPI.init()
-        bugs.query = ["q": searchQuery]
+        
+        let bugs = BugsAPI.init(query: ["q": searchQuery])
         bugs.loadBugsSong { (result) in
             guard let result = result
             else { return }
@@ -46,9 +43,8 @@ class ParsingSession {
             let songs = result.compactMap { Song(bugsSong: $0) }
             completion(songs)
         }
-
-        var apple = AppleAPI.init()
-        apple.query = ["term": searchQuery, "country": "KR"]
+        
+        let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
         apple.loadAppleSong { (result) in
             guard let result = result
             else { return }
@@ -56,9 +52,8 @@ class ParsingSession {
             let songs = result.compactMap { Song(appleSong: $0) }
             completion(songs)
         }
-
-        var flo = FloAPI.init()
-        flo.query = ["keyword": searchQuery]
+        
+        let flo = FloAPI.init(query: ["keyword": searchQuery])
         flo.loadFloSong { (result) in
             guard let result = result
             else { return }
@@ -66,15 +61,14 @@ class ParsingSession {
             let songs = result.compactMap { Song(floSong: $0) }
             completion(songs)
         }
-
-        var youTube = YouTubeAPI.init()
+        
         var apiKey: String {
             get {
                 guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist")
                 else {
                     fatalError("Couldn't find Keys.plist file")
                 }
-
+                
                 let plist = NSDictionary(contentsOfFile: filePath)
                 guard let value = plist?.object(forKey: "YOUTUBE_API_KEY") as? String
                 else {
@@ -84,12 +78,13 @@ class ParsingSession {
             }
         }
         
-        youTube.query = ["q": searchQuery + " " + artist,
-                         "type": "video",
-                         "videoCategoryId": "10",
-                         "part": "snippet",
-                         "maxResult": "10",
-                         "key": apiKey]
+        let youTube = YouTubeAPI.init(query: ["q": searchQuery + " " + artist,
+                                              "type": "video",
+                                              "videoCategoryId": "10",
+                                              "part": "snippet",
+                                              "maxResult": "10",
+                                              "key": apiKey]
+        )
         youTube.loadYoutubeSong { (result) in
             guard let result = result
             else { return }

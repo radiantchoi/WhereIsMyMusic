@@ -9,7 +9,7 @@ import Foundation
 
 struct AppleAPI {
     private let baseURL = BaseURL.apple
-    var query: Query = [:]
+    var query: Query
 }
 
 extension AppleAPI {

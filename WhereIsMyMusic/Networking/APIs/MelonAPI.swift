@@ -14,7 +14,7 @@ struct MelonAPI {
     private let artistCss = CrawlingCSS.melon.artistCss
     private let albumCss = CrawlingCSS.melon.albumCss
     
-    var query: Query = [:]
+    var query: Query
 }
 
 extension MelonAPI {

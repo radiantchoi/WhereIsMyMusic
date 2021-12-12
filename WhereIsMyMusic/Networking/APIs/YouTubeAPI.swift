@@ -9,7 +9,7 @@ import Foundation
 
 struct YouTubeAPI {
     private let baseURL = BaseURL.youTube
-    var query: Query = [:]
+    var query: Query
 }
 
 extension YouTubeAPI {

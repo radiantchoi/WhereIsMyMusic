@@ -14,7 +14,7 @@ struct BugsAPI {
     private let artistCss = CrawlingCSS.bugs.artistCss
     private let albumCss = CrawlingCSS.bugs.albumCss
     
-    var query: Query = [:]
+    var query: Query
 }
 
 extension BugsAPI {

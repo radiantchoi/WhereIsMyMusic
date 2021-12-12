@@ -14,7 +14,7 @@ struct GenieAPI {
     private let artistCss = CrawlingCSS.genie.artistCss
     private let albumCss = CrawlingCSS.genie.albumCss
     
-    var query: Query = [:]
+    var query: Query
 }
 
 extension GenieAPI {

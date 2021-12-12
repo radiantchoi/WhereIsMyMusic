@@ -9,7 +9,7 @@ import Foundation
 
 struct FloAPI {
     private let baseURL = BaseURL.flo
-    var query: Query = [:]
+    var query: Query
 }
 
 extension FloAPI {

@@ -23,6 +23,7 @@
 		4F6A00B727284F4E0054BB5B /* ShazamResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */; };
 		4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A00BC27286A8D0054BB5B /* Song.swift */; };
 		4F73B092276602BA009DE192 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73B091276602BA009DE192 /* UIViewController+Extension.swift */; };
+		4F73B0942766091C009DE192 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73B0932766091C009DE192 /* NSObject+Extension.swift */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
@@ -70,6 +71,7 @@
 		4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamResultTableViewCell.xib; sourceTree = "<group>"; };
 		4F6A00BC27286A8D0054BB5B /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4F73B091276602BA009DE192 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4F73B0932766091C009DE192 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */,
 				4F0F55D0275FA3C7005FD3EE /* SHMediaItem+Extension.swift */,
 				4F73B091276602BA009DE192 /* UIViewController+Extension.swift */,
+				4F73B0932766091C009DE192 /* NSObject+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4F0F55D5275FAF9E005FD3EE /* CrawlingCSS.swift in Sources */,
 				4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */,
+				4F73B0942766091C009DE192 /* NSObject+Extension.swift in Sources */,
 				4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */,

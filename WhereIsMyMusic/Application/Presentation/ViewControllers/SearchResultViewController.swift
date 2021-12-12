@@ -13,9 +13,9 @@ class SearchResultViewController: UIViewController {
         let table = UITableView()
         
         table.register(ShazamResultTableViewCell.nib,
-                       forCellReuseIdentifier: ShazamResultTableViewCell.identifier)
+                       forCellReuseIdentifier: ShazamResultTableViewCell.reuseIdentifier)
         table.register(SearchResultTableViewCell.nib,
-                       forCellReuseIdentifier: SearchResultTableViewCell.identifier)
+                       forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
         
         return table
     }()
@@ -75,7 +75,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let shazamCell = resultTableView.dequeueReusableCell(
-                withIdentifier: ShazamResultTableViewCell.identifier,
+                withIdentifier: ShazamResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! ShazamResultTableViewCell
             shazamCell.titleLabel.text = shazamSong.title
             shazamCell.artistLabel.text = shazamSong.artist
@@ -86,7 +86,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         let resultCell = resultTableView.dequeueReusableCell(
-            withIdentifier: SearchResultTableViewCell.identifier,
+            withIdentifier: SearchResultTableViewCell.reuseIdentifier,
             for: indexPath) as! SearchResultTableViewCell
         configureCells(resultCell, forItemAt: indexPath)
         

@@ -74,10 +74,8 @@ extension SearchResultViewController {
     func setSongData() {
         let session = ParsingSession()
         session.getSongs(shazamSong) { parsedSongs in
-            DispatchQueue.main.async {
-                self.songs.append(contentsOf: parsedSongs)
-                self.resultTableView.reloadData()
-            }
+            self.songs.append(contentsOf: parsedSongs)
+            self.resultTableView.reloadData()
         }
     }
 }

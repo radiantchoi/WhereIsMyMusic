@@ -25,17 +25,22 @@ extension NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let result: Result<T, Error>
+            
+            defer {
+                DispatchQueue.main.async {
+                    completion(result)
+                }
+            }
+            
             guard let data = data,
                   let model = try? JSONDecoder().decode(model, from: data)
             else {
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    completion(.failure(UnknownNetworkError()))
-                }
+                result = .failure(error ?? UnknownNetworkError())
                 return
             }
-            completion(.success(model))
+            
+            result = .success(model)
         }
         task.resume()
         return task

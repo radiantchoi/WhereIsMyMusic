@@ -24,10 +24,7 @@ extension MelonAPI {
                                            httpMethod: .get,
                                            query: query,
                                            headers: nil),
-                                  cssQuery: cssQuery,
-                                  titleCss: titleCss,
-                                  artistCss: artistCss,
-                                  albumCss: albumCss) {
+                                  crawlingCss: CrawlingCSS.melon) {
             switch $0 {
             case .success(let datas):
                 var melonSongs = [MelonSong]()

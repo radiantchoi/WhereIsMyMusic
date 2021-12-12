@@ -24,10 +24,7 @@ extension BugsAPI {
                                            httpMethod: .get,
                                            query: query,
                                            headers: nil),
-                                  cssQuery: cssQuery,
-                                  titleCss: titleCss,
-                                  artistCss: artistCss,
-                                  albumCss: albumCss) {
+                                  crawlingCss: CrawlingCSS.bugs) {
             switch $0 {
             case .success(let datas):
                 var bugsSongs = [BugsSong]()

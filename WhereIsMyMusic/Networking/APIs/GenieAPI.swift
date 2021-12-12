@@ -24,10 +24,7 @@ extension GenieAPI {
                                            httpMethod: .get,
                                            query: query,
                                            headers: nil),
-                                  cssQuery: cssQuery,
-                                  titleCss: titleCss,
-                                  artistCss: artistCss,
-                                  albumCss: albumCss) {
+                                  crawlingCss: CrawlingCSS.genie) {
             switch $0 {
             case .success(let datas):
                 var genieSongs = [GenieSong]()

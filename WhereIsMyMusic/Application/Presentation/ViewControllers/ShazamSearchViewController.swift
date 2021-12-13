@@ -13,7 +13,7 @@ class ShazamSearchViewController: UIViewController {
     @IBOutlet private weak var shazamButton: UIButton!
     @IBOutlet private weak var micImageView: UIImageView!
     
-    private var searching: Bool = true
+    private var searching: Bool = false
     
 }
 
@@ -25,8 +25,11 @@ extension ShazamSearchViewController {
         ShazamSession.shared.completion = {
             switch $0 {
             case .success(let shazamSong):
+                self.searching.toggle()
+                self.flicker()
                 SearchResultViewController.push(in: self, with: shazamSong)
             case .failure(let error):
+                self.searching.toggle()
                 self.alert(error)
                 self.flicker()
             }
@@ -35,14 +38,13 @@ extension ShazamSearchViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         flicker()
     }
 }
 
 extension ShazamSearchViewController {
     func flicker() {
-        searching.toggle()
         if searching {
             UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
                 self.micImageView.alpha = 0
@@ -59,6 +61,7 @@ extension ShazamSearchViewController {
 extension ShazamSearchViewController {
     @IBAction private func buttonPressed(_ sender: UIButton) {
         ShazamSession.shared.start()
+        searching.toggle()
         flicker()
     }
 }

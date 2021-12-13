@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0F55D1275FA3C7005FD3EE /* SHMediaItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F55D0275FA3C7005FD3EE /* SHMediaItem+Extension.swift */; };
+		4F0F55D3275FA8D6005FD3EE /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F55D2275FA8D6005FD3EE /* BaseURL.swift */; };
+		4F0F55D5275FAF9E005FD3EE /* CrawlingCSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F55D4275FAF9E005FD3EE /* CrawlingCSS.swift */; };
 		4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 4F1D70A327145B69004224C1 /* SwiftSoup */; };
 		4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D70A52714A3C6004224C1 /* CrawlManager.swift */; };
 		4F33C3D8273D4B92009B9868 /* IntroScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */; };
@@ -19,12 +22,17 @@
 		4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A00B427284F4E0054BB5B /* ShazamResultTableViewCell.swift */; };
 		4F6A00B727284F4E0054BB5B /* ShazamResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */; };
 		4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A00BC27286A8D0054BB5B /* Song.swift */; };
+		4F73B092276602BA009DE192 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73B091276602BA009DE192 /* UIViewController+Extension.swift */; };
+		4F73B0942766091C009DE192 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73B0932766091C009DE192 /* NSObject+Extension.swift */; };
+		4F73B09627663FAA009DE192 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73B09527663FAA009DE192 /* Array+Extension.swift */; };
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
 		4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA82717669400A649EB /* BugsAPI.swift */; };
 		4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAA27177F6400A649EB /* AppleSong.swift */; };
 		4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAC2717815100A649EB /* AppleAPI.swift */; };
+		4FB3ACD32764B60A00264277 /* ShazamResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3ACD22764B60A00264277 /* ShazamResultType.swift */; };
+		4FB3ACD82764F76C00264277 /* ParsingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB3ACD72764F76C00264277 /* ParsingSession.swift */; };
 		4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */; };
 		4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */; };
 		4FBD4B1C270F237B00D5D62E /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */; };
@@ -49,6 +57,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0F55D0275FA3C7005FD3EE /* SHMediaItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SHMediaItem+Extension.swift"; sourceTree = "<group>"; };
+		4F0F55D2275FA8D6005FD3EE /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		4F0F55D4275FAF9E005FD3EE /* CrawlingCSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlingCSS.swift; sourceTree = "<group>"; };
 		4F1D70A52714A3C6004224C1 /* CrawlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlManager.swift; sourceTree = "<group>"; };
 		4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroScreen.storyboard; sourceTree = "<group>"; };
 		4F44984E273D66B0006603FC /* LogoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoImage.png; sourceTree = "<group>"; };
@@ -60,11 +71,16 @@
 		4F6A00B427284F4E0054BB5B /* ShazamResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamResultTableViewCell.swift; sourceTree = "<group>"; };
 		4F6A00B527284F4E0054BB5B /* ShazamResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamResultTableViewCell.xib; sourceTree = "<group>"; };
 		4F6A00BC27286A8D0054BB5B /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4F73B091276602BA009DE192 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4F73B0932766091C009DE192 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		4F73B09527663FAA009DE192 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
 		4F94ACAA27177F6400A649EB /* AppleSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSong.swift; sourceTree = "<group>"; };
 		4F94ACAC2717815100A649EB /* AppleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAPI.swift; sourceTree = "<group>"; };
+		4FB3ACD22764B60A00264277 /* ShazamResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamResultType.swift; sourceTree = "<group>"; };
+		4FB3ACD72764F76C00264277 /* ParsingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingSession.swift; sourceTree = "<group>"; };
 		4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSong.swift; sourceTree = "<group>"; };
 		4FBD4B19270F237B00D5D62E /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		4FBD4B1A270F237B00D5D62E /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +119,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FB3ACD42764E1A300264277 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4FC0FD30272710A700DEFD3E /* Views */,
+				4FE03B83271029B6005B5CE8 /* ViewControllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		4FB3ACD52764E1E700264277 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4FE03B84271029C2005B5CE8 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4FB3ACD62764E1EF00264277 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
+				4FE03B8727102A15005B5CE8 /* Sessions */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4FBD542E271ADA1C00E47A6C /* ParsingModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				4FE03B812710297A005B5CE8 /* Application */,
+				4FE03B8827102A30005B5CE8 /* Networking */,
+				4FE03B8627102A06005B5CE8 /* Extensions */,
 				4FCA016726DFDC3A00DEDE39 /* Assets */,
 			);
 			path = WhereIsMyMusic;
@@ -173,12 +217,9 @@
 			children = (
 				4FCA015326DFDC0700DEDE39 /* AppDelegate.swift */,
 				4FCA015526DFDC0700DEDE39 /* SceneDelegate.swift */,
-				4FC0FD30272710A700DEFD3E /* Views */,
-				4FE03B83271029B6005B5CE8 /* ViewControllers */,
-				4FE03B8727102A15005B5CE8 /* Sessions */,
-				4FE03B84271029C2005B5CE8 /* Models */,
-				4FE03B8827102A30005B5CE8 /* Networking */,
-				4FE03B8627102A06005B5CE8 /* Extensions */,
+				4FB3ACD42764E1A300264277 /* Presentation */,
+				4FB3ACD52764E1E700264277 /* Domain */,
+				4FB3ACD62764E1EF00264277 /* Data */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -197,7 +238,6 @@
 		4FE03B84271029C2005B5CE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
 				4FBD4B0F270F1C0A00D5D62E /* ShazamSong.swift */,
 				4FE03B7D27101793005B5CE8 /* MelonSong.swift */,
 				4F66C0212715DC6700706C7A /* GenieSong.swift */,
@@ -228,6 +268,10 @@
 			children = (
 				4FE03B7B27101187005B5CE8 /* UIImageView+Extension.swift */,
 				4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */,
+				4F0F55D0275FA3C7005FD3EE /* SHMediaItem+Extension.swift */,
+				4F73B091276602BA009DE192 /* UIViewController+Extension.swift */,
+				4F73B0932766091C009DE192 /* NSObject+Extension.swift */,
+				4F73B09527663FAA009DE192 /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				4F850E3A27075E4200025F06 /* ShazamSession.swift */,
+				4FB3ACD22764B60A00264277 /* ShazamResultType.swift */,
+				4FB3ACD72764F76C00264277 /* ParsingSession.swift */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
@@ -244,9 +290,11 @@
 			isa = PBXGroup;
 			children = (
 				4FE03B85271029F8005B5CE8 /* APIs */,
+				4F0F55D2275FA8D6005FD3EE /* BaseURL.swift */,
 				4FE03B8927102B0C005B5CE8 /* EndPoint.swift */,
 				4FE03B7F27102584005B5CE8 /* NetworkManager.swift */,
 				4F1D70A52714A3C6004224C1 /* CrawlManager.swift */,
+				4F0F55D4275FAF9E005FD3EE /* CrawlingCSS.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -336,8 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB3ACD82764F76C00264277 /* ParsingSession.swift in Sources */,
 				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4FC0FD342727113100DEFD3E /* SearchResultTableViewCell.swift in Sources */,
+				4F73B09627663FAA009DE192 /* Array+Extension.swift in Sources */,
+				4F0F55D3275FA8D6005FD3EE /* BaseURL.swift in Sources */,
+				4F73B092276602BA009DE192 /* UIViewController+Extension.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
 				4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */,
@@ -346,15 +398,19 @@
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */,
+				4F0F55D1275FA3C7005FD3EE /* SHMediaItem+Extension.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
 				4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
+				4F0F55D5275FAF9E005FD3EE /* CrawlingCSS.swift in Sources */,
 				4FBD5430271ADA3500E47A6C /* FloSongModel.swift in Sources */,
+				4F73B0942766091C009DE192 /* NSObject+Extension.swift in Sources */,
 				4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */,
 				4FE03B7C27101187005B5CE8 /* UIImageView+Extension.swift in Sources */,
 				4F66C0242715DD1A00706C7A /* GenieAPI.swift in Sources */,
 				4F66C0222715DC6700706C7A /* GenieSong.swift in Sources */,
+				4FB3ACD32764B60A00264277 /* ShazamResultType.swift in Sources */,
 				4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */,
 				4FBD5432271ADED400E47A6C /* FloAPI.swift in Sources */,
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,

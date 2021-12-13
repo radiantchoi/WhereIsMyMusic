@@ -8,18 +8,13 @@
 import Foundation
 
 struct GenieAPI {
-    private let baseURL = URL(string: "https://www.genie.co.kr/search/searchSong")!
-    private let cssQuery = "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody"
-    private let titleCss = ["tr:nth-child(1) > td.info > a.title.ellipsis",
-                    "tr:nth-child(2) > td.info > a.title.ellipsis",
-                    "tr:nth-child(3) > td.info > a.title.ellipsis"]
-    private let artistCss = ["tr:nth-child(1) > td.info > a.artist.ellipsis",
-                     "tr:nth-child(2) > td.info > a.artist.ellipsis",
-                     "tr:nth-child(3) > td.info > a.artist.ellipsis"]
-    private let albumCss = ["tr:nth-child(1) > td.info > a.albumtitle.ellipsis",
-                    "tr:nth-child(2) > td.info > a.albumtitle.ellipsis",
-                    "tr:nth-child(3) > td.info > a.albumtitle.ellipsis"]
-    var query: Query = [:]
+    private let baseURL = BaseURL.genie
+    private let cssQuery = CrawlingCSS.genie.cssQuery
+    private let titleCss = CrawlingCSS.genie.titleCss
+    private let artistCss = CrawlingCSS.genie.artistCss
+    private let albumCss = CrawlingCSS.genie.albumCss
+    
+    var query: Query
 }
 
 extension GenieAPI {
@@ -29,10 +24,7 @@ extension GenieAPI {
                                            httpMethod: .get,
                                            query: query,
                                            headers: nil),
-                                  cssQuery: cssQuery,
-                                  titleCss: titleCss,
-                                  artistCss: artistCss,
-                                  albumCss: albumCss) {
+                                  crawlingCss: CrawlingCSS.genie) {
             switch $0 {
             case .success(let datas):
                 var genieSongs = [GenieSong]()

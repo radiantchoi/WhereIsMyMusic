@@ -14,24 +14,16 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     
-    static let identifier = "SearchResultTableViewCell"
-    static func nib() -> UINib {
+    static var nib: UINib {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     }
-    
 }
 
 extension SearchResultTableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(_ song: Song) {
+        vendorLabel.text = song.vendor
+        titleLabel.text = song.title
+        artistLabel.text = song.artist
+        albumLabel.text = song.album
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

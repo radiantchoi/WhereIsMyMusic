@@ -8,8 +8,8 @@
 import Foundation
 
 struct AppleAPI {
-    private let baseURL = URL(string: "https://itunes.apple.com/search")!
-    var query: Query = [:]
+    private let baseURL = BaseURL.apple
+    var query: Query
 }
 
 extension AppleAPI {
@@ -19,11 +19,8 @@ extension AppleAPI {
             switch $0 {
             case .success(let responses):
                 let appleResults = Array(responses.results)
-                if appleResults.count < 3 {
-                    completion(appleResults)
-                } else {
-                    completion(Array(appleResults[0...2]))
-                }
+                let appleSongs = appleResults.slice(first: 3)
+                completion(appleSongs)
             case .failure(_):
                 completion(nil)
             }

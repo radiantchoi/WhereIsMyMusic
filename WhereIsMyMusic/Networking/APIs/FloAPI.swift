@@ -8,8 +8,8 @@
 import Foundation
 
 struct FloAPI {
-    private let baseURL = URL(string: "https://www.music-flo.com/api/search/v2/search")!
-    var query: Query = [:]
+    private let baseURL = BaseURL.flo
+    var query: Query
 }
 
 extension FloAPI {
@@ -18,19 +18,9 @@ extension FloAPI {
         NetworkManager.shared.call(endPoint, for: FloResponse.self) {
             switch $0 {
             case .success(let result):
-                var floSongs = [FloSong]()
                 let floResults = Array(result.data.list[0].list)
-                if floResults.count < 3 {
-                    for i in 0..<floResults.count {
-                        let floSong = FloSong(floSongModel: floResults[i])
-                        floSongs.append(floSong)
-                    }
-                } else {
-                    for n in 0...2 {
-                        let floSong = FloSong(floSongModel: floResults[n])
-                        floSongs.append(floSong)
-                    }
-                }
+                let floSongModels = floResults.slice(first: 3)
+                let floSongs = floSongModels.compactMap { FloSong(floSongModel: $0) }
                 completion(floSongs)
             case .failure(_):
                 completion(nil)

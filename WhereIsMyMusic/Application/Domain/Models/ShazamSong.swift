@@ -8,7 +8,7 @@
 import Foundation
 import ShazamKit
 
-struct ShazamSong {
+struct ShazamSong: Equatable {
     let title: String?
     let artist: String?
     let album: String?

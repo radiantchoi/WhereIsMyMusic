@@ -24,7 +24,7 @@ extension DataSource {
         sections.removeAll()
     }
     
-    mutating func appned(_ itemsToAppend: [I], in section: S) {
+    mutating func append(_ itemsToAppend: [I], in section: S) {
         guard let index = sections.firstIndex(where: { $0.section == section })
         else { return }
         

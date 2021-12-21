@@ -7,15 +7,27 @@
 
 import UIKit
 
+private enum Section {
+    case shazam
+    case song
+}
+
+private enum Row: Equatable {
+    case shazam(ShazamSong)
+    case song(Song)
+}
+
 class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
     
     private let shazamSong: ShazamSong
     private var songs: [Song] = .init()
+    private var dataSource = DataSource<Section, Row>()
     
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong
+        dataSource.appendSection(.shazam, with: [.shazam(shazamSong)])
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,34 +51,32 @@ extension SearchResultViewController {
     }
 }
 
-extension SearchResultViewController {
-    private func configureCells(_ cell: SearchResultTableViewCell, forItemAt indexPath: IndexPath) {
-        let song = songs[indexPath.row - 1]
-        cell.configure(song)
-    }
-}
-
 extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSource.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songs.count + 1
+        return dataSource.numberOfItems(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        let row = dataSource.item(for: indexPath)
+        
+        switch row {
+        case .shazam(let shazamSong):
             let shazamCell = resultTableView.dequeueReusableCell(
                 withIdentifier: ShazamResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! ShazamResultTableViewCell
             shazamCell.configure(shazamSong)
-            
             return shazamCell
+        case .song(let song):
+            let cell = resultTableView.dequeueReusableCell(
+                withIdentifier: SearchResultTableViewCell.reuseIdentifier,
+                for: indexPath) as! SearchResultTableViewCell
+            cell.configure(song)
+            return cell
         }
-        
-        let resultCell = resultTableView.dequeueReusableCell(
-            withIdentifier: SearchResultTableViewCell.reuseIdentifier,
-            for: indexPath) as! SearchResultTableViewCell
-        configureCells(resultCell, forItemAt: indexPath)
-        
-        return resultCell
     }
 }
 
@@ -75,6 +85,10 @@ extension SearchResultViewController {
         let session = ParsingSession()
         session.getSongs(shazamSong) { parsedSongs in
             self.songs.append(contentsOf: parsedSongs)
+            self.dataSource.appendSection(.song, with: [])
+            parsedSongs.forEach {
+                self.dataSource.append([.song($0)], in: .song)
+            }
             self.resultTableView.reloadData()
         }
     }

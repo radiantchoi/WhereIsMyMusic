@@ -10,8 +10,8 @@ import UIKit
 
 extension UIViewController {
     func alert(_ error: ShazamError) {
-        let alert = UIAlertController(title: "Error!",
-                                      message: error.errorDescription,
+        let alert = UIAlertController(title: NSLocalizedString("Error!", comment: ""),
+                                      message: NSLocalizedString(error.errorDescription, comment: ""),
                                       preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)

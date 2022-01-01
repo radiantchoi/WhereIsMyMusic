@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WhereIsMyMusic
+
+  Created by Gordon Choi on 2022/01/01.
+  
+*/
+
+"Error!" = "오류!";
+"Record permission is denied. Please enable it in Settings." = "마이크 사용 권한이 없습니다. 설정에서 권한을 활성화해 주세요.";
+"No song found or internet connection is bad." = "노래를 찾지 못했거나, 인터넷 연결 상태가 좋지 않습니다.";
+"Unknown error occured." = "알 수 없는 오류가 발생했습니다.";

@@ -15,7 +15,7 @@ enum ShazamError: Error, LocalizedError {
     case unknown
     case matchFailed
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .recordDenied:
             return "Record permission is denied. Please enable it in Settings."

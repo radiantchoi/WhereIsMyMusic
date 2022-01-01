@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WhereIsMyMusic
+
+  Created by Gordon Choi on 2022/01/01.
+  
+*/
+
+"Error!" = "Error!";
+"Record permission is denied. Please enable it in Settings." = "Record permission is denied. Please enable it in Settings.";
+"No song found or internet connection is bad." = "No song found or internet connection is bad.";
+"Unknown error occured." = "Unknown error occured.";

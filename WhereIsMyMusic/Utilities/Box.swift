@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Pack<T> {
+final class Box<T> {
     typealias Listener = (T) -> Void
     var listener: Listener?
     
@@ -22,7 +22,7 @@ final class Pack<T> {
     }
 }
 
-extension Pack {
+extension Box {
     func bind(listener: Listener?) {
         self.listener = listener
         listener?(value)

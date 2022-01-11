@@ -21,13 +21,12 @@ class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
     
-    private let shazamSong: ShazamSong
-    private var songs: [Song] = .init()
+
     private var dataSource = DataSource<Section, Row>()
+    private var viewModel: SearchResultViewViewModel
     
-    init(shazamSong: ShazamSong) {
-        self.shazamSong = shazamSong
-        dataSource.appendSection(.shazam, with: [.shazam(shazamSong)])
+    init(viewModel: SearchResultViewViewModel) {
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,7 +46,7 @@ extension SearchResultViewController {
         resultTableView.register(SearchResultTableViewCell.nib,
                                  forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
         
-        setSongData()
+        setupSongs()
     }
 }
 
@@ -81,22 +80,20 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension SearchResultViewController {
-    func setSongData() {
-        let session = ParsingSession()
-        session.getSongs(shazamSong) { parsedSongs in
-            self.songs.append(contentsOf: parsedSongs)
-            self.dataSource.appendSection(.song, with: [])
-            parsedSongs.forEach {
-                self.dataSource.append([.song($0)], in: .song)
-            }
-            self.resultTableView.reloadData()
+    private func setupSongs() {
+        dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamSong)])
+        dataSource.appendSection(.song, with: [])
+        viewModel.songs.forEach {
+            self.dataSource.append([.song($0)], in: .song)
         }
+        self.resultTableView.reloadData()
     }
 }
 
 extension SearchResultViewController {
     static func push(in viewController: UIViewController, with shazamSong: ShazamSong) {
-        let vc = SearchResultViewController(shazamSong: shazamSong)
+        let viewModel = SearchResultViewViewModel(shazamSong: shazamSong)
+        let vc = SearchResultViewController(viewModel: viewModel)
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -60,6 +60,8 @@
 		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
 		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
 		4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8926E271874E700CBF7C0 /* FloSong.swift */; };
+		4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */; };
+		4FFEABE4278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEABE3278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,8 @@
 		4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
 		4FF8926E271874E700CBF7C0 /* FloSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSong.swift; sourceTree = "<group>"; };
+		4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamResultTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		4FFEABE3278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 			children = (
 				4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */,
 				4F89E0D4278DB3E000304A8A /* SearchResultViewViewModel.swift */,
+				4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */,
+				4FFEABE3278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -430,12 +436,14 @@
 				4F0F55D3275FA8D6005FD3EE /* BaseURL.swift in Sources */,
 				4F73B092276602BA009DE192 /* UIViewController+Extension.swift in Sources */,
 				4F89E0D5278DB3E000304A8A /* SearchResultViewViewModel.swift in Sources */,
+				4FFEABE4278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift in Sources */,
 				4FCA015426DFDC0700DEDE39 /* AppDelegate.swift in Sources */,
 				4FBD5438271B30EA00E47A6C /* YouTubeAPI.swift in Sources */,
 				4F454909278B4BBB00436137 /* ShazamSearchViewViewModel.swift in Sources */,
 				4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
+				4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F8D45C52788BBC400697FC2 /* Box.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,

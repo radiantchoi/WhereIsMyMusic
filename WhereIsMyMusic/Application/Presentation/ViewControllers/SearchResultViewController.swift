@@ -80,17 +80,15 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 
 extension SearchResultViewController {
     private func setupSongs() {
+        self.dataSource.removeAllSections()
+        self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamSong)])
+        self.dataSource.appendSection(.song, with: [])
+        
         viewModel.songs.bind { [weak self] songs in
-            guard let shazamSong = self?.viewModel.shazamSong else { return }
-            
-            self?.dataSource.removeAllSections()
-            self?.dataSource.appendSection(.shazam, with: [.shazam(shazamSong)])
-            self?.dataSource.appendSection(.song, with: [])
-            
+            self?.dataSource.removeAllItems(in: .song)
             songs.forEach {
                 self?.dataSource.append([.song($0)], in: .song)
             }
-            
             self?.resultTableView.reloadData()
         }
         viewModel.setSongData()

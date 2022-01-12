@@ -21,7 +21,6 @@ class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
     
-
     private var dataSource = DataSource<Section, Row>()
     private var viewModel: SearchResultViewViewModel
     
@@ -81,12 +80,20 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 
 extension SearchResultViewController {
     private func setupSongs() {
-        dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamSong)])
-        dataSource.appendSection(.song, with: [])
-        viewModel.songs.forEach {
-            self.dataSource.append([.song($0)], in: .song)
+        viewModel.songs.bind { [weak self] songs in
+            guard let shazamSong = self?.viewModel.shazamSong else { return }
+            
+            self?.dataSource.removeAllSections()
+            self?.dataSource.appendSection(.shazam, with: [.shazam(shazamSong)])
+            self?.dataSource.appendSection(.song, with: [])
+            
+            songs.forEach {
+                self?.dataSource.append([.song($0)], in: .song)
+            }
+            
+            self?.resultTableView.reloadData()
         }
-        self.resultTableView.reloadData()
+        viewModel.setSongData()
     }
 }
 

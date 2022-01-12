@@ -8,5 +8,30 @@
 import Foundation
 
 final class ShazamResultTableViewCellViewModel {
+    let shazamSong: ShazamSong
     
+    init?(shazamSong: ShazamSong?) {
+        guard let shazamSong = shazamSong
+        else { return nil }
+        
+        self.shazamSong = shazamSong
+    }
+}
+
+extension ShazamResultTableViewCellViewModel {
+    var title: String? {
+        return shazamSong.title
+    }
+    
+    var artist: String? {
+        return shazamSong.artist
+    }
+    
+    var album: String? {
+        return shazamSong.album
+    }
+    
+    var imageURL: URL? {
+        return shazamSong.imageURL
+    }
 }

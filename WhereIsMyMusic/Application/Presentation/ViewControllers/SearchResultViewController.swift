@@ -13,7 +13,7 @@ private enum Section {
 }
 
 private enum Row: Equatable {
-    case shazam(ShazamSong)
+    case shazam(ShazamResultTableViewCellViewModel)
     case song(SearchResultTableViewCellViewModel)
 }
 
@@ -62,11 +62,11 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
         let row = dataSource.item(for: indexPath)
         
         switch row {
-        case .shazam(let shazamSong):
+        case .shazam(let viewModel):
             let shazamCell = resultTableView.dequeueReusableCell(
                 withIdentifier: ShazamResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! ShazamResultTableViewCell
-            shazamCell.configure(shazamSong)
+            shazamCell.configure(viewModel)
             return shazamCell
         case .song(let viewModel):
             let cell = resultTableView.dequeueReusableCell(
@@ -81,7 +81,7 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 extension SearchResultViewController {
     private func setupSongs() {
         self.dataSource.removeAllSections()
-        self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamSong)])
+        self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamCell)])
         self.dataSource.appendSection(.song, with: [])
         
         viewModel.songs.bind { [weak self] songs in
@@ -97,7 +97,9 @@ extension SearchResultViewController {
 
 extension SearchResultViewController {
     static func push(in viewController: UIViewController, with shazamSong: ShazamSong) {
-        let viewModel = SearchResultViewViewModel(shazamSong: shazamSong)
+        guard let shazamCell = ShazamResultTableViewCellViewModel(shazamSong: shazamSong)
+        else { return }
+        let viewModel = SearchResultViewViewModel(shazamCell: shazamCell)
         let vc = SearchResultViewController(viewModel: viewModel)
         viewController.navigationController?.pushViewController(vc, animated: true)
     }

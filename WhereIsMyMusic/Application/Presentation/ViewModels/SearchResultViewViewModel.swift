@@ -8,18 +8,18 @@
 import Foundation
 
 struct SearchResultViewViewModel {
-    let shazamSong: ShazamSong
+    let shazamCell: ShazamResultTableViewCellViewModel
     var songs = Box([SearchResultTableViewCellViewModel]())
     
-    init(shazamSong: ShazamSong) {
-        self.shazamSong = shazamSong
+    init(shazamCell: ShazamResultTableViewCellViewModel) {
+        self.shazamCell = shazamCell
     }
 }
 
 extension SearchResultViewViewModel {
     func setSongData() {        
         let session = ParsingSession()
-        session.getSongs(shazamSong) { parsedSongs in
+        session.getSongs(shazamCell.shazamSong) { parsedSongs in
             self.songs.value.append(contentsOf: parsedSongs)
         }
     }

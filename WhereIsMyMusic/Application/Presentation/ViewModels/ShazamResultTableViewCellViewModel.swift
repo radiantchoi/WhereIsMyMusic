@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShazamResultTableViewCellViewModel {
+struct ShazamResultTableViewCellViewModel: Equatable {
     let shazamSong: ShazamSong
     
     init?(shazamSong: ShazamSong?) {

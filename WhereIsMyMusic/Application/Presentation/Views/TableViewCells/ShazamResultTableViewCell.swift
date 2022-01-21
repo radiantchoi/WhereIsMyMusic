@@ -20,12 +20,12 @@ class ShazamResultTableViewCell: UITableViewCell {
 }
 
 extension ShazamResultTableViewCell {    
-    func configure(_ shazamSong: ShazamSong) {
-        titleLabel.text = shazamSong.title
-        artistLabel.text = shazamSong.artist
-        albumLabel.text = shazamSong.album
+    func configure(_ viewModel: ShazamResultTableViewCellViewModel) {
+        titleLabel.text = viewModel.title
+        artistLabel.text = viewModel.artist
+        albumLabel.text = viewModel.album
         
-        albumImageView.load(shazamSong.imageURL)
+        albumImageView.load(viewModel.imageURL)
         albumImageView.layer.cornerRadius = 4
         albumImageView.layer.masksToBounds = true
     }

@@ -12,7 +12,3 @@ struct ShazamSearchViewViewModel {
     
     init() {}
 }
-
-extension ShazamSearchViewViewModel {
-    
-}

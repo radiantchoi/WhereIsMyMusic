@@ -15,6 +15,7 @@ class ShazamSearchViewController: UIViewController {
     
     private var searching: Bool = false
     
+    private var viewModel = ShazamSearchViewViewModel()
 }
 
 extension ShazamSearchViewController {
@@ -22,7 +23,7 @@ extension ShazamSearchViewController {
         super.viewDidLoad()
         
         micImageView.layer.cornerRadius = 50
-        ShazamSession.shared.completion = {
+        viewModel.shazamSession.completion = {
             switch $0 {
             case .success(let shazamSong):
                 self.searching.toggle()
@@ -60,7 +61,7 @@ extension ShazamSearchViewController {
 
 extension ShazamSearchViewController {
     @IBAction private func buttonPressed(_ sender: UIButton) {
-        ShazamSession.shared.start()
+        viewModel.shazamSession.start()
         searching.toggle()
         flicker()
     }

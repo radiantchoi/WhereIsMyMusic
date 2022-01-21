@@ -13,8 +13,6 @@ extension ShazamSession {
 }
 
 final class ShazamSession: NSObject {
-
-    static let shared = ShazamSession()
     
     var completion: Completion?
     

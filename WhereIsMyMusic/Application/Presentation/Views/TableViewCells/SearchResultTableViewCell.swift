@@ -20,10 +20,10 @@ class SearchResultTableViewCell: UITableViewCell {
 }
 
 extension SearchResultTableViewCell {
-    func configure(_ song: Song) {
-        vendorLabel.text = song.vendor
-        titleLabel.text = song.title
-        artistLabel.text = song.artist
-        albumLabel.text = song.album
+    func configure(_ viewModel: SearchResultTableViewCellViewModel) {
+        vendorLabel.text = viewModel.vendor
+        titleLabel.text = viewModel.title
+        artistLabel.text = viewModel.artist
+        albumLabel.text = viewModel.album
     }
 }

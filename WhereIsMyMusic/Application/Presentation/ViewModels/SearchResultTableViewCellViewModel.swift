@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class SearchResultTableViewCellViewModel {
-    let song: Song
+struct SearchResultTableViewCellViewModel: Equatable {
+    private let song: Song
     
     init?(song: Song?) {
         guard let song = song

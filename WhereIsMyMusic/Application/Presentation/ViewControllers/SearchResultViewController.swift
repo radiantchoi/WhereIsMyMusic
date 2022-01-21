@@ -14,7 +14,7 @@ private enum Section {
 
 private enum Row: Equatable {
     case shazam(ShazamSong)
-    case song(Song)
+    case song(SearchResultTableViewCellViewModel)
 }
 
 class SearchResultViewController: UIViewController {
@@ -68,11 +68,11 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
                 for: indexPath) as! ShazamResultTableViewCell
             shazamCell.configure(shazamSong)
             return shazamCell
-        case .song(let song):
+        case .song(let viewModel):
             let cell = resultTableView.dequeueReusableCell(
                 withIdentifier: SearchResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! SearchResultTableViewCell
-            cell.configure(song)
+            cell.configure(viewModel)
             return cell
         }
     }

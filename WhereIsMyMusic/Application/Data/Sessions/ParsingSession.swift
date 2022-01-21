@@ -8,7 +8,7 @@
 import Foundation
 
 class ParsingSession {
-    func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([Song]) -> Void) {
+    func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([SearchResultTableViewCellViewModel]) -> Void) {
         
         guard let title = shazamSong.title,
               let artist = shazamSong.artist,
@@ -22,7 +22,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(melonSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(melonSong: $0)) }
             completion(songs)
         }
         
@@ -31,7 +31,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(genieSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(genieSong: $0)) }
             completion(songs)
         }
         
@@ -40,7 +40,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(bugsSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(bugsSong: $0)) }
             completion(songs)
         }
         
@@ -49,7 +49,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(appleSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(appleSong: $0)) }
             completion(songs)
         }
         
@@ -58,7 +58,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(floSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(floSong: $0)) }
             completion(songs)
         }
         
@@ -89,7 +89,7 @@ class ParsingSession {
             guard let result = result
             else { return }
             
-            let songs = result.compactMap { Song(youTubeSong: $0) }
+            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(youTubeSong: $0)) }
             completion(songs)
         }
         

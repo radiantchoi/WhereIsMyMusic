@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ShazamSearchViewViewModel {
+struct ShazamSearchViewViewModel {
     let shazamSession = ShazamSession()
     
     init() {}

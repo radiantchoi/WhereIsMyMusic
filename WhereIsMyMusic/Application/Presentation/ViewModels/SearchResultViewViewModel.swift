@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class SearchResultViewViewModel {
+struct SearchResultViewViewModel {
     let shazamSong: ShazamSong
-    var songs = Box([Song]())
+    var songs = Box([SearchResultTableViewCellViewModel]())
     
     init(shazamSong: ShazamSong) {
         self.shazamSong = shazamSong

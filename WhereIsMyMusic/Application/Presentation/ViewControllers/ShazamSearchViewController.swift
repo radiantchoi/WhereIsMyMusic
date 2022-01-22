@@ -21,18 +21,6 @@ extension ShazamSearchViewController {
         super.viewDidLoad()
         
         micImageView.layer.cornerRadius = 50
-//        viewModel.shazamSession.completion = {
-//            switch $0 {
-//            case .success(let shazamSong):
-//                self.searching.toggle()
-//                self.flicker()
-//                SearchResultViewController.push(in: self, with: shazamSong)
-//            case .failure(let error):
-//                self.searching.toggle()
-//                self.alert(error)
-//                self.flicker()
-//            }
-//        }
         
         viewModel.shazamSong.bind { [weak self] shazamSong in
             guard let vc = self,
@@ -60,7 +48,7 @@ extension ShazamSearchViewController {
 }
 
 extension ShazamSearchViewController {
-    func flicker() {
+    private func flicker() {
         if viewModel.searching.value {
             UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
                 self.micImageView.alpha = 0

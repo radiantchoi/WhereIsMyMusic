@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="cancelButton" destination="uKC-MW-ffV" id="NrD-v6-Suy"/>
                 <outlet property="micImageView" destination="gvb-Gd-TQm" id="G99-Zh-orD"/>
+                <outlet property="progressBar" destination="H3P-b6-jsK" id="DuB-e9-qSA"/>
                 <outlet property="shazamButton" destination="5nC-U6-C7Q" id="GGh-SC-2kN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,23 +55,26 @@
                         </button>
                     </subviews>
                 </stackView>
+                <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-b6-jsK">
+                    <rect key="frame" x="20" y="44" width="374" height="4"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="progressTintColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </progressView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <color key="tintColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H3P-b6-jsK" secondAttribute="trailing" constant="20" id="PqL-wS-y3O"/>
                 <constraint firstItem="6sK-JM-pE8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QFa-Xd-Qth"/>
+                <constraint firstItem="H3P-b6-jsK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="S3q-PF-G5Q"/>
+                <constraint firstItem="H3P-b6-jsK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="n90-nB-Bw1"/>
                 <constraint firstItem="6sK-JM-pE8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oiZ-dr-zD6"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="scz-mQ-Zn9">
-            <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Button"/>
-            <buttonConfiguration key="configuration" style="filled" title="Button"/>
-            <point key="canvasLocation" x="-315" y="99"/>
-        </button>
     </objects>
     <resources>
         <image name="microphone-342" width="256" height="256"/>

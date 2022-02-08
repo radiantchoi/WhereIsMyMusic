@@ -11,7 +11,9 @@ import ShazamKit
 class ShazamSearchViewController: UIViewController {
     
     @IBOutlet private weak var shazamButton: UIButton!
+    @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var micImageView: UIImageView!
+    @IBOutlet private weak var progressBar: UIProgressView!
     
     private var viewModel = ShazamSearchViewViewModel()
 }
@@ -53,19 +55,33 @@ extension ShazamSearchViewController {
             UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
                 self.micImageView.alpha = 0
             }
+            UIView.animate(withDuration: 12.0) {
+                self.progressBar.setProgress(1.0, animated: true)
+            }
             shazamButton.isEnabled = false
+            cancelButton.isEnabled = true
+            
         } else {
             micImageView.layer.removeAllAnimations()
             micImageView.alpha = 1
+            progressBar.layer.removeAllAnimations()
+            progressBar.setProgress(0, animated: false)
             shazamButton.isEnabled = true
+            cancelButton.isEnabled = false
         }
     }
 }
 
 extension ShazamSearchViewController {
-    @IBAction private func buttonPressed(_ sender: UIButton) {
+    @IBAction private func searchPressed(_ sender: UIButton) {
         viewModel.shazamSession.start()
         viewModel.searching.value = true
+        flicker()
+    }
+    
+    @IBAction private func cancelPressed(_ sender: UIButton) {
+        viewModel.shazamSession.stop()
+        viewModel.searching.value = false
         flicker()
     }
 }

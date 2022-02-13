@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import MarqueeLabel
 
 class SearchResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var vendorLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var titleLabel: MarqueeLabel!
+    @IBOutlet weak var artistLabel: MarqueeLabel!
+    @IBOutlet weak var albumLabel: MarqueeLabel!
     
     static var nib: UINib {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
@@ -21,9 +22,18 @@ class SearchResultTableViewCell: UITableViewCell {
 
 extension SearchResultTableViewCell {
     func configure(_ viewModel: SearchResultTableViewCellViewModel) {
+        labelTuning(titleLabel)
+        labelTuning(artistLabel)
+        labelTuning(albumLabel)
+        
         vendorLabel.text = viewModel.vendor
         titleLabel.text = viewModel.title
         artistLabel.text = viewModel.artist
         albumLabel.text = viewModel.album
+    }
+    
+    func labelTuning(_ label: MarqueeLabel) {
+        label.speed = .duration(20)
+        label.trailingBuffer = 20
     }
 }

@@ -22,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-JM-pE8">
-                    <rect key="frame" x="79" y="266" width="256" height="364"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-JM-pE8">
+                    <rect key="frame" x="79" y="299.5" width="256" height="297"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microphone-342" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Gd-TQm">
                             <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
@@ -33,7 +33,7 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-U6-C7Q">
-                            <rect key="frame" x="93.5" y="279" width="69" height="31"/>
+                            <rect key="frame" x="93.5" y="266" width="69" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Search">
                                 <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,20 +43,18 @@
                                 <action selector="searchPressed:" destination="-1" eventType="touchUpInside" id="2de-Gi-GcU"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKC-MW-ffV">
-                            <rect key="frame" x="94" y="333" width="68.5" height="31"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Cancel">
-                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="DWw-20-bkt"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKC-MW-ffV">
+                    <rect key="frame" x="346" y="52" width="44" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="✖️"/>
+                    <connections>
+                        <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="DWw-20-bkt"/>
+                    </connections>
+                </button>
                 <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-b6-jsK">
-                    <rect key="frame" x="20" y="44" width="374" height="4"/>
+                    <rect key="frame" x="20" y="850" width="374" height="4"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="progressTintColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,9 +65,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <color key="tintColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="uKC-MW-ffV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Mst-bn-k8R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H3P-b6-jsK" secondAttribute="trailing" constant="20" id="PqL-wS-y3O"/>
                 <constraint firstItem="6sK-JM-pE8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QFa-Xd-Qth"/>
-                <constraint firstItem="H3P-b6-jsK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="S3q-PF-G5Q"/>
+                <constraint firstItem="H3P-b6-jsK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-8" id="S3q-PF-G5Q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uKC-MW-ffV" secondAttribute="trailing" constant="24" id="b64-GT-BVG"/>
                 <constraint firstItem="H3P-b6-jsK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="n90-nB-Bw1"/>
                 <constraint firstItem="6sK-JM-pE8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oiZ-dr-zD6"/>
             </constraints>

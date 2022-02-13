@@ -78,5 +78,11 @@
         <designable name="U8C-T0-059">
             <size key="intrinsicContentSize" width="36.5" height="20.5"/>
         </designable>
+        <designable name="fuf-Bh-TND">
+            <size key="intrinsicContentSize" width="41" height="20.5"/>
+        </designable>
+        <designable name="zKD-GZ-gVA">
+            <size key="intrinsicContentSize" width="49" height="20.5"/>
+        </designable>
     </designables>
 </document>

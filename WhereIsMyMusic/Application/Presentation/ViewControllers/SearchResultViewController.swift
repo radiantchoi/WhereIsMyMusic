@@ -67,12 +67,14 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
                 withIdentifier: ShazamResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! ShazamResultTableViewCell
             shazamCell.configure(viewModel)
+            shazamCell.isUserInteractionEnabled = false
             return shazamCell
         case .song(let viewModel):
             let cell = resultTableView.dequeueReusableCell(
                 withIdentifier: SearchResultTableViewCell.reuseIdentifier,
                 for: indexPath) as! SearchResultTableViewCell
             cell.configure(viewModel)
+            cell.isUserInteractionEnabled = false
             return cell
         }
     }

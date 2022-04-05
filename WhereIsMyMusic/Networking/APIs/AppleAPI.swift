@@ -18,8 +18,8 @@ extension AppleAPI {
         NetworkManager.shared.call(endPoint, for: AppleSongs.self) {
             switch $0 {
             case .success(let responses):
-                let appleResults = Array(responses.results)
-                let appleSongs = appleResults.slice(first: 3)
+                let appleResults = Array(responses.results).slice(first: 3)
+                let appleSongs = appleResults.compactMap { AppleSong(appleSongModel: $0) }
                 completion(appleSongs)
             case .failure(_):
                 completion(nil)

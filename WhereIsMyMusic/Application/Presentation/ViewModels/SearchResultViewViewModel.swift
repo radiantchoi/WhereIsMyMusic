@@ -13,6 +13,8 @@ struct SearchResultViewViewModel {
     let shazamCell: ShazamResultTableViewCellViewModel
     let songs: BehaviorRelay<[SearchResultTableViewCellViewModel]> = BehaviorRelay(value: [])
     
+    let disposeBag = DisposeBag()
+    
     init(shazamCell: ShazamResultTableViewCellViewModel) {
         self.shazamCell = shazamCell
     }
@@ -25,6 +27,12 @@ extension SearchResultViewViewModel {
             let newValue = self.songs.value + parsedSongs
             self.songs.accept(newValue)
         }
+        
+        session.getSongsTwo(shazamCell.shazamSong)
+            .subscribe(onNext: { viewModels in
+                let newValue = self.songs.value + viewModels
+                self.songs.accept(newValue)
+            }).disposed(by: disposeBag)
     }
 }
 

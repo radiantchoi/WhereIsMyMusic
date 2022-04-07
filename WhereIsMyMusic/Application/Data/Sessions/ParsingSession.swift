@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class ParsingSession {
+    
+    let disposeBag = DisposeBag()
+    
+}
+
+extension ParsingSession {
     func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([SearchResultTableViewCellViewModel]) -> Void) {
         
         guard let title = shazamSong.title,
@@ -53,12 +60,6 @@ class ParsingSession {
             completion(songs)
         }
         
-        let appleArray = apple.loadApple()
-            .subscribe(onNext: {
-                print($0)
-            })
-        
-        
         let flo = FloAPI.init(query: ["keyword": searchQuery])
         flo.loadFloSong { (result) in
             guard let result = result
@@ -98,6 +99,24 @@ class ParsingSession {
             let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(youTubeSong: $0)) }
             completion(songs)
         }
+    }
+    
+    func getSongsTwo(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
         
+        let searchQuery = shazamSong.title!
+        
+        let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
+        
+        return Observable<[SearchResultTableViewCellViewModel]>.create { observer in
+            let appleCells = apple.loadApple()
+                .subscribe(onNext: { appleSongs in
+                    let cellViewModels = appleSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(appleSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
+            return Disposables.create {
+                appleCells.disposed(by: self.disposeBag)
+            }
+        }
     }
 }

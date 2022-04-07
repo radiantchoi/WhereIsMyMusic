@@ -85,7 +85,7 @@ extension ShazamSearchViewController {
     
     @IBAction private func cancelPressed(_ sender: UIButton) {
         viewModel.shazamSession.stop()
-        viewModel.searching.onNext(true)
+        viewModel.searching.onNext(false)
         flicker()
     }
 }

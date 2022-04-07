@@ -11,9 +11,9 @@ import RxSwift
 
 class ShazamSearchViewViewModel {
     let shazamSession = ShazamSession()
-    var shazamSong = PublishSubject<ShazamSong>()
-    var error = PublishSubject<ShazamError>()
-    var searching = BehaviorSubject(value: false)
+    let shazamSong = PublishSubject<ShazamSong>()
+    let error = PublishSubject<ShazamError>()
+    let searching = BehaviorSubject(value: false)
     
     init() {
         shazamSession.completion = {

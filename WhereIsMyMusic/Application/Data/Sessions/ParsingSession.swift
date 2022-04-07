@@ -15,50 +15,16 @@ class ParsingSession {
 }
 
 extension ParsingSession {
-    func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([SearchResultTableViewCellViewModel]) -> Void) {
-        
-        guard let title = shazamSong.title,
-              let _ = shazamSong.artist,
-              let _ = shazamSong.album
-        else { return }
-        
-        let searchQuery = title
-        
-        let melon = MelonAPI.init(query: ["q": searchQuery])
-        melon.loadMelonSong { (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(melonSong: $0)) }
-            completion(songs)
-        }
-        
-        let genie = GenieAPI.init(query: ["query": searchQuery])
-        genie.loadGenieSong{ (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(genieSong: $0)) }
-            completion(songs)
-        }
-        
-        let bugs = BugsAPI.init(query: ["q": searchQuery])
-        bugs.loadBugsSong { (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(bugsSong: $0)) }
-            completion(songs)
-        }
-    }
-    
-    func getSongsTwo(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
+    func getSongs(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
         
         let searchQuery = shazamSong.title!
         let artist = shazamSong.artist!
         
         let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
         let flo = FloAPI.init(query: ["keyword": searchQuery])
+        let melon = MelonAPI.init(query: ["q": searchQuery])
+        let genie = GenieAPI.init(query: ["query": searchQuery])
+        let bugs = BugsAPI.init(query: ["q": searchQuery])
         
         var apiKey: String {
             get {
@@ -102,10 +68,31 @@ extension ParsingSession {
                     observer.onNext(cellViewModels)
                 })
             
+            let melonCells = melon.loadMelon()
+                .subscribe(onNext: { melonSongs in
+                    let cellViewModels = melonSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(melonSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
+            let genieCells = genie.loadGenie()
+                .subscribe(onNext: { genieSongs in
+                    let cellViewModels = genieSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(genieSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
+            let bugsCells = bugs.loadBugs()
+                .subscribe(onNext: { bugsSongs in
+                    let cellViewModels = bugsSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(bugsSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
             return Disposables.create {
                 appleCells.disposed(by: self.disposeBag)
                 youtubeCells.disposed(by: self.disposeBag)
                 floCells.disposed(by: self.disposeBag)
+                melonCells.disposed(by: self.disposeBag)
+                genieCells.disposed(by: self.disposeBag)
+                bugsCells.disposed(by: self.disposeBag)
             }
         }
     }

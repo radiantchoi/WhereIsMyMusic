@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct MelonAPI {
     private let baseURL = BaseURL.melon
@@ -15,26 +16,23 @@ struct MelonAPI {
     private let albumCss = CrawlingCSS.melon.albumCss
     
     var query: Query
+    
+    let disposeBag = DisposeBag()
 }
 
 extension MelonAPI {
-    func loadMelonSong(completion: @escaping ([MelonSong]?) -> Void) {
-
-        CrawlManager.shared.crawl(EndPoint(baseURL: baseURL,
-                                           httpMethod: .get,
-                                           query: query,
-                                           headers: nil),
-                                  crawlingCss: CrawlingCSS.melon) {
-            switch $0 {
-            case .success(let datas):
-                var melonSongs = [MelonSong]()
-                for data in datas {
-                    let melonSong = MelonSong.init(title: data[0], artist: data[1], album: data[2])
-                    melonSongs.append(melonSong)
-                }
-                completion(melonSongs)
-            case .failure(_):
-                completion(nil)
+    func loadMelon() -> Observable<[MelonSong]> {
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        
+        return Observable.create { observer in
+            let source = CrawlManager.shared.crawlTwo(endPoint, crawlingCss: CrawlingCSS.melon)
+                .subscribe(onNext: { datas in
+                    let melonSongs = datas.compactMap { MelonSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
+                    observer.onNext(melonSongs)
+                })
+            
+            return Disposables.create {
+                source.disposed(by: disposeBag)
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct BugsAPI {
     private let baseURL = BaseURL.bugs
@@ -15,26 +16,23 @@ struct BugsAPI {
     private let albumCss = CrawlingCSS.bugs.albumCss
     
     var query: Query
+    
+    let disposeBag = DisposeBag()
 }
 
 extension BugsAPI {
-    func loadBugsSong(completion: @escaping ([BugsSong]?) -> Void) {
-
-        CrawlManager.shared.crawl(EndPoint(baseURL: baseURL,
-                                           httpMethod: .get,
-                                           query: query,
-                                           headers: nil),
-                                  crawlingCss: CrawlingCSS.bugs) {
-            switch $0 {
-            case .success(let datas):
-                var bugsSongs = [BugsSong]()
-                for data in datas {
-                    let bugsSong = BugsSong.init(title: data[0], artist: data[1], album: data[2])
-                    bugsSongs.append(bugsSong)
-                }
-                completion(bugsSongs)
-            case .failure(_):
-                completion(nil)
+    func loadBugs() -> Observable<[BugsSong]> {
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        
+        return Observable.create { observer in
+            let source = CrawlManager.shared.crawlTwo(endPoint, crawlingCss: CrawlingCSS.bugs)
+                .subscribe(onNext: { datas in
+                    let bugsSongs = datas.compactMap { BugsSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
+                    observer.onNext(bugsSongs)
+                })
+            
+            return Disposables.create {
+                source.disposed(by: disposeBag)
             }
         }
     }

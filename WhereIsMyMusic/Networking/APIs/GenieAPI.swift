@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct GenieAPI {
     private let baseURL = BaseURL.genie
@@ -15,36 +16,23 @@ struct GenieAPI {
     private let albumCss = CrawlingCSS.genie.albumCss
     
     var query: Query
+    
+    let disposeBag = DisposeBag()
 }
 
 extension GenieAPI {
-    func loadGenieSong(completion: @escaping ([GenieSong]?) -> Void) {
-
-        CrawlManager.shared.crawl(EndPoint(baseURL: baseURL,
-                                           httpMethod: .get,
-                                           query: query,
-                                           headers: nil),
-                                  crawlingCss: CrawlingCSS.genie) {
-            switch $0 {
-            case .success(let datas):
-                var genieSongs = [GenieSong]()
-                for data in datas {
-                    var titleData: String = ""
-                    if data[0].count != 0 {
-                        let titleSpread = data[0].map { String($0) }
-                        if titleSpread.count > 6 && titleSpread[0...5].joined() == "TITLE " {
-                            titleData = titleSpread[6...].joined()
-                        } else {
-                            titleData = titleSpread.joined()
-                        }
-                    }
-                    let genieSong = GenieSong.init(title: titleData, artist: data[1], album: data[2])
-                    genieSongs.append(genieSong)
-                }
-                completion(genieSongs)
-                
-            case .failure(_):
-                completion(nil)
+    func loadGenie() -> Observable<[GenieSong]> {
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        
+        return Observable.create { observer in
+            let source = CrawlManager.shared.crawlTwo(endPoint, crawlingCss: CrawlingCSS.genie)
+                .subscribe(onNext: { datas in
+                    let genieSongs = datas.compactMap { GenieSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
+                    observer.onNext(genieSongs)
+                })
+            
+            return Disposables.create {
+                source.disposed(by: disposeBag)
             }
         }
     }

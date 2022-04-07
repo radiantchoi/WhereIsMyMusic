@@ -23,12 +23,7 @@ struct SearchResultViewViewModel {
 extension SearchResultViewViewModel {
     func setSongData() {        
         let session = ParsingSession()
-        session.getSongs(shazamCell.shazamSong) { parsedSongs in
-            let newValue = self.songs.value + parsedSongs
-            self.songs.accept(newValue)
-        }
-        
-        session.getSongsTwo(shazamCell.shazamSong)
+        session.getSongs(shazamCell.shazamSong)
             .subscribe(onNext: { viewModels in
                 let newValue = self.songs.value + viewModels
                 self.songs.accept(newValue)

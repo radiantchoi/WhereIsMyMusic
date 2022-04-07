@@ -18,7 +18,7 @@ extension ParsingSession {
     func getSongs(_ shazamSong: ShazamSong, completion: @escaping ([SearchResultTableViewCellViewModel]) -> Void) {
         
         guard let title = shazamSong.title,
-              let artist = shazamSong.artist,
+              let _ = shazamSong.artist,
               let _ = shazamSong.album
         else { return }
         
@@ -50,24 +50,15 @@ extension ParsingSession {
             let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(bugsSong: $0)) }
             completion(songs)
         }
+    }
+    
+    func getSongsTwo(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
+        
+        let searchQuery = shazamSong.title!
+        let artist = shazamSong.artist!
         
         let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
-        apple.loadAppleSong { (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(appleSong: $0)) }
-            completion(songs)
-        }
-        
         let flo = FloAPI.init(query: ["keyword": searchQuery])
-        flo.loadFloSong { (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(floSong: $0)) }
-            completion(songs)
-        }
         
         var apiKey: String {
             get {
@@ -84,7 +75,6 @@ extension ParsingSession {
                 return value
             }
         }
-        
         let youTube = YouTubeAPI.init(query: ["q": searchQuery + " " + artist,
                                               "type": "video",
                                               "videoCategoryId": "10",
@@ -92,20 +82,6 @@ extension ParsingSession {
                                               "maxResult": "10",
                                               "key": apiKey]
         )
-        youTube.loadYoutubeSong { (result) in
-            guard let result = result
-            else { return }
-            
-            let songs = result.compactMap { SearchResultTableViewCellViewModel(song: Song(youTubeSong: $0)) }
-            completion(songs)
-        }
-    }
-    
-    func getSongsTwo(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
-        
-        let searchQuery = shazamSong.title!
-        
-        let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
         
         return Observable<[SearchResultTableViewCellViewModel]>.create { observer in
             let appleCells = apple.loadApple()
@@ -114,8 +90,22 @@ extension ParsingSession {
                     observer.onNext(cellViewModels)
                 })
             
+            let youtubeCells = youTube.loadYouTube()
+                .subscribe(onNext: { youtubeSongs in
+                    let cellViewModels = youtubeSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(youTubeSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
+            let floCells = flo.loadFlo()
+                .subscribe(onNext: { floSongs in
+                    let cellViewModels = floSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(floSong: $0)) }
+                    observer.onNext(cellViewModels)
+                })
+            
             return Disposables.create {
                 appleCells.disposed(by: self.disposeBag)
+                youtubeCells.disposed(by: self.disposeBag)
+                floCells.disposed(by: self.disposeBag)
             }
         }
     }

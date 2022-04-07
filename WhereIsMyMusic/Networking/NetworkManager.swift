@@ -14,41 +14,7 @@ struct NetworkManager {
 }
 
 extension NetworkManager {
-    @discardableResult
-    func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask {
-        let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
-        var request = URLRequest(url: url!)
-        request.httpMethod = endPoint.httpMethod.rawValue
-        
-        if endPoint.headers != nil {
-            for (key, value) in endPoint.headers! {
-                request.setValue(value, forHTTPHeaderField: key)
-            }
-        }
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            let result: Result<T, Error>
-            
-            defer {
-                DispatchQueue.main.async {
-                    completion(result)
-                }
-            }
-            
-            guard let data = data,
-                  let model = try? JSONDecoder().decode(model, from: data)
-            else {
-                result = .failure(error ?? UnknownNetworkError())
-                return
-            }
-            
-            result = .success(model)
-        }
-        task.resume()
-        return task
-    }
-    
-    func callTwo<T: Codable>(_ endPoint: EndPoint, for model: T.Type) -> Observable<T> {
+    func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type) -> Observable<T> {
         let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         var request = URLRequest(url: url!)
         request.httpMethod = endPoint.httpMethod.rawValue
@@ -82,6 +48,7 @@ extension NetworkManager {
             }
         }
     }
+    
 }
 
 struct UnknownNetworkError: Error {

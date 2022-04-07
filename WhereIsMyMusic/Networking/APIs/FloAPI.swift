@@ -6,24 +6,29 @@
 //
 
 import Foundation
+import RxSwift
 
 struct FloAPI {
     private let baseURL = BaseURL.flo
     var query: Query
+    
+    let disposeBag = DisposeBag()
 }
 
 extension FloAPI {
-    func loadFloSong(completion: @escaping ([FloSong]?) -> Void) {
+    func loadFlo() -> Observable<[FloSong]> {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
-        NetworkManager.shared.call(endPoint, for: FloResponse.self) {
-            switch $0 {
-            case .success(let result):
-                let floResults = Array(result.data.list[0].list)
-                let floSongModels = floResults.slice(first: 3)
-                let floSongs = floSongModels.compactMap { FloSong(floSongModel: $0) }
-                completion(floSongs)
-            case .failure(_):
-                completion(nil)
+        
+        return Observable<[FloSong]>.create { observer in
+            let data = NetworkManager.shared.call(endPoint, for: FloResponse.self)
+                .subscribe(onNext: { floSongs in
+                    let floResults = floSongs.data.list[0].list.slice(first: 3)
+                    let floData = floResults.compactMap { FloSong(floSongModel: $0) }
+                    observer.onNext(floData)
+                })
+            
+            return Disposables.create {
+                data.disposed(by: disposeBag)
             }
         }
     }

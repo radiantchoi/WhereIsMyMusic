@@ -88,15 +88,7 @@ extension SearchResultViewController {
         self.dataSource.removeAllSections()
         self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamCell)])
         self.dataSource.appendSection(.song, with: [])
-        
-//        viewModel.songs.bind { [weak self] songs in
-//            self?.dataSource.removeAllItems(in: .song)
-//            songs.forEach {
-//                self?.dataSource.append([.song($0)], in: .song)
-//            }
-//            self?.resultTableView.reloadData()
-//        }
-        
+
         viewModel.songs.asObservable()
             .subscribe(onNext: { [weak self] songs in
                 self?.dataSource.removeAllItems(in: .song)

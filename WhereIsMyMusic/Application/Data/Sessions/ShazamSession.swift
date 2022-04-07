@@ -8,9 +8,8 @@
 import Foundation
 import ShazamKit
 
-extension ShazamSession {
-    
-}
+typealias ResultType = Result<ShazamSong, ShazamError>
+typealias Completion = (ResultType) -> Void
 
 final class ShazamSession: NSObject {
     

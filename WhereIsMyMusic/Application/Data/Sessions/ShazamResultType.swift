@@ -7,9 +7,6 @@
 
 import Foundation
 
-typealias ResultType = Result<ShazamSong, ShazamError>
-typealias Completion = (ResultType) -> Void
-
 enum ShazamError: Error, LocalizedError {
     case recordDenied
     case unknown

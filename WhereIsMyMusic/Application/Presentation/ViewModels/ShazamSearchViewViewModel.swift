@@ -6,22 +6,24 @@
 //
 
 import Foundation
+import RxRelay
+import RxSwift
 
 class ShazamSearchViewViewModel {
     let shazamSession = ShazamSession()
-    var shazamSong: Box<ShazamSong?> = Box(nil)
-    var error: Box<ShazamError?> = Box(nil)
-    var searching = Box(false)
+    var shazamSong = PublishSubject<ShazamSong>()
+    var error = PublishSubject<ShazamError>()
+    var searching = BehaviorSubject(value: false)
     
     init() {
         shazamSession.completion = {
             switch $0 {
             case .success(let shazamSong):
-                self.searching.value = false
-                self.shazamSong.value = shazamSong
+                self.searching.onNext(false)
+                self.shazamSong.onNext(shazamSong)
             case .failure(let error):
-                self.searching.value = false
-                self.error.value = error
+                self.searching.onNext(false)
+                self.error.onNext(error)
             }
         }
     }

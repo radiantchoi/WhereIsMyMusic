@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 private enum Section {
     case shazam
@@ -20,6 +21,8 @@ private enum Row: Equatable {
 class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
+    
+    private let disposeBag = DisposeBag()
     
     private var dataSource = DataSource<Section, Row>()
     private var viewModel: SearchResultViewViewModel
@@ -86,13 +89,23 @@ extension SearchResultViewController {
         self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamCell)])
         self.dataSource.appendSection(.song, with: [])
         
-        viewModel.songs.bind { [weak self] songs in
-            self?.dataSource.removeAllItems(in: .song)
-            songs.forEach {
-                self?.dataSource.append([.song($0)], in: .song)
-            }
-            self?.resultTableView.reloadData()
-        }
+//        viewModel.songs.bind { [weak self] songs in
+//            self?.dataSource.removeAllItems(in: .song)
+//            songs.forEach {
+//                self?.dataSource.append([.song($0)], in: .song)
+//            }
+//            self?.resultTableView.reloadData()
+//        }
+        
+        viewModel.songs.asObservable()
+            .subscribe(onNext: { [unowned self] songs in
+                self.dataSource.removeAllItems(in: .song)
+                songs.forEach {
+                    self.dataSource.append([.song($0)], in: .song)
+                }
+                self.resultTableView.reloadData()
+            }).disposed(by: disposeBag)
+        
         viewModel.setSongData()
     }
 }

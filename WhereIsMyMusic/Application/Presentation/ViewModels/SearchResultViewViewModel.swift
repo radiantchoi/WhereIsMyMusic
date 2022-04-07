@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 struct SearchResultViewViewModel {
     let shazamCell: ShazamResultTableViewCellViewModel
-    var songs = Box([SearchResultTableViewCellViewModel]())
+    let songs: BehaviorRelay<[SearchResultTableViewCellViewModel]> = BehaviorRelay(value: [])
     
     init(shazamCell: ShazamResultTableViewCellViewModel) {
         self.shazamCell = shazamCell
@@ -20,7 +22,8 @@ extension SearchResultViewViewModel {
     func setSongData() {        
         let session = ParsingSession()
         session.getSongs(shazamCell.shazamSong) { parsedSongs in
-            self.songs.value.append(contentsOf: parsedSongs)
+            let newValue = self.songs.value + parsedSongs
+            self.songs.accept(newValue)
         }
     }
 }

@@ -98,12 +98,12 @@ extension SearchResultViewController {
 //        }
         
         viewModel.songs.asObservable()
-            .subscribe(onNext: { [unowned self] songs in
-                self.dataSource.removeAllItems(in: .song)
+            .subscribe(onNext: { [weak self] songs in
+                self?.dataSource.removeAllItems(in: .song)
                 songs.forEach {
-                    self.dataSource.append([.song($0)], in: .song)
+                    self?.dataSource.append([.song($0)], in: .song)
                 }
-                self.resultTableView.reloadData()
+                self?.resultTableView.reloadData()
             }).disposed(by: disposeBag)
         
         viewModel.setSongData()

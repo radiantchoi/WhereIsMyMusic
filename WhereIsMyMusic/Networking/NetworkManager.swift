@@ -76,6 +76,7 @@ extension NetworkManager {
                     
                     observer.onCompleted()
                 }
+            
             return Disposables.create {
                 dataRequest.cancel()
             }

@@ -53,6 +53,12 @@ class ParsingSession {
             completion(songs)
         }
         
+        let appleArray = apple.loadApple()
+            .subscribe(onNext: {
+                print($0)
+            })
+        
+        
         let flo = FloAPI.init(query: ["keyword": searchQuery])
         flo.loadFloSong { (result) in
             guard let result = result

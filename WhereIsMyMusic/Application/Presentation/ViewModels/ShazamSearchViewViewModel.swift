@@ -15,16 +15,27 @@ class ShazamSearchViewViewModel {
     let error = PublishSubject<ShazamError>()
     let searching = BehaviorSubject(value: false)
     
+    let disposeBag = DisposeBag()
+    
     init() {
-        shazamSession.completion = {
-            switch $0 {
-            case .success(let shazamSong):
+//        shazamSession.completion = {
+//            switch $0 {
+//            case .success(let shazamSong):
+//                self.searching.onNext(false)
+//                self.shazamSong.onNext(shazamSong)
+//            case .failure(let error):
+//                self.searching.onNext(false)
+//                self.error.onNext(error)
+//            }
+//        }
+        
+        shazamSession.completion.asObserver()
+            .subscribe(onNext: { shazamSong in
                 self.searching.onNext(false)
                 self.shazamSong.onNext(shazamSong)
-            case .failure(let error):
+            }, onError: { error in
                 self.searching.onNext(false)
-                self.error.onNext(error)
-            }
-        }
+                self.error.onNext(error as! ShazamError)
+            }).disposed(by: disposeBag)
     }
 }

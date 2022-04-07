@@ -36,7 +36,6 @@ extension ShazamSession {
             self.record()
         case .denied:
             DispatchQueue.main.async {
-//                self.completion?(.failure(.recordDenied))
                 self.completion.onError(ShazamError.recordDenied)
             }
         case .undetermined:
@@ -45,14 +44,12 @@ extension ShazamSession {
                     if granted {
                         self.record()
                     } else {
-//                        self.completion?(.failure(.recordDenied))
                         self.completion.onError(ShazamError.recordDenied)
                     }
                 }
             }
         @unknown default:
             DispatchQueue.main.async {
-//                self.completion?(.failure(.unknown))
                 self.completion.onError(ShazamError.unknown)
             }
         }
@@ -72,7 +69,6 @@ extension ShazamSession {
             self.audioEngine.prepare()
             try self.audioEngine.start()
         } catch {
-//            self.completion?(.failure(.unknown))
             self.completion.onError(ShazamError.unknown)
         }
     }
@@ -85,12 +81,10 @@ extension ShazamSession: SHSessionDelegate {
             guard let mediaItem = match.mediaItems.first,
                   let shazamSong = ShazamSong(mediaItem: mediaItem)
             else {
-//                self.completion?(.failure(.matchFailed))
                 self.completion.onError(ShazamError.matchFailed)
                 return
             }
             
-//            self.completion?(.success(shazamSong))
             self.completion.onNext(shazamSong)
             self.stop()
         }
@@ -98,7 +92,6 @@ extension ShazamSession: SHSessionDelegate {
     
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
         DispatchQueue.main.async {
-//            self.completion?(.failure(.matchFailed))
             self.completion.onError(ShazamError.matchFailed)
             self.stop()
         }

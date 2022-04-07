@@ -27,35 +27,18 @@ extension ShazamSearchViewController {
         
         micImageView.layer.cornerRadius = 50
         
-//        viewModel.shazamSong.bind { [weak self] shazamSong in
-//            guard let vc = self,
-//                  let shazamSong = shazamSong
-//            else { return }
-//            SearchResultViewController.push(in: vc, with: shazamSong)
-//        }
-        
         viewModel.shazamSong.asObserver()
             .subscribe(onNext: { shazamSong in
                 SearchResultViewController.push(in: self, with: shazamSong)
             }).disposed(by: disposeBag)
-        
-//        viewModel.error.bind { [weak self] error in
-//            guard let error = error
-//            else { return }
-//            self?.alert(error)
-//        }
         
         viewModel.error.asObserver()
             .subscribe(onNext: { error in
                 self.alert(error)
             }).disposed(by: disposeBag)
         
-//        viewModel.searching.bind{ [weak self] toggle in
-//            self?.flicker()
-//        }
-        
         viewModel.searching.asObserver()
-            .subscribe(onNext: { sig in
+            .subscribe(onNext: { toggle in
                 self.flicker()
             }).disposed(by: disposeBag)
     }
@@ -69,25 +52,27 @@ extension ShazamSearchViewController {
 
 extension ShazamSearchViewController {
     private func flicker() {
-        let value = (try? viewModel.searching.value()) ?? false
-        if value {
-            UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
-                self.micImageView.alpha = 0
-            }
-            UIView.animate(withDuration: 12.0) {
-                self.progressBar.setProgress(1.0, animated: true)
-            }
-            shazamButton.isEnabled = false
-            cancelButton.isEnabled = true
-            
-        } else {
-            micImageView.layer.removeAllAnimations()
-            micImageView.alpha = 1
-            progressBar.layer.removeAllAnimations()
-            progressBar.setProgress(0, animated: false)
-            shazamButton.isEnabled = true
-            cancelButton.isEnabled = false
-        }
+        viewModel.searching.asObserver()
+            .subscribe(onNext: { value in
+                if value {
+                    UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
+                        self.micImageView.alpha = 0
+                    }
+                    UIView.animate(withDuration: 12.0) {
+                        self.progressBar.setProgress(1.0, animated: true)
+                    }
+                    self.shazamButton.isEnabled = false
+                    self.cancelButton.isEnabled = true
+                    
+                } else {
+                    self.micImageView.layer.removeAllAnimations()
+                    self.micImageView.alpha = 1
+                    self.progressBar.layer.removeAllAnimations()
+                    self.progressBar.setProgress(0, animated: false)
+                    self.shazamButton.isEnabled = true
+                    self.cancelButton.isEnabled = false
+                }
+            }).disposed(by: disposeBag)
     }
 }
 

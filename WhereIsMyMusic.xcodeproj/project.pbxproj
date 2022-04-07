@@ -32,7 +32,6 @@
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F89E0D5278DB3E000304A8A /* SearchResultViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89E0D4278DB3E000304A8A /* SearchResultViewViewModel.swift */; };
 		4F8C3D3E27FC5CA2007C7573 /* AppleSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D3D27FC5CA2007C7573 /* AppleSongModel.swift */; };
-		4F8D45C52788BBC400697FC2 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D45C42788BBC400697FC2 /* Box.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
 		4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA82717669400A649EB /* BugsAPI.swift */; };
 		4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAA27177F6400A649EB /* AppleSong.swift */; };
@@ -94,7 +93,6 @@
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F89E0D4278DB3E000304A8A /* SearchResultViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewViewModel.swift; sourceTree = "<group>"; };
 		4F8C3D3D27FC5CA2007C7573 /* AppleSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSongModel.swift; sourceTree = "<group>"; };
-		4F8D45C42788BBC400697FC2 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
 		4F94ACAA27177F6400A649EB /* AppleSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSong.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				4FD3C988276E395C001A890E /* DataSource.swift */,
-				4F8D45C42788BBC400697FC2 /* Box.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
 				4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
-				4F8D45C52788BBC400697FC2 /* Box.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */,
 				4F0F55D1275FA3C7005FD3EE /* SHMediaItem+Extension.swift in Sources */,

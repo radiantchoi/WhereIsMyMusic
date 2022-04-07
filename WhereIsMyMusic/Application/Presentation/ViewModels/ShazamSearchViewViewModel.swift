@@ -17,18 +17,7 @@ class ShazamSearchViewViewModel {
     
     let disposeBag = DisposeBag()
     
-    init() {
-//        shazamSession.completion = {
-//            switch $0 {
-//            case .success(let shazamSong):
-//                self.searching.onNext(false)
-//                self.shazamSong.onNext(shazamSong)
-//            case .failure(let error):
-//                self.searching.onNext(false)
-//                self.error.onNext(error)
-//            }
-//        }
-        
+    init() {        
         shazamSession.completion.asObserver()
             .subscribe(onNext: { shazamSong in
                 self.searching.onNext(false)

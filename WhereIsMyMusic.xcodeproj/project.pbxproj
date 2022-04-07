@@ -31,7 +31,7 @@
 		4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7A4BD926FCC814007BAD79 /* Alamofire */; };
 		4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F850E3A27075E4200025F06 /* ShazamSession.swift */; };
 		4F89E0D5278DB3E000304A8A /* SearchResultViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89E0D4278DB3E000304A8A /* SearchResultViewViewModel.swift */; };
-		4F8D45C52788BBC400697FC2 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D45C42788BBC400697FC2 /* Box.swift */; };
+		4F8C3D3E27FC5CA2007C7573 /* AppleSongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C3D3D27FC5CA2007C7573 /* AppleSongModel.swift */; };
 		4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA6271765B000A649EB /* BugsSong.swift */; };
 		4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACA82717669400A649EB /* BugsAPI.swift */; };
 		4F94ACAB27177F6400A649EB /* AppleSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94ACAA27177F6400A649EB /* AppleSong.swift */; };
@@ -59,6 +59,8 @@
 		4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8927102B0C005B5CE8 /* EndPoint.swift */; };
 		4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8D27102CE3005B5CE8 /* URL+Extension.swift */; };
 		4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03B8F27103834005B5CE8 /* MelonAPI.swift */; };
+		4FE9C4BC27FC23300081FF60 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE9C4BB27FC23300081FF60 /* RxCocoa */; };
+		4FE9C4BE27FC23300081FF60 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE9C4BD27FC23300081FF60 /* RxSwift */; };
 		4FEF20C427B953B2007D314B /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 4FEF20C327B953B2007D314B /* MarqueeLabel */; };
 		4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8926E271874E700CBF7C0 /* FloSong.swift */; };
 		4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */; };
@@ -90,7 +92,7 @@
 		4F73B09527663FAA009DE192 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4F850E3A27075E4200025F06 /* ShazamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSession.swift; sourceTree = "<group>"; };
 		4F89E0D4278DB3E000304A8A /* SearchResultViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewViewModel.swift; sourceTree = "<group>"; };
-		4F8D45C42788BBC400697FC2 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		4F8C3D3D27FC5CA2007C7573 /* AppleSongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSongModel.swift; sourceTree = "<group>"; };
 		4F94ACA6271765B000A649EB /* BugsSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSong.swift; sourceTree = "<group>"; };
 		4F94ACA82717669400A649EB /* BugsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsAPI.swift; sourceTree = "<group>"; };
 		4F94ACAA27177F6400A649EB /* AppleSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSong.swift; sourceTree = "<group>"; };
@@ -129,8 +131,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE9C4BE27FC23300081FF60 /* RxSwift in Frameworks */,
 				4FEF20C427B953B2007D314B /* MarqueeLabel in Frameworks */,
 				4FE03B7A27101061005B5CE8 /* Kingfisher in Frameworks */,
+				4FE9C4BC27FC23300081FF60 /* RxCocoa in Frameworks */,
 				4F7A4BDA26FCC814007BAD79 /* Alamofire in Frameworks */,
 				4F1D70A427145B69004224C1 /* SwiftSoup in Frameworks */,
 			);
@@ -182,6 +186,7 @@
 			children = (
 				4FBD542F271ADA3500E47A6C /* FloSongModel.swift */,
 				4FBD5433271B2EE300E47A6C /* YouTubeSongModel.swift */,
+				4F8C3D3D27FC5CA2007C7573 /* AppleSongModel.swift */,
 			);
 			path = ParsingModels;
 			sourceTree = "<group>";
@@ -251,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				4FD3C988276E395C001A890E /* DataSource.swift */,
-				4F8D45C42788BBC400697FC2 /* Box.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -364,6 +368,8 @@
 				4FE03B7927101061005B5CE8 /* Kingfisher */,
 				4F1D70A327145B69004224C1 /* SwiftSoup */,
 				4FEF20C327B953B2007D314B /* MarqueeLabel */,
+				4FE9C4BB27FC23300081FF60 /* RxCocoa */,
+				4FE9C4BD27FC23300081FF60 /* RxSwift */,
 			);
 			productName = WhereIsMyMusic;
 			productReference = 4FCA015026DFDC0700DEDE39 /* WhereIsMyMusic.app */;
@@ -398,6 +404,7 @@
 				4FE03B7827101061005B5CE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				4F1D70A227145B69004224C1 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				4FEF20C227B953B2007D314B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
+				4FE9C4BA27FC23300081FF60 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4FCA015126DFDC0700DEDE39 /* Products */;
 			projectDirPath = "";
@@ -449,10 +456,10 @@
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
 				4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
-				4F8D45C52788BBC400697FC2 /* Box.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */,
 				4F0F55D1275FA3C7005FD3EE /* SHMediaItem+Extension.swift in Sources */,
+				4F8C3D3E27FC5CA2007C7573 /* AppleSongModel.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
 				4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */,
@@ -710,6 +717,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		4FE9C4BA27FC23300081FF60 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		4FEF20C227B953B2007D314B /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cbpowell/MarqueeLabel";
@@ -735,6 +750,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4FE03B7827101061005B5CE8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		4FE9C4BB27FC23300081FF60 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FE9C4BA27FC23300081FF60 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		4FE9C4BD27FC23300081FF60 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FE9C4BA27FC23300081FF60 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		4FEF20C327B953B2007D314B /* MarqueeLabel */ = {
 			isa = XCSwiftPackageProductDependency;

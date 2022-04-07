@@ -12,20 +12,11 @@ struct AppleSong: Codable {
     let artist: String
     let album: String
     
-    enum CodingKeys: String, CodingKey {
-        case title = "trackName"
-        case artist = "artistName"
-        case album = "collectionName"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        title = try values.decode(String.self, forKey: CodingKeys.title)
-        artist = try values.decode(String.self, forKey: CodingKeys.artist)
-        album = try values.decode(String.self, forKey: CodingKeys.album)
+    init(appleSongModel: AppleSongModel) {
+        self.title = appleSongModel.trackName
+        self.artist = appleSongModel.artistName
+        self.album = appleSongModel.collectionName
     }
 }
 
-struct AppleSongs: Codable {
-    let results: [AppleSong]
-}
+

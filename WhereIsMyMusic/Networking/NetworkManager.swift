@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import RxSwift
+import Alamofire
 
 struct NetworkManager {
     static let shared = NetworkManager()
 }
 
 extension NetworkManager {
-    @discardableResult
-    func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask {
+    func call<T: Codable>(_ endPoint: EndPoint, for model: T.Type) -> Observable<T> {
         let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         var request = URLRequest(url: url!)
         request.httpMethod = endPoint.httpMethod.rawValue
@@ -24,27 +25,30 @@ extension NetworkManager {
             }
         }
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            let result: Result<T, Error>
-            
-            defer {
-                DispatchQueue.main.async {
-                    completion(result)
+        return Observable<T>.create { observer in
+            let dataRequest = AF.request(request)
+                .responseData { response in
+                    switch response.result {
+                    case .success(let data):
+                        do {
+                            let model: T = try JSONDecoder().decode(T.self, from: data)
+                            observer.onNext(model)
+                        } catch (let error) {
+                            observer.onError(error)
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                    
+                    observer.onCompleted()
                 }
-            }
             
-            guard let data = data,
-                  let model = try? JSONDecoder().decode(model, from: data)
-            else {
-                result = .failure(error ?? UnknownNetworkError())
-                return
+            return Disposables.create {
+                dataRequest.cancel()
             }
-            
-            result = .success(model)
         }
-        task.resume()
-        return task
     }
+    
 }
 
 struct UnknownNetworkError: Error {

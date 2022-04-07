@@ -6,23 +6,29 @@
 //
 
 import Foundation
+import RxSwift
 
 struct YouTubeAPI {
     private let baseURL = BaseURL.youTube
     var query: Query
+    
+    let disposeBag = DisposeBag()
 }
 
 extension YouTubeAPI {
-    func loadYoutubeSong(completion: @escaping ([YouTubeSong]?) -> Void) {
+    func loadYouTube() -> Observable<[YouTubeSong]> {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
-        NetworkManager.shared.call(endPoint, for: YouTubeResponse.self) {
-            switch $0 {
-            case .success(let result):
-                let youTubeResults = Array(result.items).slice(first: 3)
-                let youTubeSongs = youTubeResults.compactMap { YouTubeSong(result: $0) }
-                completion(youTubeSongs)
-            case .failure(_):
-                completion(nil)
+        
+        return Observable<[YouTubeSong]>.create { observer in
+            let data = NetworkManager.shared.call(endPoint, for: YouTubeResponse.self)
+                .subscribe(onNext: { youtubeSongs in
+                    let youtubeResult = youtubeSongs.items.slice(first: 3)
+                    let youtubeData = youtubeResult.compactMap { YouTubeSong(result: $0) }
+                    observer.onNext(youtubeData)
+                })
+            
+            return Disposables.create {
+                data.disposed(by: disposeBag)
             }
         }
     }

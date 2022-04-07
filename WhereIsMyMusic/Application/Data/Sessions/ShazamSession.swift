@@ -7,14 +7,14 @@
 
 import Foundation
 import ShazamKit
+import RxSwift
 
-extension ShazamSession {
-    
-}
+typealias ResultType = Result<ShazamSong, ShazamError>
+typealias Completion = (ResultType) -> Void
 
 final class ShazamSession: NSObject {
     
-    var completion: Completion?
+    var completion = PublishSubject<ShazamSong>()
     
     private lazy var audioSession: AVAudioSession = .sharedInstance()
     private lazy var session: SHSession = .init()
@@ -36,7 +36,7 @@ extension ShazamSession {
             self.record()
         case .denied:
             DispatchQueue.main.async {
-                self.completion?(.failure(.recordDenied))
+                self.completion.onError(ShazamError.recordDenied)
             }
         case .undetermined:
             audioSession.requestRecordPermission { granted in
@@ -44,13 +44,13 @@ extension ShazamSession {
                     if granted {
                         self.record()
                     } else {
-                        self.completion?(.failure(.recordDenied))
+                        self.completion.onError(ShazamError.recordDenied)
                     }
                 }
             }
         @unknown default:
             DispatchQueue.main.async {
-                self.completion?(.failure(.unknown))
+                self.completion.onError(ShazamError.unknown)
             }
         }
     }
@@ -69,7 +69,7 @@ extension ShazamSession {
             self.audioEngine.prepare()
             try self.audioEngine.start()
         } catch {
-            self.completion?(.failure(.unknown))
+            self.completion.onError(ShazamError.unknown)
         }
     }
 }
@@ -81,18 +81,18 @@ extension ShazamSession: SHSessionDelegate {
             guard let mediaItem = match.mediaItems.first,
                   let shazamSong = ShazamSong(mediaItem: mediaItem)
             else {
-                self.completion?(.failure(.matchFailed))
+                self.completion.onError(ShazamError.matchFailed)
                 return
             }
             
-            self.completion?(.success(shazamSong))
+            self.completion.onNext(shazamSong)
             self.stop()
         }
     }
     
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
         DispatchQueue.main.async {
-            self.completion?(.failure(.matchFailed))
+            self.completion.onError(ShazamError.matchFailed)
             self.stop()
         }
     }

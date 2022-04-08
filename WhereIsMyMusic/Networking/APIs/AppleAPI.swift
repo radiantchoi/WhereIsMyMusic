@@ -12,7 +12,7 @@ struct AppleAPI {
     private let baseURL = BaseURL.apple
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension AppleAPI {

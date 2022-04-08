@@ -15,7 +15,7 @@ class ShazamSearchViewViewModel {
     let error = PublishSubject<ShazamError>()
     let searching = BehaviorSubject(value: false)
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {        
         shazamSession.completion.asObserver()

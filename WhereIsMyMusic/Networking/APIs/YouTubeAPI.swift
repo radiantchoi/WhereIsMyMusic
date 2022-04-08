@@ -12,7 +12,7 @@ struct YouTubeAPI {
     private let baseURL = BaseURL.youTube
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension YouTubeAPI {

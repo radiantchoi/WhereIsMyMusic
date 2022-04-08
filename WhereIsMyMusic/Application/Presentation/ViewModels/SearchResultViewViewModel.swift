@@ -13,7 +13,7 @@ struct SearchResultViewViewModel {
     let shazamCell: ShazamResultTableViewCellViewModel
     let songs: BehaviorRelay<[SearchResultTableViewCellViewModel]> = BehaviorRelay(value: [])
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init(shazamCell: ShazamResultTableViewCellViewModel) {
         self.shazamCell = shazamCell

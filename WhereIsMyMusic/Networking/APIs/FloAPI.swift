@@ -12,7 +12,7 @@ struct FloAPI {
     private let baseURL = BaseURL.flo
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension FloAPI {

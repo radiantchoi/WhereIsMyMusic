@@ -17,7 +17,7 @@ struct BugsAPI {
     
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension BugsAPI {

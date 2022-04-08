@@ -17,7 +17,7 @@ struct GenieAPI {
     
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension GenieAPI {

@@ -17,7 +17,7 @@ struct MelonAPI {
     
     var query: Query
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 }
 
 extension MelonAPI {

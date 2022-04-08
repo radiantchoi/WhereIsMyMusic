@@ -10,7 +10,7 @@ import RxSwift
 
 class ParsingSession {
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
 }
 

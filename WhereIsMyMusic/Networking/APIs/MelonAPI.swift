@@ -25,7 +25,7 @@ extension MelonAPI {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         
         return Observable.create { observer in
-            let source = CrawlManager.shared.crawlTwo(endPoint, crawlingCss: CrawlingCSS.melon)
+            let source = CrawlManager.shared.crawl(endPoint, crawlingCss: CrawlingCSS.melon)
                 .subscribe(onNext: { datas in
                     let melonSongs = datas.compactMap { MelonSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
                     observer.onNext(melonSongs)

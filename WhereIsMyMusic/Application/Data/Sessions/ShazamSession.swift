@@ -9,9 +9,6 @@ import Foundation
 import ShazamKit
 import RxSwift
 
-typealias ResultType = Result<ShazamSong, ShazamError>
-typealias Completion = (ResultType) -> Void
-
 final class ShazamSession: NSObject {
     
     var completion = PublishSubject<ShazamSong>()

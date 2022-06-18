@@ -21,7 +21,7 @@ extension CrawlManager {
         
         return Observable<[[String]]>.create { observer in
             let data = AF.request(urlString)
-                .responseString { (response) in
+                .responseString { response in
                     guard let html = response.value
                     else { return }
                     

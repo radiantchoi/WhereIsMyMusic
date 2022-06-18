@@ -19,7 +19,7 @@ extension FloAPI {
     func loadFlo() -> Observable<[FloSong]> {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         
-        return Observable<[FloSong]>.create { observer in
+        return PublishSubject.create { observer in
             let data = NetworkManager.shared.call(endPoint, for: FloResponse.self)
                 .subscribe(onNext: { floSongs in
                     let floResults = floSongs.data.list[0].list.slice(first: 3)

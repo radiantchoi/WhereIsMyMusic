@@ -49,7 +49,7 @@ extension ParsingSession {
                                               "key": apiKey]
         )
         
-        return Observable<[SearchResultTableViewCellViewModel]>.create { observer in
+        return PublishSubject.create { observer in
             let appleCells = apple.loadApple()
                 .subscribe(onNext: { appleSongs in
                     let cellViewModels = appleSongs.compactMap { SearchResultTableViewCellViewModel(song: Song(appleSong: $0)) }

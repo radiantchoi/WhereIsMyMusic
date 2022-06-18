@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 struct AppleAPI {
     private let baseURL = BaseURL.apple
@@ -19,7 +20,7 @@ extension AppleAPI {
     func loadApple() -> Observable<[AppleSong]> {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         
-        return Observable<[AppleSong]>.create { observer in
+        return PublishSubject.create { observer in
             let data = NetworkManager.shared.call(endPoint, for: AppleSongs.self)
                 .subscribe(onNext: { appleSongs in
                     let appleResult = appleSongs.results.slice(first: 3)

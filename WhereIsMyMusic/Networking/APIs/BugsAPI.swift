@@ -24,7 +24,7 @@ extension BugsAPI {
     func loadBugs() -> Observable<[BugsSong]> {
         let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
         
-        return Observable.create { observer in
+        return PublishSubject.create { observer in
             let source = CrawlManager.shared.crawl(endPoint, crawlingCss: CrawlingCSS.bugs)
                 .subscribe(onNext: { datas in
                     let bugsSongs = datas.compactMap { BugsSong.init(title: $0[0], artist: $0[1], album: $0[2]) }

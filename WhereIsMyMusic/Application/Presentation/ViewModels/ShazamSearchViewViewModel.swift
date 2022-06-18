@@ -19,12 +19,21 @@ class ShazamSearchViewViewModel {
     
     init() {        
         shazamSession.completion.asObserver()
-            .subscribe(onNext: { shazamSong in
+            .subscribe(onNext: { result in
+//                self.searching.onNext(false)
+//                self.shazamSong.onNext(shazamSong)
+//            }, onError: { error in
+//                self.searching.onNext(false)
+//                self.error.onNext(error as! ShazamError)
+                
                 self.searching.onNext(false)
-                self.shazamSong.onNext(shazamSong)
-            }, onError: { error in
-                self.searching.onNext(false)
-                self.error.onNext(error as! ShazamError)
+                switch result {
+                case .success(let shazamSong):
+                    self.shazamSong.onNext(shazamSong)
+                case .failure(let error):
+                    self.error.onNext(error)
+                }
+                
             }).disposed(by: disposeBag)
     }
 }

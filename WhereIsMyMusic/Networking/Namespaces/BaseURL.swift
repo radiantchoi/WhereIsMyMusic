@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BaseURL {
+enum BaseURL {
     static let melon = URL(string: "https://www.melon.com/search/song/index.htm")!
     static let genie = URL(string: "https://www.genie.co.kr/search/searchSong")!
     static let bugs = URL(string: "https://music.bugs.co.kr/search/track")!

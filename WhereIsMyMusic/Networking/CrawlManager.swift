@@ -25,22 +25,20 @@ extension CrawlManager {
                     guard let html = response.value
                     else { return }
                     
-                    do {
-                        var results: [[String]] = Array(repeating: [], count: 3)
-                        let doc: Document = try SwiftSoup.parse(html)
-                        let elements: Elements = try doc.select(crawlingCss.cssQuery)
-                        for n in 0...2 {
-                            let titleResult = try elements.select(crawlingCss.titleCss[n]).text()
-                            let artistResult = try elements.select(crawlingCss.artistCss[n]).text()
-                            let albumResult = try elements.select(crawlingCss.albumCss[n]).text()
-                            results[n].append(titleResult)
-                            results[n].append(artistResult)
-                            results[n].append(albumResult)
-                        }
-                        observer.onNext(results)
-                    } catch(let error) {
-                        observer.onError(error)
+                    var results: [[String]] = []
+                    let doc = try? SwiftSoup.parse(html)
+                    let elements = try? doc?.select(crawlingCss.cssQuery)
+                    for n in 0...2 {
+                        let titleResult = try? elements?.select(crawlingCss.titleCss[n]).text()
+                        let artistResult = try? elements?.select(crawlingCss.artistCss[n]).text()
+                        let albumResult = try? elements?.select(crawlingCss.albumCss[n]).text()
+                        
+                        let result = [titleResult ?? "", artistResult ?? "", albumResult ?? ""]
+                        results.append(result)
                     }
+                    
+                    observer.onNext(results)
+                    observer.onCompleted()
                 }
             
             return Disposables.create {

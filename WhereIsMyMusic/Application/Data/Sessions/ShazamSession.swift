@@ -32,19 +32,9 @@ extension ShazamSession {
         case .granted:
             self.record()
         case .denied:
-//            DispatchQueue.main.async {
-//                self.completion.onError(ShazamError.recordDenied)
-//            }
             self.completion.onNext(.failure(ShazamError.recordDenied))
         case .undetermined:
             audioSession.requestRecordPermission { granted in
-//                DispatchQueue.main.async {
-//                    if granted {
-//                        self.record()
-//                    } else {
-//                        self.completion.onError(ShazamError.recordDenied)
-//                    }
-//                }
                 if granted {
                     self.record()
                 } else {
@@ -52,9 +42,6 @@ extension ShazamSession {
                 }
             }
         @unknown default:
-//            DispatchQueue.main.async {
-//                self.completion.onError(ShazamError.unknown)
-//            }
             self.completion.onNext(.failure(ShazamError.unknown))
         }
     }
@@ -73,7 +60,6 @@ extension ShazamSession {
             self.audioEngine.prepare()
             try self.audioEngine.start()
         } catch {
-//            self.completion.onError(ShazamError.unknown)
             self.completion.onNext(.failure(ShazamError.unknown))
         }
     }
@@ -86,7 +72,6 @@ extension ShazamSession: SHSessionDelegate {
             guard let mediaItem = match.mediaItems.first,
                   let shazamSong = ShazamSong(mediaItem: mediaItem)
             else {
-//                self.completion.onError(ShazamError.matchFailed)
                 self.completion.onNext(.failure(ShazamError.matchFailed))
                 return
             }
@@ -98,7 +83,6 @@ extension ShazamSession: SHSessionDelegate {
     
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
         DispatchQueue.main.async {
-//            self.completion.onError(ShazamError.matchFailed)
             self.completion.onNext(.failure(ShazamError.matchFailed))
             self.stop()
         }

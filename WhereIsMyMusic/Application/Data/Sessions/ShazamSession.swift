@@ -10,7 +10,6 @@ import ShazamKit
 import RxSwift
 
 final class ShazamSession: NSObject {
-    
     var completion = PublishSubject<Result<ShazamSong, ShazamError>>()
     
     private lazy var audioSession: AVAudioSession = .sharedInstance()

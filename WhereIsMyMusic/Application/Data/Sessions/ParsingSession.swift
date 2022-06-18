@@ -9,9 +9,7 @@ import Foundation
 import RxSwift
 
 class ParsingSession {
-    
     private let disposeBag = DisposeBag()
-    
 }
 
 extension ParsingSession {

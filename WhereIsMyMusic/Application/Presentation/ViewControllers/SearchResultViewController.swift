@@ -19,7 +19,6 @@ private enum Row: Equatable {
 }
 
 class SearchResultViewController: UIViewController {
-    
     @IBOutlet weak var resultTableView: UITableView!
     
     private let disposeBag = DisposeBag()

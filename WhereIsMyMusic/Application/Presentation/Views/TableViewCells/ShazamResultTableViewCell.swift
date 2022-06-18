@@ -8,7 +8,6 @@
 import UIKit
 
 class ShazamResultTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!

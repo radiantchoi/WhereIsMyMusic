@@ -10,7 +10,6 @@ import ShazamKit
 import RxSwift
 
 class ShazamSearchViewController: UIViewController {
-    
     @IBOutlet private weak var shazamButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var micImageView: UIImageView!

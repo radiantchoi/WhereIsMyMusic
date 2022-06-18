@@ -9,7 +9,6 @@ import UIKit
 import MarqueeLabel
 
 class SearchResultTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var titleLabel: MarqueeLabel!
     @IBOutlet weak var artistLabel: MarqueeLabel!

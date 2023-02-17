@@ -5,8 +5,9 @@
 //  Created by Gordon Choi on 2021/09/02.
 //
 
-import UIKit
 import ShazamKit
+import UIKit
+
 import RxSwift
 
 final class ShazamSearchViewController: UIViewController {

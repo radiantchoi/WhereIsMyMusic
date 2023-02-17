@@ -17,6 +17,8 @@
 		4F33C3D8273D4B92009B9868 /* IntroScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */; };
 		4F44984F273D66B0006603FC /* LogoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F44984E273D66B0006603FC /* LogoImage.png */; };
 		4F454909278B4BBB00436137 /* ShazamSearchViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */; };
+		4F4584EA299F44EE0040432C /* ShazamSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584E9299F44EE0040432C /* ShazamSearchUseCase.swift */; };
+		4F4584EF299F46950040432C /* ShazamSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584EE299F46950040432C /* ShazamSearchRepository.swift */; };
 		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
@@ -79,6 +81,8 @@
 		4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroScreen.storyboard; sourceTree = "<group>"; };
 		4F44984E273D66B0006603FC /* LogoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoImage.png; sourceTree = "<group>"; };
 		4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewViewModel.swift; sourceTree = "<group>"; };
+		4F4584E9299F44EE0040432C /* ShazamSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchUseCase.swift; sourceTree = "<group>"; };
+		4F4584EE299F46950040432C /* ShazamSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchRepository.swift; sourceTree = "<group>"; };
 		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +158,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4F4584E8299F44D60040432C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4F4584E9299F44EE0040432C /* ShazamSearchUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4F4584ED299F46480040432C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4F4584EE299F46950040432C /* ShazamSearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		4FB3ACD42764E1A300264277 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +187,7 @@
 		4FB3ACD52764E1E700264277 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4F4584E8299F44D60040432C /* UseCase */,
 				4FE03B84271029C2005B5CE8 /* Models */,
 			);
 			path = Domain;
@@ -175,6 +196,7 @@
 		4FB3ACD62764E1EF00264277 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4F4584ED299F46480040432C /* Repository */,
 				4FBD542E271ADA1C00E47A6C /* ParsingModels */,
 				4FE03B8727102A15005B5CE8 /* Sessions */,
 			);
@@ -453,6 +475,7 @@
 				4FC0FD342727113100DEFD3E /* SearchResultTableViewCell.swift in Sources */,
 				4F73B09627663FAA009DE192 /* Array+Extension.swift in Sources */,
 				4F0F55D3275FA8D6005FD3EE /* BaseURL.swift in Sources */,
+				4F4584EF299F46950040432C /* ShazamSearchRepository.swift in Sources */,
 				4F73B092276602BA009DE192 /* UIViewController+Extension.swift in Sources */,
 				4F89E0D5278DB3E000304A8A /* SearchResultViewViewModel.swift in Sources */,
 				4FFEABE4278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift in Sources */,
@@ -486,6 +509,7 @@
 				4F850E3B27075E4200025F06 /* ShazamSession.swift in Sources */,
 				4FE03B7E27101793005B5CE8 /* MelonSong.swift in Sources */,
 				4FBD4B10270F1C0A00D5D62E /* ShazamSong.swift in Sources */,
+				4F4584EA299F44EE0040432C /* ShazamSearchUseCase.swift in Sources */,
 				4FBD4B1B270F237B00D5D62E /* SearchResultViewController.swift in Sources */,
 				4F94ACA92717669400A649EB /* BugsAPI.swift in Sources */,
 				4FE03B9027103834005B5CE8 /* MelonAPI.swift in Sources */,

@@ -40,9 +40,6 @@
                                 <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="baseBackgroundColor" red="0.98143190150000004" green="0.81941813230000005" blue="0.14907398820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
-                            <connections>
-                                <action selector="searchPressed:" destination="-1" eventType="touchUpInside" id="2de-Gi-GcU"/>
-                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -54,9 +51,6 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" image="xmark" catalog="system"/>
-                    <connections>
-                        <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="DWw-20-bkt"/>
-                    </connections>
                 </button>
                 <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H3P-b6-jsK">
                     <rect key="frame" x="20" y="850" width="374" height="4"/>

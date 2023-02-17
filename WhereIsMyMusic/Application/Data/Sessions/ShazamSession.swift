@@ -7,83 +7,106 @@
 
 import Foundation
 import ShazamKit
+
 import RxSwift
 
 final class ShazamSession: NSObject {
     var completion = PublishSubject<Result<ShazamSong, ShazamError>>()
     
+    private var isSearching = BehaviorSubject(value: false)
+    private var shazamResult = PublishSubject<ShazamSong>()
+    private var shazamError = PublishSubject<ShazamError>()
+    
+    var searchingStatusObservable: Observable<Bool> {
+        return isSearching.asObservable()
+    }
+    var shazamResultObservable: Observable<ShazamSong> {
+        return shazamResult.asObservable()
+    }
+    var shazamErrorObservable: Observable<ShazamError> {
+        return shazamError.asObservable()
+    }
+    
     private lazy var audioSession: AVAudioSession = .sharedInstance()
     private lazy var session: SHSession = .init()
     private lazy var audioEngine: AVAudioEngine = .init()
-    private lazy var inputNode = self.audioEngine.inputNode
+    private lazy var inputNode = audioEngine.inputNode
     private lazy var bus: AVAudioNodeBus = 0
+    
+//    private var audioEngineStatus: Bool {
+//        return audioEngine.isRunning
+//    }
+//
+//    var isSearchingObservable: Observable<Bool> {
+//        return Observable.create { observer in
+//            observer.onNext(self.audioEngineStatus)
+//
+//            return Disposables.create()
+//        }
+//    }
     
     override init() {
         super.init()
+        
         session.delegate = self
     }
 }
-
 
 extension ShazamSession {
     func start() {
         switch audioSession.recordPermission {
         case .granted:
-            self.record()
+            record()
         case .denied:
-            self.completion.onNext(.failure(ShazamError.recordDenied))
+            shazamError.onNext(ShazamError.recordDenied)
         case .undetermined:
-            audioSession.requestRecordPermission { granted in
+            audioSession.requestRecordPermission { [weak self] granted in
                 if granted {
-                    self.record()
+                    self?.record()
                 } else {
-                    self.completion.onNext(.failure(ShazamError.recordDenied))
+                    self?.shazamError.onNext(ShazamError.recordDenied)
                 }
             }
         @unknown default:
-            self.completion.onNext(.failure(ShazamError.unknown))
+            shazamError.onNext(ShazamError.unknown)
         }
     }
     
     func stop() {
-        self.audioEngine.stop()
-        self.inputNode.removeTap(onBus: bus)
+        audioEngine.stop()
+        inputNode.removeTap(onBus: bus)
+        isSearching.onNext(false)
     }
     
     private func record() {
         do {
             let format = self.inputNode.outputFormat(forBus: bus)
-            self.inputNode.installTap(onBus: bus, bufferSize: 1024, format: format) { buffer, time in
-                self.session.matchStreamingBuffer(buffer, at: time)
+            inputNode.installTap(onBus: bus, bufferSize: 1024, format: format) { [weak self] buffer, time in
+                self?.session.matchStreamingBuffer(buffer, at: time)
             }
-            self.audioEngine.prepare()
-            try self.audioEngine.start()
+            audioEngine.prepare()
+            try audioEngine.start()
+            isSearching.onNext(true)
         } catch {
-            self.completion.onNext(.failure(ShazamError.unknown))
+            shazamError.onNext(ShazamError.unknown)
         }
     }
 }
 
 extension ShazamSession: SHSessionDelegate {
-    
     func session(_ session: SHSession, didFind match: SHMatch) {
-        DispatchQueue.main.async {
-            guard let mediaItem = match.mediaItems.first,
-                  let shazamSong = ShazamSong(mediaItem: mediaItem)
-            else {
-                self.completion.onNext(.failure(ShazamError.matchFailed))
-                return
-            }
-            
-            self.completion.onNext(.success(shazamSong))
-            self.stop()
+        guard let mediaItem = match.mediaItems.first,
+              let shazamSong = ShazamSong(mediaItem: mediaItem) else {
+            shazamError.onNext(ShazamError.matchFailed)
+            return
         }
+        
+        shazamResult.onNext((shazamSong))
+        stop()
     }
     
     func session(_ session: SHSession, didNotFindMatchFor signature: SHSignature, error: Error?) {
-        DispatchQueue.main.async {
-            self.completion.onNext(.failure(ShazamError.matchFailed))
-            self.stop()
-        }
+        shazamError.onNext(ShazamError.matchFailed)
+        stop()
     }
 }

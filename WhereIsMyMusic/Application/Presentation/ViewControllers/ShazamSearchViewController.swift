@@ -8,6 +8,7 @@
 import ShazamKit
 import UIKit
 
+import RxCocoa
 import RxSwift
 
 final class ShazamSearchViewController: UIViewController {
@@ -27,6 +28,7 @@ extension ShazamSearchViewController {
         
         setupView()
         bindViewModel()
+        bindAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,13 +109,29 @@ extension ShazamSearchViewController {
 }
 
 extension ShazamSearchViewController {
-    @IBAction private func searchPressed(_ sender: UIButton) {
+    private func bindAction() {
+        shazamButton.rx.tap
+            .withUnretained(self)
+            .bind { _ in
+                self.startSearching()
+            }
+            .disposed(by: disposeBag)
+        
+        cancelButton.rx.tap
+            .withUnretained(self)
+            .bind { _ in
+                self.stopSearching()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func startSearching() {
         viewModel.shazamSession.start()
         viewModel.searching.onNext(true)
         flicker()
     }
     
-    @IBAction private func cancelPressed(_ sender: UIButton) {
+    private func stopSearching() {
         viewModel.shazamSession.stop()
         viewModel.searching.onNext(false)
         flicker()

@@ -18,7 +18,7 @@ private enum Row: Equatable {
     case song(SearchResultTableViewCellViewModel)
 }
 
-class SearchResultViewController: UIViewController {
+final class SearchResultViewController: UIViewController {
     @IBOutlet weak var resultTableView: UITableView!
     
     private let disposeBag = DisposeBag()
@@ -42,12 +42,16 @@ extension SearchResultViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.981432, green: 0.819418, blue: 0.149074, alpha: 1)
+        
+        registerTableViewCells()
+        setupSongs()
+    }
+    
+    private func registerTableViewCells() {
         resultTableView.register(ShazamResultTableViewCell.nib,
                                  forCellReuseIdentifier: ShazamResultTableViewCell.reuseIdentifier)
         resultTableView.register(SearchResultTableViewCell.nib,
                                  forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
-        
-        setupSongs()
     }
 }
 
@@ -84,9 +88,9 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 
 extension SearchResultViewController {
     private func setupSongs() {
-        self.dataSource.removeAllSections()
-        self.dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamCell)])
-        self.dataSource.appendSection(.song, with: [])
+        dataSource.removeAllSections()
+        dataSource.appendSection(.shazam, with: [.shazam(viewModel.shazamCell)])
+        dataSource.appendSection(.song, with: [])
 
         viewModel.songs.asObservable()
             .subscribe(onNext: { [weak self] songs in

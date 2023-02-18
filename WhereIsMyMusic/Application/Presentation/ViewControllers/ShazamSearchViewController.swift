@@ -44,19 +44,23 @@ extension ShazamSearchViewController {
     }
     
     private func bindViewModel() {
-        viewModel.shazamSong.asObserver()
+        viewModel.shazamSong
             .subscribe(onNext: { shazamSong in
-                SearchResultViewController.push(in: self, with: shazamSong)
+                DispatchQueue.main.async {
+                    SearchResultViewController.push(in: self, with: shazamSong)
+                }
             })
             .disposed(by: disposeBag)
         
-        viewModel.error.asObserver()
+        viewModel.shazamError
             .subscribe(onNext: { [weak self] error in
-                self?.alert(error)
+                DispatchQueue.main.async {
+                    self?.alert(error)
+                }
             })
             .disposed(by: disposeBag)
         
-        viewModel.searching.asObserver()
+        viewModel.searching
             .subscribe(onNext: { [weak self] _ in
                 self?.flicker()
             })
@@ -66,10 +70,12 @@ extension ShazamSearchViewController {
     private func flicker() {
         viewModel.searching.asObserver()
             .subscribe(onNext: { [weak self] value in
-                if value {
-                    self?.startAnimation()
-                } else {
-                    self?.terminateAnimation()
+                DispatchQueue.main.async {
+                    if value {
+                        self?.startAnimation()
+                    } else {
+                        self?.terminateAnimation()
+                    }
                 }
             })
             .disposed(by: disposeBag)
@@ -126,13 +132,13 @@ extension ShazamSearchViewController {
     }
     
     private func startSearching() {
-        viewModel.shazamSession.start()
+        viewModel.startSearching()
         viewModel.searching.onNext(true)
         flicker()
     }
     
     private func stopSearching() {
-        viewModel.shazamSession.stop()
+        viewModel.stopSearching()
         viewModel.searching.onNext(false)
         flicker()
     }

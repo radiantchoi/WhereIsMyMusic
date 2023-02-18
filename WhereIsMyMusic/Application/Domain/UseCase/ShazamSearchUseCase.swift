@@ -12,6 +12,7 @@ protocol ShazamSearchUseCase {
     func stopSearching()
     func subscribeShazamResult() -> Observable<ShazamSong>
     func subscribeShazamError() -> Observable<ShazamError>
+    func subscribeSearchingStatus() -> Observable<Bool>
 }
 
 final class ShazamSearchUseCaseImpl: ShazamSearchUseCase {
@@ -35,5 +36,9 @@ final class ShazamSearchUseCaseImpl: ShazamSearchUseCase {
     
     func subscribeShazamError() -> Observable<ShazamError> {
         return repository.subscribeShazamError()
+    }
+    
+    func subscribeSearchingStatus() -> Observable<Bool> {
+        return repository.subscribeSearchingStatus()
     }
 }

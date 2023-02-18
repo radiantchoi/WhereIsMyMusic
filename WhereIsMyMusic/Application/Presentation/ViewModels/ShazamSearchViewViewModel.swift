@@ -20,7 +20,7 @@ final class ShazamSearchViewViewModel {
     init(shazamUseCase: ShazamSearchUseCase = ShazamSearchUseCaseImpl()) {
         self.shazamUseCase = shazamUseCase
         
-        subscribeResults()
+        subscribeViewModel()
     }
     
     func startSearching() {
@@ -31,7 +31,7 @@ final class ShazamSearchViewViewModel {
         shazamUseCase.stopSearching()
     }
     
-    func subscribeResults() {
+    func subscribeViewModel() {
         shazamUseCase.subscribeShazamResult()
             .subscribe(onNext: { [weak self] result in
                 self?.shazamSong.onNext(result)
@@ -41,6 +41,12 @@ final class ShazamSearchViewViewModel {
         shazamUseCase.subscribeShazamError()
             .subscribe(onNext: { [weak self] error in
                 self?.shazamError.onNext(error)
+            })
+            .disposed(by: disposeBag)
+        
+        shazamUseCase.subscribeSearchingStatus()
+            .subscribe(onNext: { [weak self] isSearching in
+                self?.searching.onNext(isSearching)
             })
             .disposed(by: disposeBag)
     }

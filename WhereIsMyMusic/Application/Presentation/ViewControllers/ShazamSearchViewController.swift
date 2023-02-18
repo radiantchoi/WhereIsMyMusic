@@ -68,7 +68,7 @@ extension ShazamSearchViewController {
     }
     
     private func flicker() {
-        viewModel.searching.asObserver()
+        viewModel.searching
             .subscribe(onNext: { [weak self] value in
                 DispatchQueue.main.async {
                     if value {
@@ -133,13 +133,11 @@ extension ShazamSearchViewController {
     
     private func startSearching() {
         viewModel.startSearching()
-        viewModel.searching.onNext(true)
         flicker()
     }
     
     private func stopSearching() {
         viewModel.stopSearching()
-        viewModel.searching.onNext(false)
         flicker()
     }
 }

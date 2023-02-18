@@ -11,20 +11,18 @@ import ShazamKit
 import RxSwift
 
 final class ShazamSession: NSObject {
-    var completion = PublishSubject<Result<ShazamSong, ShazamError>>()
-    
-    private var isSearching = BehaviorSubject(value: false)
     private var shazamResult = PublishSubject<ShazamSong>()
     private var shazamError = PublishSubject<ShazamError>()
+    private var isSearching = BehaviorSubject(value: false)
     
-    var searchingStatusObservable: Observable<Bool> {
-        return isSearching.asObservable()
-    }
     var shazamResultObservable: Observable<ShazamSong> {
         return shazamResult.asObservable()
     }
     var shazamErrorObservable: Observable<ShazamError> {
         return shazamError.asObservable()
+    }
+    var isSearchingObservable: Observable<Bool> {
+        return isSearching.asObservable()
     }
     
     private lazy var audioSession: AVAudioSession = .sharedInstance()
@@ -32,18 +30,6 @@ final class ShazamSession: NSObject {
     private lazy var audioEngine: AVAudioEngine = .init()
     private lazy var inputNode = audioEngine.inputNode
     private lazy var bus: AVAudioNodeBus = 0
-    
-//    private var audioEngineStatus: Bool {
-//        return audioEngine.isRunning
-//    }
-//
-//    var isSearchingObservable: Observable<Bool> {
-//        return Observable.create { observer in
-//            observer.onNext(self.audioEngineStatus)
-//
-//            return Disposables.create()
-//        }
-//    }
     
     override init() {
         super.init()

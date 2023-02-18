@@ -18,7 +18,6 @@ final class ShazamSearchViewController: UIViewController {
     @IBOutlet private weak var progressBar: UIProgressView!
     
     private let viewModel = ShazamSearchViewViewModel()
-    
     private let disposeBag = DisposeBag()
 }
 
@@ -30,12 +29,6 @@ extension ShazamSearchViewController {
         bindViewModel()
         bindAction()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        flicker()
-    }
 }
 
 extension ShazamSearchViewController {
@@ -45,18 +38,16 @@ extension ShazamSearchViewController {
     
     private func bindViewModel() {
         viewModel.shazamSong
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { shazamSong in
-                DispatchQueue.main.async {
-                    SearchResultViewController.push(in: self, with: shazamSong)
-                }
+                SearchResultViewController.push(in: self, with: shazamSong)
             })
             .disposed(by: disposeBag)
         
         viewModel.shazamError
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] error in
-                DispatchQueue.main.async {
-                    self?.alert(error)
-                }
+                self?.alert(error)
             })
             .disposed(by: disposeBag)
         

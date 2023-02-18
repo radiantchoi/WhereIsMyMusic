@@ -10,8 +10,8 @@ import RxSwift
 protocol ShazamSearchUseCase {
     func startSearching()
     func stopSearching()
-//    func subscribeShazamResult() -> Observable<ShazamSong>
-//    func subscribeShazamError() -> Observable<ShazamError>
+    func subscribeShazamResult() -> Observable<ShazamSong>
+    func subscribeShazamError() -> Observable<ShazamError>
 }
 
 final class ShazamSearchUseCaseImpl: ShazamSearchUseCase {
@@ -22,10 +22,18 @@ final class ShazamSearchUseCaseImpl: ShazamSearchUseCase {
     }
     
     func startSearching() {
-        
+        repository.startSearching()
     }
     
     func stopSearching() {
-        
+        repository.stopSearching()
+    }
+    
+    func subscribeShazamResult() -> Observable<ShazamSong> {
+        return repository.subscribeShazamResult()
+    }
+    
+    func subscribeShazamError() -> Observable<ShazamError> {
+        return repository.subscribeShazamError()
     }
 }

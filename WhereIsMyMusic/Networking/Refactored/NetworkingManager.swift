@@ -7,6 +7,7 @@
 
 import Foundation
 
+import Alamofire
 import RxSwift
 
 struct NetworkingManager {
@@ -30,33 +31,48 @@ struct NetworkingManager {
     
     private func call(_ request: URLRequest, sessionType: SessionType = .dataTask, data: Data? = nil) -> Single<Data> {
         return Single.create { observer in
-            let completionHandler: (Data?, URLResponse?, Error?) -> Void = { data, response, error in
-                if error != nil {
-                    observer(.failure(NetworkError.unknownNetworkError))
-                    return
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    observer(.failure(NetworkError.failedToGetHTTPResponse))
-                    return
-                }
-                
-                guard let data else {
-                    observer(.failure(NetworkError.failedToGetData))
-                    return
-                }
-                
-                if (200...299) ~= httpResponse.statusCode {
+//            let completionHandler: (Data?, URLResponse?, Error?) -> Void = { data, response, error in
+//                if error != nil {
+//                    observer(.failure(NetworkError.unknownNetworkError))
+//                    return
+//                }
+//
+//                guard let httpResponse = response as? HTTPURLResponse else {
+//                    observer(.failure(NetworkError.failedToGetHTTPResponse))
+//                    return
+//                }
+//
+//                guard let data else {
+//                    observer(.failure(NetworkError.failedToGetData))
+//                    return
+//                }
+//
+//                if (200...299) ~= httpResponse.statusCode {
+//                    observer(.success(data))
+//                } else {
+//                    observer(.failure(NetworkError.invalidNetworkStatusCode(code: httpResponse.statusCode)))
+//                }
+//            }
+//
+//            let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
+//            task.resume()
+            
+//            return Disposables.create()
+            
+            let dataRequest = AF.request(request)
+                .validate(statusCode: 200...299)
+                .responseData { response in
+                    guard let data else {
+                        observer(.failure(NetworkError.failedToGetData))
+                        return
+                    }
+                    
                     observer(.success(data))
-                } else {
-                    observer(.failure(NetworkError.invalidNetworkStatusCode(code: httpResponse.statusCode)))
                 }
+            
+            return Disposables.create {
+                dataRequest.cancel()
             }
-            
-            let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
-            task.resume()
-            
-            return Disposables.create()
         }
     }
     

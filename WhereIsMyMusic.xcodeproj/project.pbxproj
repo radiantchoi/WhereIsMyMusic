@@ -19,6 +19,8 @@
 		4F454909278B4BBB00436137 /* ShazamSearchViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */; };
 		4F4584EA299F44EE0040432C /* ShazamSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584E9299F44EE0040432C /* ShazamSearchUseCase.swift */; };
 		4F4584EF299F46950040432C /* ShazamSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584EE299F46950040432C /* ShazamSearchRepository.swift */; };
+		4F4584F429A245B30040432C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584F329A245B30040432C /* Endpoint.swift */; };
+		4F4584F629A24D8F0040432C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584F529A24D8F0040432C /* NetworkingError.swift */; };
 		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
@@ -83,6 +85,8 @@
 		4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewViewModel.swift; sourceTree = "<group>"; };
 		4F4584E9299F44EE0040432C /* ShazamSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchUseCase.swift; sourceTree = "<group>"; };
 		4F4584EE299F46950040432C /* ShazamSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchRepository.swift; sourceTree = "<group>"; };
+		4F4584F329A245B30040432C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		4F4584F529A24D8F0040432C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
@@ -172,6 +176,15 @@
 				4F4584EE299F46950040432C /* ShazamSearchRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		4F4584F229A245A40040432C /* Refactored */ = {
+			isa = PBXGroup;
+			children = (
+				4F4584F329A245B30040432C /* Endpoint.swift */,
+				4F4584F529A24D8F0040432C /* NetworkingError.swift */,
+			);
+			path = Refactored;
 			sourceTree = "<group>";
 		};
 		4FB3ACD42764E1A300264277 /* Presentation */ = {
@@ -367,6 +380,7 @@
 		4FE03B8827102A30005B5CE8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4F4584F229A245A40040432C /* Refactored */,
 				4FE03B85271029F8005B5CE8 /* APIs */,
 				4FC48696285DD36700588498 /* Namespaces */,
 				4FE03B8927102B0C005B5CE8 /* EndPoint.swift */,
@@ -484,11 +498,13 @@
 				4F454909278B4BBB00436137 /* ShazamSearchViewViewModel.swift in Sources */,
 				4F6A00B627284F4E0054BB5B /* ShazamResultTableViewCell.swift in Sources */,
 				4F94ACA7271765B000A649EB /* BugsSong.swift in Sources */,
+				4F4584F629A24D8F0040432C /* NetworkingError.swift in Sources */,
 				4FE03B8027102584005B5CE8 /* NetworkManager.swift in Sources */,
 				4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */,
 				4FBD5434271B2EE300E47A6C /* YouTubeSongModel.swift in Sources */,
 				4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */,
 				4F6A00BD27286A8D0054BB5B /* Song.swift in Sources */,
+				4F4584F429A245B30040432C /* Endpoint.swift in Sources */,
 				4F0F55D1275FA3C7005FD3EE /* SHMediaItem+Extension.swift in Sources */,
 				4F8C3D3E27FC5CA2007C7573 /* AppleSongModel.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,

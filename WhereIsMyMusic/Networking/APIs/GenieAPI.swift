@@ -22,7 +22,7 @@ struct GenieAPI {
 
 extension GenieAPI {
     func loadGenie() -> Observable<[GenieSong]> {
-        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .GET, query: query, headers: nil)
         
         return PublishSubject.create { observer in
             let source = CrawlManager.shared.crawl(endPoint, crawlingCss: CrawlingCSS.genie)

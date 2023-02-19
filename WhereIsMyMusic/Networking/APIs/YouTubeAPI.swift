@@ -17,7 +17,7 @@ struct YouTubeAPI {
 
 extension YouTubeAPI {
     func loadYouTube() -> Observable<[YouTubeSong]> {
-        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .GET, query: query, headers: nil)
         
         return PublishSubject.create { observer in
             let data = NetworkManager.shared.call(endPoint, for: YouTubeResponse.self)

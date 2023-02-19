@@ -22,7 +22,7 @@ struct BugsAPI {
 
 extension BugsAPI {
     func loadBugs() -> Observable<[BugsSong]> {
-        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .GET, query: query, headers: nil)
         
         return PublishSubject.create { observer in
             let source = CrawlManager.shared.crawl(endPoint, crawlingCss: CrawlingCSS.bugs)

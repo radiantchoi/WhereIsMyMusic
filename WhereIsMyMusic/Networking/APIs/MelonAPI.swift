@@ -23,7 +23,7 @@ struct MelonAPI {
 
 extension MelonAPI {
     func loadMelon() -> Observable<[MelonSong]> {
-        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .GET, query: query, headers: nil)
         
         return PublishSubject.create { observer in
             let source = CrawlManager.shared.crawl(endPoint, crawlingCss: CrawlingCSS.melon)

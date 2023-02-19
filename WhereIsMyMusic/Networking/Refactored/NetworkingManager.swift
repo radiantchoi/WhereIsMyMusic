@@ -74,6 +74,14 @@ struct NetworkingManager {
                 dataRequest.cancel()
             }
         }
+        .catch { error -> Single<Data> in
+            if let afError = error as? AFError,
+               let responseCode = afError.responseCode {
+                return Single.error(NetworkError.invalidNetworkStatusCode(code: responseCode))
+            } else {
+                return Single.error(NetworkError.unknownNetworkError)
+            }
+        }
     }
     
     enum SessionType {

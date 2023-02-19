@@ -21,6 +21,7 @@
 		4F4584EF299F46950040432C /* ShazamSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584EE299F46950040432C /* ShazamSearchRepository.swift */; };
 		4F4584F429A245B30040432C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584F329A245B30040432C /* Endpoint.swift */; };
 		4F4584F629A24D8F0040432C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584F529A24D8F0040432C /* NetworkingError.swift */; };
+		4F4584F829A26D600040432C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4584F729A26D600040432C /* NetworkingManager.swift */; };
 		4F4E1D74271C4E4D00896A22 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E1D73271C4E4C00896A22 /* Keys.plist */; };
 		4F4E628226E07B8E001592AC /* ShazamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */; };
 		4F4E628326E07B8E001592AC /* ShazamSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */; };
@@ -87,6 +88,7 @@
 		4F4584EE299F46950040432C /* ShazamSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchRepository.swift; sourceTree = "<group>"; };
 		4F4584F329A245B30040432C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4F4584F529A24D8F0040432C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		4F4584F729A26D600040432C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		4F4E1D73271C4E4C00896A22 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4F4E628026E07B8E001592AC /* ShazamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewController.swift; sourceTree = "<group>"; };
 		4F4E628126E07B8E001592AC /* ShazamSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShazamSearchViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				4F4584F329A245B30040432C /* Endpoint.swift */,
 				4F4584F529A24D8F0040432C /* NetworkingError.swift */,
+				4F4584F729A26D600040432C /* NetworkingManager.swift */,
 			);
 			path = Refactored;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				4F8C3D3E27FC5CA2007C7573 /* AppleSongModel.swift in Sources */,
 				4FE03B8A27102B0C005B5CE8 /* EndPoint.swift in Sources */,
 				4FE03B8E27102CE3005B5CE8 /* URL+Extension.swift in Sources */,
+				4F4584F829A26D600040432C /* NetworkingManager.swift in Sources */,
 				4F94ACAD2717815100A649EB /* AppleAPI.swift in Sources */,
 				4FCA015626DFDC0700DEDE39 /* SceneDelegate.swift in Sources */,
 				4FD3C989276E395C001A890E /* DataSource.swift in Sources */,

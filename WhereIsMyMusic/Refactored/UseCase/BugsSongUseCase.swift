@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol BugsSongUseCase {
-    func loadBugsSong(_ endpoint: Endpoint) -> Single<[BugsSong]>
+    func loadBugsSong(_ endpoint: Endpoint) -> Single<[Song]>
 }
 
 final class BugsSongUseCaseImpl: BugsSongUseCase {
@@ -20,10 +20,11 @@ final class BugsSongUseCaseImpl: BugsSongUseCase {
         self.repository = repository
     }
     
-    func loadBugsSong(_ endpoint: Endpoint) -> Single<[BugsSong]> {
+    func loadBugsSong(_ endpoint: Endpoint) -> Single<[Song]> {
         return repository.scrapFromWebsite(endpoint, css: ScrapingCSS.bugs)
             .map { datas in
-                return datas.compactMap { BugsSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
+                let bugsSongs = datas.compactMap { BugsSong.init(title: $0[0], artist: $0[1], album: $0[2]) }
+                return bugsSongs.compactMap { Song(bugsSong: $0) }
             }
     }
 }

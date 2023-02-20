@@ -70,6 +70,7 @@
 		4FEF20C427B953B2007D314B /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 4FEF20C327B953B2007D314B /* MarqueeLabel */; };
 		4FF8668829A36FBF00C3CDCC /* ShazamSongDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8668729A36FBF00C3CDCC /* ShazamSongDTO.swift */; };
 		4FF8668B29A3D5B700C3CDCC /* SearchMusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8668A29A3D5B700C3CDCC /* SearchMusicRepository.swift */; };
+		4FF8668E29A3DE9300C3CDCC /* FloSongUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8668D29A3DE9300C3CDCC /* FloSongUseCase.swift */; };
 		4FF8926F271874E700CBF7C0 /* FloSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8926E271874E700CBF7C0 /* FloSong.swift */; };
 		4FFEABE2278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */; };
 		4FFEABE4278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEABE3278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift */; };
@@ -137,6 +138,7 @@
 		4FE03B8F27103834005B5CE8 /* MelonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonAPI.swift; sourceTree = "<group>"; };
 		4FF8668729A36FBF00C3CDCC /* ShazamSongDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSongDTO.swift; sourceTree = "<group>"; };
 		4FF8668A29A3D5B700C3CDCC /* SearchMusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicRepository.swift; sourceTree = "<group>"; };
+		4FF8668D29A3DE9300C3CDCC /* FloSongUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSongUseCase.swift; sourceTree = "<group>"; };
 		4FF8926E271874E700CBF7C0 /* FloSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloSong.swift; sourceTree = "<group>"; };
 		4FFEABE1278F3A0800169D24 /* ShazamResultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamResultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		4FFEABE3278F3A1C00169D24 /* SearchResultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		4F4584F229A245A40040432C /* Refactored */ = {
 			isa = PBXGroup;
 			children = (
+				4FF8668C29A3DE6C00C3CDCC /* UseCase */,
 				4FF8668429A36E7D00C3CDCC /* Data */,
 				4FF8668329A36E6600C3CDCC /* Networking */,
 			);
@@ -443,6 +446,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		4FF8668C29A3DE6C00C3CDCC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4FF8668D29A3DE9300C3CDCC /* FloSongUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,6 +551,7 @@
 				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4F4584FA29A2905C0040432C /* ScrapingManager.swift in Sources */,
 				4FC0FD342727113100DEFD3E /* SearchResultTableViewCell.swift in Sources */,
+				4FF8668E29A3DE9300C3CDCC /* FloSongUseCase.swift in Sources */,
 				4F73B09627663FAA009DE192 /* Array+Extension.swift in Sources */,
 				4F0F55D3275FA8D6005FD3EE /* BaseURL.swift in Sources */,
 				4F4584EF299F46950040432C /* ShazamSearchRepository.swift in Sources */,

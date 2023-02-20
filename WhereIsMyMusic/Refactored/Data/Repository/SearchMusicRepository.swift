@@ -15,7 +15,7 @@ protocol SearchMusicRepository {
 }
 
 final class SearchMusicRepositoryImpl: SearchMusicRepository {
-    func callFromAPI<T>(_ endpoint: Endpoint) -> Single<T> where T: Decodable {
+    func callFromAPI<T: Decodable>(_ endpoint: Endpoint) -> Single<T> {
         return NetworkingManager.shared
             .call(endpoint)
             .map {

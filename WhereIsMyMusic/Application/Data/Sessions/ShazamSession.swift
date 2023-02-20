@@ -84,6 +84,7 @@ extension ShazamSession: SHSessionDelegate {
         guard let mediaItem = match.mediaItems.first,
               let shazamSong = ShazamSongDTO(mediaItem: mediaItem) else {
             shazamError.onNext(ShazamError.matchFailed)
+            stop()
             return
         }
         

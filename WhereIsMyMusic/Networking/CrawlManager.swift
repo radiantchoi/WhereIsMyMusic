@@ -33,7 +33,7 @@ extension CrawlManager {
                         let artistResult = try? elements?.select(crawlingCss.artistCss[n]).text()
                         let albumResult = try? elements?.select(crawlingCss.albumCss[n]).text()
                         
-                        let result = [titleResult ?? "", artistResult ?? "", albumResult ?? ""]
+                        let result = [titleResult?.replacingOccurrences(of: "TITLE", with: "") ?? "", artistResult ?? "", albumResult ?? ""]
                         results.append(result)
                     }
                     

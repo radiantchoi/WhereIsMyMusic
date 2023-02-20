@@ -40,7 +40,7 @@ struct ScrapingManager {
                             let artistResult = try? elements.select(css.artistCss[n]).text()
                             let albumResult = try? elements.select(css.albumCss[n]).text()
                             
-                            let result = [titleResult ?? "", artistResult ?? "", albumResult ?? ""]
+                            let result = [titleResult?.replacingOccurrences(of: "TITLE", with: "") ?? "", artistResult ?? "", albumResult ?? ""]
                             results.append(result)
                         }
                     } catch {

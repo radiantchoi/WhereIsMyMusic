@@ -15,7 +15,7 @@ struct CrawlManager {
 }
 
 extension CrawlManager {
-    func crawl(_ endPoint: EndPoint, crawlingCss: CrawlingCSS) -> Observable<[[String]]> {
+    func crawl(_ endPoint: EndPoint, crawlingCss: ScrapingCSS) -> Observable<[[String]]> {
         let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         let urlString = String(describing: url!)
         

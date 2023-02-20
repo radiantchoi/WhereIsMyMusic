@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CrawlingCSS {
+struct ScrapingCSS {
     let cssQuery: String
     let titleCss: [String]
     let artistCss: [String]
     let albumCss: [String]
 }
 
-extension CrawlingCSS {
-    static var melon: CrawlingCSS {
-        CrawlingCSS(
+extension ScrapingCSS {
+    static var melon: ScrapingCSS {
+        ScrapingCSS(
             cssQuery: "#frm_defaultList > div > table > tbody",
             titleCss: ["tr:nth-child(1) > td:nth-child(3) > div > div > a.fc_gray",
                        "tr:nth-child(2) > td:nth-child(3) > div > div > a.fc_gray",
@@ -30,8 +30,8 @@ extension CrawlingCSS {
         )
     }
     
-    static var genie: CrawlingCSS {
-        CrawlingCSS(cssQuery: "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody",
+    static var genie: ScrapingCSS {
+        ScrapingCSS(cssQuery: "#body-content > div.search_song > div.music-list-wrap > div.music-list-wrap > table > tbody",
                     titleCss: ["tr:nth-child(1) > td.info > a.title.ellipsis",
                                "tr:nth-child(2) > td.info > a.title.ellipsis",
                                "tr:nth-child(3) > td.info > a.title.ellipsis"],
@@ -44,8 +44,8 @@ extension CrawlingCSS {
         )
     }
     
-    static var bugs: CrawlingCSS {
-        CrawlingCSS(cssQuery: "#DEFAULT0 > table > tbody",
+    static var bugs: ScrapingCSS {
+        ScrapingCSS(cssQuery: "#DEFAULT0 > table > tbody",
                     titleCss: ["tr:nth-child(1) > th > p > a",
                                "tr:nth-child(2) > th > p > a",
                                "tr:nth-child(3) > th > p > a"],

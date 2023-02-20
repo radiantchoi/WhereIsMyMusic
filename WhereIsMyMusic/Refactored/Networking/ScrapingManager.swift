@@ -16,7 +16,7 @@ struct ScrapingManager {
     
     private init() {}
     
-    func scrap(_ endpoint: Endpoint, css: CrawlingCSS) -> Single<[[String]]> {
+    func scrap(_ endpoint: Endpoint, css: ScrapingCSS) -> Single<[[String]]> {
         guard let request = try? endpoint.toURLRequest() else {
             return Single.error(NetworkError.failedToCreateRequest)
         }
@@ -24,7 +24,7 @@ struct ScrapingManager {
         return scrap(request, css: css)
     }
     
-    private func scrap(_ request: URLRequest, css: CrawlingCSS) -> Single<[[String]]> {
+    private func scrap(_ request: URLRequest, css: ScrapingCSS) -> Single<[[String]]> {
         return Single.create { observer in
             let scrapRequest = AF.request(request)
                 .validate(statusCode: 200...299)

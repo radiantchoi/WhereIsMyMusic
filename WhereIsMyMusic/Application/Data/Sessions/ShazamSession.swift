@@ -11,11 +11,11 @@ import ShazamKit
 import RxSwift
 
 final class ShazamSession: NSObject {
-    private var shazamResult = PublishSubject<ShazamSong>()
+    private var shazamResult = PublishSubject<ShazamSongDTO>()
     private var shazamError = PublishSubject<ShazamError>()
     private var isSearching = BehaviorSubject(value: false)
     
-    var shazamResultObservable: Observable<ShazamSong> {
+    var shazamResultObservable: Observable<ShazamSongDTO> {
         return shazamResult.asObservable()
     }
     var shazamErrorObservable: Observable<ShazamError> {
@@ -82,7 +82,7 @@ extension ShazamSession {
 extension ShazamSession: SHSessionDelegate {
     func session(_ session: SHSession, didFind match: SHMatch) {
         guard let mediaItem = match.mediaItems.first,
-              let shazamSong = ShazamSong(mediaItem: mediaItem) else {
+              let shazamSong = ShazamSongDTO(mediaItem: mediaItem) else {
             shazamError.onNext(ShazamError.matchFailed)
             return
         }

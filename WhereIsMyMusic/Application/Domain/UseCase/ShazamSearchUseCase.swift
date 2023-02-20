@@ -32,6 +32,7 @@ final class ShazamSearchUseCaseImpl: ShazamSearchUseCase {
     
     func subscribeShazamResult() -> Observable<ShazamSong> {
         return repository.subscribeShazamResult()
+            .map { ShazamSong(shazamSongDTO: $0) }
     }
     
     func subscribeShazamError() -> Observable<ShazamError> {

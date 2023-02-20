@@ -10,7 +10,7 @@ import RxSwift
 protocol ShazamSearchRepository {
     func startSearching()
     func stopSearching()
-    func subscribeShazamResult() -> Observable<ShazamSong>
+    func subscribeShazamResult() -> Observable<ShazamSongDTO>
     func subscribeShazamError() -> Observable<ShazamError>
     func subscribeSearchingStatus() -> Observable<Bool>
 }
@@ -30,7 +30,7 @@ final class ShazamSearchRepositoryImpl: ShazamSearchRepository {
         shazamSession.stop()
     }
     
-    func subscribeShazamResult() -> Observable<ShazamSong> {
+    func subscribeShazamResult() -> Observable<ShazamSongDTO> {
         return shazamSession.shazamResultObservable
     }
     

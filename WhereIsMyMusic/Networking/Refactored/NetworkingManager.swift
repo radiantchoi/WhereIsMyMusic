@@ -17,11 +17,7 @@ struct NetworkingManager {
     
     func call(_ endpoint: Endpoint) -> Single<Data> {
         guard let request = try? endpoint.toURLRequest() else {
-            return Single.create { observer in
-                observer(.failure(NetworkError.failedToCreateRequest))
-                
-                return Disposables.create()
-            }
+            return Single.error(NetworkError.failedToCreateRequest)
         }
         
         // 향후 업로드 태스크가 추가되면, 알맞은 세션타입을 넣어서 보강해야 함

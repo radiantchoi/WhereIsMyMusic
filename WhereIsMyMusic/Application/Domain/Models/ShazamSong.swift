@@ -9,20 +9,17 @@ import Foundation
 import ShazamKit
 
 struct ShazamSong: Equatable {
-    let title: String?
-    let artist: String?
-    let album: String?
+    let isrc: String
+    let title: String
+    let artist: String
+    let album: String
     let imageURL: URL?
     
-    init?(mediaItem: SHMatchedMediaItem) {
-        guard let title = mediaItem.title,
-              let artist = mediaItem.artist,
-              let album = mediaItem.album
-        else { return nil }
-        
-        self.title = title
-        self.artist = artist
-        self.album = album
-        self.imageURL = mediaItem.artworkURL
+    init(shazamSongDTO: ShazamSongDTO) {
+        isrc = shazamSongDTO.isrc
+        title = shazamSongDTO.title
+        artist = shazamSongDTO.artist
+        album = shazamSongDTO.album
+        imageURL = shazamSongDTO.imageURL
     }
 }

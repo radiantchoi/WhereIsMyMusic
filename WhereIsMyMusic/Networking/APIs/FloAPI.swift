@@ -17,7 +17,7 @@ struct FloAPI {
 
 extension FloAPI {
     func loadFlo() -> Observable<[FloSong]> {
-        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .get, query: query, headers: nil)
+        let endPoint = EndPoint(baseURL: baseURL, httpMethod: .GET, query: query, headers: nil)
         
         return PublishSubject.create { observer in
             let data = NetworkManager.shared.call(endPoint, for: FloResponse.self)

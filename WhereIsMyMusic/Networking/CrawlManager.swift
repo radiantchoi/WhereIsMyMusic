@@ -15,7 +15,7 @@ struct CrawlManager {
 }
 
 extension CrawlManager {
-    func crawl(_ endPoint: EndPoint, crawlingCss: CrawlingCSS) -> Observable<[[String]]> {
+    func crawl(_ endPoint: EndPoint, crawlingCss: ScrapingCSS) -> Observable<[[String]]> {
         let url = endPoint.baseURL.withQueries(endPoint.query ?? [:])
         let urlString = String(describing: url!)
         
@@ -33,7 +33,7 @@ extension CrawlManager {
                         let artistResult = try? elements?.select(crawlingCss.artistCss[n]).text()
                         let albumResult = try? elements?.select(crawlingCss.albumCss[n]).text()
                         
-                        let result = [titleResult ?? "", artistResult ?? "", albumResult ?? ""]
+                        let result = [titleResult?.replacingOccurrences(of: "TITLE", with: "") ?? "", artistResult ?? "", albumResult ?? ""]
                         results.append(result)
                     }
                     

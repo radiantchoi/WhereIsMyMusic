@@ -13,8 +13,3 @@ struct EndPoint {
     let query: Query?
     let headers: [String: String]?
 }
-
-enum HTTPMethod: String {
-    case post = "POST"
-    case get = "GET"
-}

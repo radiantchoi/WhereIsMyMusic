@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FloSong {
+struct FloSong: Decodable {
     let title: String
     let artist: String
     let album: String

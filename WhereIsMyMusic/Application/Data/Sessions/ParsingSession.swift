@@ -15,8 +15,8 @@ class ParsingSession {
 extension ParsingSession {
     func getSongs(_ shazamSong: ShazamSong) -> Observable<[SearchResultTableViewCellViewModel]> {
         
-        let searchQuery = shazamSong.title!
-        let artist = shazamSong.artist!
+        let searchQuery = shazamSong.title
+        let artist = shazamSong.artist
         
         let apple = AppleAPI.init(query: ["term": searchQuery, "country": "KR"])
         let flo = FloAPI.init(query: ["keyword": searchQuery])

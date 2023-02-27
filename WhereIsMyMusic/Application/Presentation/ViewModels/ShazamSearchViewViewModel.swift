@@ -6,28 +6,48 @@
 //
 
 import Foundation
-import RxRelay
+
 import RxSwift
 
-class ShazamSearchViewViewModel {
-    let shazamSession = ShazamSession()
+final class ShazamSearchViewViewModel {
     let shazamSong = PublishSubject<ShazamSong>()
-    let error = PublishSubject<ShazamError>()
+    let shazamError = PublishSubject<ShazamError>()
     let searching = BehaviorSubject(value: false)
     
+    private let shazamUseCase: ShazamSearchUseCase
     private let disposeBag = DisposeBag()
     
-    init() {        
-        shazamSession.completion.asObserver()
-            .subscribe(onNext: { result in                
-                self.searching.onNext(false)
-                switch result {
-                case .success(let shazamSong):
-                    self.shazamSong.onNext(shazamSong)
-                case .failure(let error):
-                    self.error.onNext(error)
-                }
-                
-            }).disposed(by: disposeBag)
+    init(shazamUseCase: ShazamSearchUseCase = ShazamSearchUseCaseImpl()) {
+        self.shazamUseCase = shazamUseCase
+        
+        subscribeViewModel()
+    }
+    
+    func startSearching() {
+        shazamUseCase.startSearching()
+    }
+    
+    func stopSearching() {
+        shazamUseCase.stopSearching()
+    }
+    
+    func subscribeViewModel() {
+        shazamUseCase.subscribeShazamResult()
+            .subscribe(onNext: { [weak self] result in
+                self?.shazamSong.onNext(result)
+            })
+            .disposed(by: disposeBag)
+        
+        shazamUseCase.subscribeShazamError()
+            .subscribe(onNext: { [weak self] error in
+                self?.shazamError.onNext(error)
+            })
+            .disposed(by: disposeBag)
+        
+        shazamUseCase.subscribeSearchingStatus()
+            .subscribe(onNext: { [weak self] isSearching in
+                self?.searching.onNext(isSearching)
+            })
+            .disposed(by: disposeBag)
     }
 }

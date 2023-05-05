@@ -14,6 +14,7 @@
 		4F1D70A62714A3C6004224C1 /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D70A52714A3C6004224C1 /* CrawlManager.swift */; };
 		4F1E17742780583A00DDF64D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E17762780583A00DDF64D /* InfoPlist.strings */; };
 		4F1E177A27805B2000DDF64D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E177C27805B2000DDF64D /* Localizable.strings */; };
+		4F226C6329AF4D9C00BEBAA7 /* BugsSongEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F226C6229AF4D9C00BEBAA7 /* BugsSongEndpoint.swift */; };
 		4F33C3D8273D4B92009B9868 /* IntroScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */; };
 		4F44984F273D66B0006603FC /* LogoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F44984E273D66B0006603FC /* LogoImage.png */; };
 		4F454909278B4BBB00436137 /* ShazamSearchViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */; };
@@ -86,6 +87,7 @@
 		4F1E17772780583C00DDF64D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F1E177B27805B2000DDF64D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F1E177D27805B2100DDF64D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F226C6229AF4D9C00BEBAA7 /* BugsSongEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsSongEndpoint.swift; sourceTree = "<group>"; };
 		4F33C3D7273D4B92009B9868 /* IntroScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroScreen.storyboard; sourceTree = "<group>"; };
 		4F44984E273D66B0006603FC /* LogoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoImage.png; sourceTree = "<group>"; };
 		4F454908278B4BBB00436137 /* ShazamSearchViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSearchViewViewModel.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		4FF8668629A36EC700C3CDCC /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				4F226C6229AF4D9C00BEBAA7 /* BugsSongEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				4FB3ACD82764F76C00264277 /* ParsingSession.swift in Sources */,
 				4FBD5436271B2EF700E47A6C /* YouTubeSong.swift in Sources */,
 				4F4584FA29A2905C0040432C /* ScrapingManager.swift in Sources */,
+				4F226C6329AF4D9C00BEBAA7 /* BugsSongEndpoint.swift in Sources */,
 				4FC0FD342727113100DEFD3E /* SearchResultTableViewCell.swift in Sources */,
 				4FF8668E29A3DE9300C3CDCC /* FloSongUseCase.swift in Sources */,
 				4F73B09627663FAA009DE192 /* Array+Extension.swift in Sources */,

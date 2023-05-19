@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array {
-    func slice(first n: Int) -> Array<Element> {
+    func slice(first n: Int) -> Self {
         return count >= n
         ? Array(self[0..<n])
         : self
